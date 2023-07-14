@@ -12,12 +12,19 @@
 	margin: 0 !important;
 }
 
-#toolbar-menubar, #tabs-toolbar, #status-bar {
+#toolbar-menubar,
+#tabs-toolbar,
+#status-bar,
+.inline-toolbar,
+.contentTabToolbar {
 	appearance: none !important;
 	background: var(--gnome-toolbar-background) !important;
 	border: 0 !important;
 }
-#toolbar-menubar:not([inactive=true]), #tabs-toolbar {
+#toolbar-menubar:not([inactive=true]),
+#tabs-toolbar,
+.inline-toolbar,
+.contentTabToolbar {
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 #status-bar {
@@ -51,6 +58,17 @@ unified-toolbar:-moz-window-inactive,
 	height: auto !important;
 	min-height: auto !important;
 	padding: 6px !important;
+}
+
+/* Other toolbars */
+.inline-toolbar,
+.contentTabToolbar {
+	padding: 6px 3px !important;
+}
+
+.mail-toolbox::after,
+.contentTabToolbox::after {
+	display: none !important;
 }
 
 /* Text link */

@@ -19,6 +19,9 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input,
 	box-sizing: border-box;
 	transition: outline 0.3s, outline-offset 0.3s;
 }
+.contentTabSecurity[src] + .contentTabUrlInput {
+	padding-inline-start: 28px !important;
+}
 
 /* Entries focused */
 .themeableSearchBox:focus {
