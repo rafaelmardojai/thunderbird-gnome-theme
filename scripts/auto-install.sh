@@ -1,14 +1,12 @@
 #! /usr/bin/env bash
 
-sysThemeNames=("'Pop'" "'Pop-dark'" "'Pop-light'" "'Yaru'" "'Yaru-dark'" "'Yaru-light'" "'Adwaita-maia'" "'Adwaita-maia-dark'")
-themeNames=("pop" "pop" "pop" "yaru" "yaru" "yaru" "maia" "maia")
+sysThemeNames=("'Adwaita-maia'" "'Adwaita-maia-dark'")
+themeNames=("maia" "maia")
 
-firefoxInstallationPaths=(
-    ~/.mozilla/firefox
-    ~/.var/app/org.mozilla.firefox/.mozilla/firefox
-    ~/.librewolf
-    ~/.var/app/io.gitlab.librewolf-community/.librewolf
-    ~/snap/firefox/common/.mozilla/firefox
+installationPaths=(
+    ~/.thunderbird
+    ~/.var/app/org.mozilla.Thunderbird/.thunderbird
+    ~/snap/thunderbird/common/.thunderbird
 )
 
 currentTheme=$(gsettings get org.gnome.desktop.interface gtk-theme ) || currentTheme=""
@@ -25,9 +23,9 @@ for i in "${!sysThemeNames[@]}"; do
    fi
 done
 
-for folder in "${firefoxInstallationPaths[@]}"; do
+for folder in "${installationPaths[@]}"; do
     if [ -d $folder ]; then
-    echo Firefox installation folder found
+    echo Thunderbird installation folder found
 
     folderArg=" -f $folder"
     eval ${installScript}${themeArg}${folderArg}   
@@ -38,5 +36,5 @@ for folder in "${firefoxInstallationPaths[@]}"; do
 done
 
 if [ $foldersFoundCount = 0 ];then
-    echo No firefox folder found ;
+    echo No Thunderbird folder found ;
     fi

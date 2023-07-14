@@ -31,6 +31,72 @@ The `main` branch of this repo supports the current Thunderbird stable release `
 
 Theme versions complatible with older Thunderbird releases are preserved as git tags.
 
+## Installation
+
+### Installation script
+1. Clone this repo and enter folder:
+
+	```sh
+	git clone https://github.com/rafaelmardojai/thunderbird-gnome-theme && cd thunderbird-gnome-theme
+	```
+2. Checkout a git branch or tag if needed, otherwise use `main` and ignore this step.
+	```sh
+	git checkout beta # Set beta branch
+	git checkout v115 # Set v115 tag
+	```
+3. Run installation script
+
+	#### Auto install script
+
+	This script will lookup Thunderbird profiles location and enable a theme variant for your GTK theme if it exists.
+	```sh
+	./scripts/auto-install.sh
+	```
+	#### Install script
+	```sh
+	./scripts/install.sh # Standard
+	./scripts/install.sh -f ~/.var/app/org.mozilla.Thunderbird/.thunderbird # Flatpak
+	```
+
+	##### Script options
+	- `-f <thunderbird_folder_path>` *optional*
+		- Set custom Firefox folder path.
+		- Default: `~/.thunderbird`
+
+	- `-p <profile_name>` *optional*
+		- Set custom profile name, for example `e0j6yb0p.default-nightly`.
+		- Default: All the profiles found in the firefox folder
+
+	- `-t <theme_name>` *optional*
+		- Set the colors used in the theme.
+		- Default: Adwaita.
+		- Options: `adwaita`, `maia`.
+
+
+### Required Firefox preferences
+We provide a **user.js** configuration file in `configuration/user.js` that enable some preferences required by this theme to work.
+
+You should already have this file installed if you followed one of the installation methods, but in any case be sure this preferences are enabled under Thunderbird's `Config Editor`:
+
+- `toolkit.legacyUserProfileCustomizations.stylesheets`
+
+	This preference is required to load the custom CSS in Firefox, otherwise the theme wouldn't work.
+
+- `svg.context-properties.content.enabled`
+
+	This preference is required to recolor the icons, otherwise you will get black icons everywhere.
+
+> For other non essential preferences checkout `configuration/user.js`.
+
+## Updating
+
+You can follow the installation script steps again to update the theme.
+
+## Uninstalling
+1. Go to your profile folder. Go to Manu > Help > More Troubleshooting Information >  Application Basics > Profile Directory > Open Directory)
+2. Remove `chrome` folder.
+3. Remove the unwanted preferences from your `user.js` inside your profile folder. The install script append the needed prefs in that file, you can check what preferences does it append by checking `configuration/user.js` in this repo.
+
 ## Enabling optional features
 Optional features can be enabled by creating new `boolean` preferences in the config editor.
 
