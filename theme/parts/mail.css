@@ -1,0 +1,69 @@
+/* Mail view theming */
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#folderPaneHeaderBar:not([hidden]) {
+	background: var(--gnome-toolbar-background) !important;
+}
+
+/* Filters */
+.list-header-bar:not([hidden]), #quick-filter-bar {
+	background: var(--gnome-toolbar-background) !important;
+	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+#quick-filter-bar-filter-text-bar {
+	padding-top: 12px !important;
+}
+#qfb-qs-textbox {
+	max-width: 100% !important;
+}
+
+/* List */
+#threadTree {
+	background: var(--gnome-view-background) !important;
+}
+#threadTree .tree-table {
+	background: transparent !important;
+}
+#threadTree[rows="thread-card"] .tree-table {
+	padding: 12px !important;
+}
+
+#threadTree tr[is="thread-card"] {
+	margin-bottom: 6px;
+}
+
+.thread-card-container {
+	border: 0 !important;
+	border-radius: 6px !important;
+	margin-bottom: 2px;
+}
+
+tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
+#threadTree [is="tree-view-table-body"] > :hover,
+#threadTree [is="tree-view-table-body"] > .selected,
+#threadTree [is="tree-view-table-body"]:focus > .selected,
+#threadTree [is="tree-view-table-body"]:focus-within > .selected,
+#threadTree [is="tree-view-table-body"] > .selected:focus-within {
+	background: none !important;
+}
+
+#threadTree [is="tree-view-table-body"] > :hover .thread-card-container {
+	background: var(--gnome-hover-color) !important;
+}
+
+#threadTree [is="tree-view-table-body"] > .selected .thread-card-container,
+#threadTree [is="tree-view-table-body"]:focus > .selected .thread-card-container,
+#threadTree [is="tree-view-table-body"]:focus-within > .selected .thread-card-container,
+#threadTree [is="tree-view-table-body"] > .selected:focus-within .thread-card-container {
+	background: var(--gnome-active-color) !important;
+}
+
+/* Mesagge */
+#messageHeader {
+	background: var(--gnome-toolbar-background) !important;
+	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+#messagePane {
+	background: var(--gnome-view-background) !important;
+}

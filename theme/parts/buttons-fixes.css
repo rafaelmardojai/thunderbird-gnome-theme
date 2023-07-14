@@ -1,0 +1,46 @@
+/* Buttons Issues/Glitches fixes */
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+.button.check-button:before {
+	display: none !important;
+}
+.button.check-button[aria-pressed="true"] {
+	box-shadow: none !important;
+}
+.button.check-button.icon-button {
+	background-position: center !important;
+}
+
+.button-group {
+	border: none !important;
+	margin: 0 !important;
+}
+
+.unified-toolbar-button {
+	justify-content: center !important;
+}
+
+/* Spaces toolbar */
+.spaces-toolbar-button.current,
+.spaces-toolbar-button.current:hover {
+	background-color: var(--spaces-button-active-bg-color) !important;
+}
+
+.spaces-toolbar-button:not([hidden]) {
+	align-items: center;
+	justify-content: center;
+	display: flex !important;
+}
+
+/* App menu */
+#appMenu-fontSizeReset-button {
+	flex: unset !important;
+}
+#appMenu-fontSizeReset-button > .toolbarbutton-text {
+	border: 0 !important;
+	padding: 0 !important;
+	min-width: 0 !important;
+}
+#appMenu-fontSizeReset-button:hover > .toolbarbutton-text {
+	background: none !important;
+}

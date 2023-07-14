@@ -1,0 +1,18 @@
+/* Header bar */
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Headerbar */
+#unifiedToolbar {
+	padding: 6px 3px !important;
+	min-height: 34px;
+}
+
+#unifiedToolbarContent {
+	padding-inline-start: 0 !important;
+}
+
+/* Headerbar CSD colors */
+unified-toolbar {
+	background: var(--gnome-headerbar-background) !important;
+	border-bottom: 1px solid var(--gnome-headerbar-shade-color) !important;
+}

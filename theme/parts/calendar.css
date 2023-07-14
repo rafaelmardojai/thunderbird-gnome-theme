@@ -1,0 +1,74 @@
+/* Calendar */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Main */
+#primaryButtonSidePanel, #unifinder-searchBox, #calendarViewHeader, #task-addition-box {
+	background: var(--gnome-toolbar-background) !important;
+	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+	height: auto !important;
+	min-height: auto !important;
+	padding: 6px !important;
+}
+
+.navigation-inner-box {
+	padding: 0 !important;
+}
+
+#view-box {
+	background: var(--gnome-view-background) !important;
+	padding: 24px !important;
+}
+
+/* Sidebar */
+#minimonth-pane {
+	padding: 12px !important;
+}
+
+#calMinimonthBox {
+	margin: 0 !important;
+	width: 100% !important;
+}
+
+calendar-minimonth {
+	--mmMainBorderRadius: 12px !important;
+	--mmMainBackground: var(--gnome-card-background) !important;
+	border: 0 !important;
+	box-shadow: var(--gnome-card-shadow);
+	padding: 12px !important;
+	width: 100% !important;
+}
+
+.minimonth-nav-section {
+	background: none !important;
+}
+
+.minimonth-nav-item {
+	border-inline: 0 !important;
+}
+
+#calendar-list > li {
+	border-radius: 6px !important;
+}
+#calendar-list > li:not(.selected):hover {
+	background-color: var(--gnome-hover-color) !important;
+}
+#calendar-list > li.selected,
+#calendar-list:focus-within > li.selected {
+	appearance: none !important;
+	background-color: var(--gnome-active-color) !important;
+	color: inherit !important;
+}
+
+/* Tasks */
+#todo-tab-panel, #unifinder-todo-tree {
+	background-color: var(--gnome-window-background) !important;	
+}
+
+#unifinder-task-edit-field {
+	margin: 3px 6px !important;
+}
+
+#show-completed-checkbox-box, {
+	
+}

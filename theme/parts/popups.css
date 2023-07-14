@@ -1,0 +1,135 @@
+/* Popup menus and context menus */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Style menus */
+menupopup {
+	-moz-appearance: none !important;	
+	color: var(--gnome-toolbar-color) !important;
+	padding: 8px !important;
+}
+
+menu menupopup {
+	margin:	-14px -8px 0px 0px !important;
+}
+
+menulist {
+	padding: 0px !important;
+}
+
+.menupopup-arrowscrollbox {
+	-moz-appearance: none !important;
+	background: var(--gnome-menu-background) !important;
+	border: 1px solid var(--gnome-menu-border-color) !important;
+	border-radius: 12px !important;
+	box-shadow: var(--gnome-menu-shadow) !important;
+	padding: 6px !important;
+	margin: 0 !important;
+}
+
+menuitem:is([type="checkbox"], [checked="true"]) .menu-iconic-icon,
+menuitem[type="radio"] .menu-iconic-icon {
+	appearance: none !important;
+}
+menuitem:not(.menuitem-iconic) {
+	padding-right: 18px !important;
+}
+menuitem :is(label, description)[value][crop]::before {
+	min-width: min-content !important;
+}
+menuitem:not([acceltext]) .menu-accel-container {
+	visibility: collapse !important;
+}
+menuitem[type="checkbox"] image, menuitem[type="radio"] image {
+	visibility: visible !important;
+}
+menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
+	background: transparent !important;
+}
+
+/* Style popovers */
+panel  {
+	--arrowpanel-background: var(--gnome-menu-background) !important;
+	--arrowpanel-border-radius: 12px !important;
+	margin-top: 18px !important;
+}
+
+.panel-header,
+.panel-subview-body {
+	padding: 6px !important;
+}
+
+/* Panel header */
+.panel-header {
+	border: 0 !important;
+	position: relative !important;
+}
+
+/* Menu buttons */
+menuitem, menupopup menu,
+panelview .subviewbutton,
+panelview .toolbarbutton-1 {
+	-moz-appearance: none !important;
+	border-radius: 6px !important;	
+	color: var(--gnome-toolbar-color) !important;
+	font: menu !important;
+	padding: 4px 12px !important;
+	min-height: 32px !important;
+	margin: 0 !important;
+}
+
+.panel-subview-body > .subviewbutton-iconic > .toolbarbutton-icon {
+	visibility: collapse !important;
+}
+
+.subviewbutton[shortcut]:after {
+	opacity: 0.5 !important;
+}
+
+/* Menu buttons disabled */
+menuitem[disabled="true"], menupopup menu[disabled="true"],
+.subviewbutton[disabled="true"], .toolbarbutton-1[disabled="true"],
+.protections-popup-category[disabled="true"],
+.identity-popup-content-blocking-category[disabled="true"] {
+	opacity: .5 !important;
+}
+menuitem[disabled="true"][_moz-menuactive], menupopup menu[disabled="true"][_moz-menuactive] {
+	background: transparent !important;
+}
+
+/* Menu buttons hover */
+menuitem:not([disabled="true"]):is(:hover, [_moz-menuactive]),
+menupopup menu:not([disabled="true"]):is(:hover, [_moz-menuactive]),
+.subviewbutton:not([disabled="true"], .toolbaritem-combined-buttons):hover {
+	background: var(--gnome-selected-color) !important;
+}
+
+/* Menu buttons back */
+.subviewbutton-back {
+	justify-content: start !important;
+	opacity: 1 !important;
+	width: 100%;
+}
+.subviewbutton-back .toolbarbutton-icon {
+	width: 16px !important;
+	height: 16px !important;
+}
+.subviewbutton-back + h1 {
+	font-weight: bold !important;
+	left: 0 !important;
+	padding: 0 !important;
+	pointer-events: none;
+	position: absolute !important;
+	top: 12px !important;
+	width: 100%;
+}
+
+/* Style popover separators */
+toolbarseparator, menuseparator {
+	appearance: none !important;
+}
+
+toolbarseparator:not([orient="vertical"]), menupopup menuseparator {
+	border-top: 1px solid var(--gnome-menu-separator-color) !important;
+	margin: 6px 0 !important;
+}
