@@ -17,7 +17,23 @@
 
 #view-box {
 	background: var(--gnome-view-background) !important;
-	padding: 24px !important;
+}
+
+calendar-month-view, calendar-multiweek-view {
+	padding: 0 !important;
+}
+
+.monthtable {
+	border: 0 !important;
+}
+.monthtable thead :is(td, th) > * {
+	border-top: 0 !important;
+}
+.monthtable :is(td, th):first-child > * {
+	border-left: 0 !important;
+}
+.monthtable :is(td, th):last-child > * {
+	border-right: 0 !important;
 }
 
 /* Sidebar */
@@ -67,8 +83,4 @@ calendar-minimonth {
 
 #unifinder-task-edit-field {
 	margin: 3px 6px !important;
-}
-
-#show-completed-checkbox-box, {
-	
 }
