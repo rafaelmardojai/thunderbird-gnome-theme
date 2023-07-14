@@ -60,12 +60,12 @@ Theme versions complatible with older Thunderbird releases are preserved as git 
 
 	##### Script options
 	- `-f <thunderbird_folder_path>` *optional*
-		- Set custom Firefox folder path.
+		- Set custom Thunderbird folder path.
 		- Default: `~/.thunderbird`
 
 	- `-p <profile_name>` *optional*
 		- Set custom profile name, for example `e0j6yb0p.default-nightly`.
-		- Default: All the profiles found in the firefox folder
+		- Default: All the profiles found in the thunderbird folder
 
 	- `-t <theme_name>` *optional*
 		- Set the colors used in the theme.
@@ -73,14 +73,14 @@ Theme versions complatible with older Thunderbird releases are preserved as git 
 		- Options: `adwaita`, `maia`.
 
 
-### Required Firefox preferences
+### Required Thunderbird preferences
 We provide a **user.js** configuration file in `configuration/user.js` that enable some preferences required by this theme to work.
 
 You should already have this file installed if you followed one of the installation methods, but in any case be sure this preferences are enabled under Thunderbird's `Config Editor`:
 
 - `toolkit.legacyUserProfileCustomizations.stylesheets`
 
-	This preference is required to load the custom CSS in Firefox, otherwise the theme wouldn't work.
+	This preference is required to load the custom CSS in Thunderbird, otherwise the theme wouldn't work.
 
 - `svg.context-properties.content.enabled`
 
