@@ -55,6 +55,11 @@ calendar-minimonth {
 	width: 100% !important;
 }
 
+.minimonth-week {
+	background: none !important;
+	color: var(--gnome-window-color) !important;
+}
+
 .minimonth-nav-section {
 	background: none !important;
 }
