@@ -43,7 +43,7 @@ calendar-month-view, calendar-multiweek-view {
 
 #calMinimonthBox {
 	margin: 0 !important;
-	width: 100% !important;
+	min-width: auto !important;
 }
 
 calendar-minimonth {
