@@ -4,7 +4,9 @@
 
 /* Buttons */
 .button,
-.message-header-view-button,
+.message-header-view-button:not([is="toolbarbutton-menu-button"]),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
 .close-icon,
 button.calview-toggle-item,
 .nav-button,
@@ -35,7 +37,9 @@ button.calview-toggle-item,
 /* Flat Buttons */
 .button.button-flat,
 .button.icon-button:not(.button-group .button),
-.message-header-view-button,
+.message-header-view-button:not([is="toolbarbutton-menu-button"]),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
 .close-icon,
 button.calview-toggle-item,
 .today-pane-cycler,
@@ -49,7 +53,7 @@ button.calview-toggle-item,
 }
 
 /* Buttons with margins */
-.message-header-view-button,
+.message-header-view-button:not([is="toolbarbutton-menu-button"]),
 .close-icon,
 .nav-button,
 #quick-filter-bar .button,
@@ -75,7 +79,8 @@ button.calview-toggle-item,
 
 /* Text and icon buttons */
 .button.icon-button,
-.message-header-view-button,
+.message-header-view-button:not([is="toolbarbutton-menu-button"]),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
 .icons-beside-text #unifiedToolbar .unified-toolbar-button {
 	padding: 2px 9px !important;
 	font-weight: bold !important;
@@ -84,7 +89,8 @@ button.calview-toggle-item,
 	padding-inline-start: calc(9px * 1.5 + var(--icon-size)) !important;
 	background-position: 9px center !important;
 }
-.toolbarbutton-1.message-header-view-button {
+.toolbarbutton-1.message-header-view-button:not([is="toolbarbutton-menu-button"]),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
 	gap: 3px;
 }
 .icons-beside-text #unifiedToolbar .unified-toolbar-button .button-icon {
@@ -115,7 +121,9 @@ button.calview-toggle-item,
 /* Hover flat buttons */
 .button.button-flat:not([disabled="true"], [aria-pressed="true"]):hover,
 .button.icon-button:not(.button-group .button):not([disabled="true"], [aria-pressed="true"]):hover,
-.message-header-view-button:not([disabled="true"], [open]):hover,
+.message-header-view-button:not([is="toolbarbutton-menu-button"]):not([disabled="true"], [open]):hover,
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]):hover > .toolbarbutton-menubutton-button:not([disabled="true"]),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]):hover > .toolbarbutton-menubutton-dropmarker:not([disabled="true"], [open]),
 .close-icon:not([disabled="true"]):hover,
 button.calview-toggle-item:not([disabled="true"]):hover,
 .today-pane-cycler:not([disabled="true"]):hover,
@@ -142,7 +150,9 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 .button.button-flat.check-button[aria-pressed="true"],
 .button.icon-button:not(.button-group .button):not([disabled="true"]):active,
 .button.icon-button.check-button:not(.button-group .button):not([disabled="true"])[aria-pressed="true"],
-.message-header-view-button:is(:active, [open]),
+.message-header-view-button:not([is="toolbarbutton-menu-button"]):is(:active, [open]),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
 .close-icon:not([disabled="true"]):active,
 .today-pane-cycler:not([disabled="true"]):active,
 .nav-button:not([disabled="true"]):active,
@@ -182,7 +192,8 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 
 /* Combined buttons */
 .button-group .button:not(:last-of-type):not(#hack),
-#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:last-of-type) {
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:last-of-type),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;
 	border-right-width: 0 !important;
@@ -190,7 +201,8 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 }
 
 .button-group .button:not(:first-of-type):not(#hack),
-#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:first-of-type) {
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:first-of-type),
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
 	border-top-left-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 	margin-left: 0 !important;
@@ -199,6 +211,23 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 .button-group .button {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
+}
+
+/* Split buttons (flat) */
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
+	position: relative !important;
+}
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
+	min-width: 24px !important;
+	width: 24px !important;
+}
+#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
+	border-right: 1px solid var(--gnome-border-color);
+	content: "";
+	height: 22px;
+	position: absolute;
+	right: 0;
+	top: 6px;
 }
 
 /* Opaque buttons */

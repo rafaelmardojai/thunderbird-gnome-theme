@@ -20,6 +20,11 @@
 	justify-content: center !important;
 }
 
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+	align-items: center !important;
+	justify-content: center !important;
+}
+
 /* Spaces toolbar */
 .spaces-toolbar-button.current,
 .spaces-toolbar-button.current:hover {

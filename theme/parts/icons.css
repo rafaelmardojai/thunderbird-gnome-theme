@@ -11,6 +11,7 @@
 .calendar-displayed,
 .today-pane-cycler,
 .subviewbutton-back .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
 #offline-status,
 #button-appmenu .toolbarbutton-icon,
 #folderTree > li > .mode-container > .mode-button,
@@ -107,6 +108,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-nav-right: var(--gnome-icon-pan-end-symbolic) !important;
 	--icon-nav-up: var(--gnome-icon-go-up-symbolic) !important;
 	--icon-nav-down: var(--gnome-icon-go-down-symbolic) !important;
+	--icon-nav-down-sm: var(--gnome-icon-pan-down-symbolic) !important;
 	--icon-close: var(--gnome-icon-process-stop-symbolic) !important;
 	--icon-print: var(--gnome-icon-printer-symbolic) !important;
 	--icon-extension: var(--gnome-icon-application-x-addon-symbolic) !important;
@@ -156,7 +158,8 @@ tr[data-properties~="tagged"] .tag-icon {
 }
 
 /* Fix icons sizes */
-.menu-iconic-icon {
+.menu-iconic-icon,
+link[href="chrome://global/skin/dropmarker.css"] + image {
 	height: 16px !important;
 	width: 16px !important;
 }
