@@ -36,6 +36,25 @@ calendar-month-view, calendar-multiweek-view {
 	border-right: 0 !important;
 }
 
+.calendar-month-day-box-current-month[relation="today"][selected="true"],
+.calendar-month-day-box-day-off[relation="today"][selected="true"],
+.calendar-month-day-box-other-month[relation="today"][selected="true"] {
+	background-color: var(--viewTodayBackground) !important;
+}
+.calendar-month-day-box-current-month[selected="true"] {
+	background-color: var(--viewBackground) !important;
+}
+.calendar-month-day-box-day-off[selected="true"] {
+	background-color: var(--viewWeekendBackground) !important;;
+}
+
+.calendar-month-day-box-current-month[selected="true"],
+.calendar-month-day-box-day-off[selected="true"],
+.calendar-month-day-box-other-month[selected="true"] {
+	background-image: linear-gradient(var(--gnome-view-selected-background), var(--gnome-view-selected-background)) !important;
+	border-color: var(--viewBorderColor) !important;
+}
+
 /* Sidebar */
 #minimonth-pane {
 	padding: 12px !important;
@@ -49,12 +68,17 @@ calendar-month-view, calendar-multiweek-view {
 calendar-minimonth {
 	--mmMainBorderRadius: 12px !important;
 	--mmMainBackground: var(--gnome-card-background) !important;
+	--mmDayTodayBackground: var(--gnome-accent-bg) !important;
 	border: 0 !important;
 	box-shadow: var(--gnome-card-shadow);
+	min-width: auto !important;
 	padding: 12px !important;
-	width: 100% !important;
+	width: auto !important;
 }
-
+.minimonth-cal-box {
+	border-spacing: 6px !important;
+	padding: 0 !important;
+}
 .minimonth-week {
 	background: none !important;
 	color: var(--gnome-window-color) !important;
@@ -66,6 +90,34 @@ calendar-minimonth {
 
 .minimonth-nav-item {
 	border-inline: 0 !important;
+}
+
+.minimonth-day {
+	border: 0 !important;
+	border-radius: 100% !important;
+	padding: 9px 0 !important;
+}
+.minimonth-week,
+.minimonth-week:not([hidden]) ~ .minimonth-day {
+	padding: 5.5px 0 !important;
+}
+
+.minimonth-day[today="true"] {
+	--mmDayBusyColor: #fff !important;
+	background-color: var(--gnome-accent-bg) !important;
+}
+.minimonth-day:hover[interactive]:not([selected="true"], [today="true"]) {
+	background-color: var(--gnome-hover-color) !important;
+}
+.minimonth-day:active[interactive]:not([today="true"]) {
+	background-color: var(--gnome-active-color) !important;
+}
+.minimonth-day[selected="true"][interactive]:not([today="true"]) {
+	background-color: var(--gnome-selected-color) !important;
+}
+.minimonth-day[selected="true"] {
+	outline: 2px solid var(--gnome-accent-bg) !important;
+	outline-offset: -2px;
 }
 
 #calendar-list > li {

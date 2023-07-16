@@ -15,9 +15,10 @@
 	--splitter-color: var(--gnome-border-color) !important;
 	--viewBorderColor: color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewBackground: var(--gnome-view-background) !important;
-	--viewTodayBackground: var(--gnome-view-background) !important;
+	--viewTodayBackground:  color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewMonthDayOtherBackground: color-mix(in srgb, currentColor 2%, transparent) !important;
-	--viewWeekendBackground: color-mix(in srgb, currentColor 6%, transparent) !important;
+	--viewWeekendBackground: color-mix(in srgb, currentColor 4%, transparent) !important;
+	--viewHighlightBorderColor: var(--gnome-accent-bg) !important;
 	--thread-pane-header-padding: 6px !important;
 	--folder-tree-header-padding: 6px !important;
 	--tree-view-bg: var(--gnome-view-background) !important;
