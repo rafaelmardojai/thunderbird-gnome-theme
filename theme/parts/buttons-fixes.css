@@ -7,7 +7,7 @@
 .button.check-button[aria-pressed="true"] {
 	box-shadow: none !important;
 }
-.button.check-button.icon-button {
+.button.check-button.icon-button:not(.collapsible-button) {
 	background-position: center !important;
 }
 

@@ -91,6 +91,19 @@ button.calview-toggle-item,
 	margin-inline-end: 3px !important;
 }
 
+/* Collapsible */
+.button.collapsible-button {
+	background-position: 9px center !important;
+}
+
+@container threadPane (min-width: 999px) {
+	.button.collapsible-button {
+		font-weight: bold !important;
+		padding: 2px 15px !important;
+		padding-inline-start: calc(9px * 1.5 + var(--icon-size)) !important;
+	}
+}
+
 /* Hover buttons */
 .button:not([disabled="true"]):hover,
 #unifiedToolbar .unified-toolbar-button:hover,
