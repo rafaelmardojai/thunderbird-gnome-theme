@@ -11,7 +11,7 @@
 	--spaces-border-color: var(--gnome-border-color) !important;
 	--spaces-total-width: calc(2 * var(--spaces-padding) + 34px + var(--messenger-body-border)) !important;
 	--sidebar-background-color: var(--gnome-window-background) !important;
-	--sidebar-border-color: var(--gnome-toolbar-border-color) !important;
+	--sidebar-border-color: var(--gnome-border-color) !important;
 	--splitter-color: var(--gnome-border-color) !important;
 	--viewBorderColor: color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewBackground: var(--gnome-view-background) !important;
@@ -20,6 +20,7 @@
 	--viewWeekendBackground: color-mix(in srgb, currentColor 6%, transparent) !important;
 	--thread-pane-header-padding: 6px !important;
 	--folder-tree-header-padding: 6px !important;
+	--tree-view-bg: var(--gnome-view-background) !important;
 	--treeitem-border-radius: 6px !important;
 	--treeitem-background-hover: var(--gnome-hover-color)  !important;
 	--treeitem-background-selected: var(--gnome-active-color) !important;

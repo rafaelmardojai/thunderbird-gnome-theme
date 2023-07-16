@@ -2,8 +2,28 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#folderPaneHeaderBar:not([hidden]) {
+
+#folderPaneHeaderBar:not([hidden]),
+#messageHeader {
 	background: var(--gnome-toolbar-background) !important;
+	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+
+/* Sidebar */
+#folderTree {
+	padding: 6px !important;
+}
+
+#folderTree > li:first-child > .mode-container {
+	border: 0 !important;
+}
+
+#folderTree > li:not(:first-child) > .mode-container {
+	padding-top: 3px !important;
+}
+
+#folderTree .container {
+	margin-inline: 0 !important;
 }
 
 /* Filters */
@@ -60,10 +80,6 @@ tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
 }
 
 /* Mesagge */
-#messageHeader {
-	background: var(--gnome-toolbar-background) !important;
-	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
-}
 #messagePane {
 	background: var(--gnome-view-background) !important;
 }
