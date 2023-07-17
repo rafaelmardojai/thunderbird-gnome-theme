@@ -191,11 +191,11 @@ tab:not([soundplaying], [muted], [activemedia-blocked], [crashed]) .tab-icon-sta
 }
 :root:not(:-moz-window-inactive) .tab-icon-overlay:hover,
 :root:not(:-moz-window-inactive) .tab-close-button:hover {
-	background: var(--gnome-hover-color) !important;
+	background-color: var(--gnome-hover-color) !important;
 }
 :root:not(:-moz-window-inactive) .tab-icon-overlay:active,
 :root:not(:-moz-window-inactive) .tab-close-button:active {
-	background: var(--gnome-active-color) !important;
+	background-color: var(--gnome-active-color) !important;
 }
 
 .tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) image {
