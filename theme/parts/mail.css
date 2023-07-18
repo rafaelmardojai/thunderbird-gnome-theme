@@ -101,3 +101,9 @@ notification-message {
 	background-color: color-mix(in srgb, var(--gnome-accent-bg) 30%, var(--gnome-window-background)) !important;
 	color: var(--gnome-window-color) !important;
 }
+
+/* Remove new message indicator dot */
+.new-messages:not([data-server-type]) > .container > .icon::after,
+tr[data-properties~="new"] .thread-card-container::after {
+	display: none !important;
+}
