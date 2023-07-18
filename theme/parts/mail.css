@@ -102,6 +102,13 @@ notification-message {
 	margin: 0 !important;
 	padding: 6px !important;
 }
+.notification-message {
+	font-weight: bold !important;
+	margin-block: 0 !important;
+}
+.infobar > .icon {
+	margin: 0 !important;
+}
 
 .calendar-notification-bar,
 .container.infobar {

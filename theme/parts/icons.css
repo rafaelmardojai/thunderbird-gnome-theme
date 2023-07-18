@@ -16,6 +16,7 @@ button.email-action-flagged#starMessageButton,
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
 button.button-menu-list,
+.container.infobar .icon:after,
 #offline-status,
 #button-appmenu .toolbarbutton-icon,
 #folderTree > li > .mode-container > .mode-button,
@@ -134,6 +135,10 @@ menuitem[type="radio"][checked="true"] {
 	--icon-unread-dot: var(--gnome-icon-bullet-symbolic) !important;
 	--icon-new-indicator: var(--gnome-icon-bullet-symbolic) !important;
 	--icon-close: var(--gnome-icon-window-close-symbolic) !important;
+	--icon-check: var(--gnome-icon-select-symbolic) !important;
+	--icon-tentative: var(--gnome-icon-question-symbolic) !important;
+	--icon-photo-ban: var(--gnome-icon-stop-sign-large-symbolic) !important;
+	--icon-column-menu: var(--gnome-icon-columns-symbolic) !important;
 	
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
@@ -295,7 +300,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
   list-style-image: url("../icons/preferences-system-time-symbolic.svg") !important;
 }
 
-.twisty {
+#folderTree li.children > .container > .twisty {
 	background-image: url("../icons/pan-down-symbolic.svg") !important;
 }
 #folderTree li.children.collapsed > .container .twisty {
@@ -339,4 +344,9 @@ tr:not([data-properties~="flagged"]) .tree-view-row-flag > .tree-button-flag > i
 tr:not([data-properties~="flagged"]) .button-star {
 	--icon-star: var(--gnome-icon-non-starred-symbolic) !important;
 	--icon-sta-sm: var(--gnome-icon-non-starred-symbolic) !important;
+}
+
+/* Cancel icon */
+.imipDeclineCounterButton, .imipDeclineRecurrencesButton, .imipDeclineButton {
+	list-style-image: var(--gnome-icon-process-stop-symbolic) !important;
 }

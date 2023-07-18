@@ -11,6 +11,7 @@
 button.calview-toggle-item,
 .nav-button,
 button.button-menu-list,
+.notification-button:not(.button-menu-list),
 .notification-close,
 .today-pane-cycler,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
@@ -61,6 +62,8 @@ button.calview-toggle-item,
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
 .close-icon,
 .nav-button,
+button.button-menu-list,
+.notification-button:not(.button-menu-list),
 .notification-close,
 #quick-filter-bar .button,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
@@ -75,6 +78,7 @@ button.calview-toggle-item,
 /* Text buttons */
 .button:not(.icon-only),
 button.calview-toggle-item,
+.notification-button:not(.button-menu-list),
 .text-only #unifiedToolbar .unified-toolbar-button,
 #appMenu-fontSizeReset-button:not(#hack) {
 	padding: 2px 15px !important;
@@ -124,6 +128,7 @@ button.button-menu-list {
 
 /* Hover buttons */
 .button:not([disabled="true"]):hover,
+.notification-button:not(.button-menu-list):not([disabled="true"]):hover,
 #unifiedToolbar .unified-toolbar-button:hover,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):hover,
 button.button-menu-list:not([disabled="true"]):hover {
@@ -156,6 +161,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 .button[open],
 .button.check-button[aria-pressed="true"],
 button.button-menu-list:is(:active, [open]),
+.notification-button:not(.button-menu-list):not([disabled="true"]):active,
 #unifiedToolbar .unified-toolbar-button:active,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):is(:active, [checked="true"]) {
 	background-color: var(--gnome-button-active-background) !important;
@@ -166,9 +172,9 @@ button.button-menu-list:is(:active, [open]),
 .button.button-flat.check-button[aria-pressed="true"],
 .button.icon-button:not(.button-group .button):not([disabled="true"]):active,
 .button.icon-button.check-button:not(.button-group .button):not([disabled="true"])[aria-pressed="true"],
-.message-header-view-button:not([is="toolbarbutton-menu-button"]):is(:active, [open]),
-.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
-.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
+.message-header-view-button:not([is="toolbarbutton-menu-button"], [disabled="true"]):is(:active, [open]),
+.message-header-view-button:is([is="toolbarbutton-menu-button"], [disabled="true"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
+.message-header-view-button:is([is="toolbarbutton-menu-button"], [disabled="true"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
 .close-icon:not([disabled="true"]):active,
 .notification-close:not([disabled="true"]):active,
 .today-pane-cycler:not([disabled="true"]):active,

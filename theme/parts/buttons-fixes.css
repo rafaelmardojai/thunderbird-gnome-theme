@@ -59,3 +59,10 @@
 .message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
 	display: none !important;
 }
+
+/* Message buttons */
+.toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
+.toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
+.toolbarbutton-1:not([is="toolbarbutton-menu-button"],[disabled="true"]):is([open="true"],[checked="true"],:hover:active) {
+	box-shadow: none !important;
+}
