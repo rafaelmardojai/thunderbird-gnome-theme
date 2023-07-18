@@ -110,6 +110,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-forward: var(--gnome-icon-mail-forward-symbolic) !important;
 	--icon-reply: var(--gnome-icon-mail-reply-sender-symbolic) !important;
 	--icon-reply-all: var(--gnome-icon-mail-reply-all-symbolic) !important;
+	--icon-reply-list: var(--gnome-icon-mail-reply-all-symbolic) !important;
 	--icon-calendar: var(--gnome-icon-x-office-calendar-symbolic) !important;
 	--icon-calendar-today: var(--gnome-icon-month-symbolic) !important;
 	--icon-nav-today: var(--gnome-icon-month-symbolic) !important;
@@ -145,6 +146,8 @@ menuitem[type="radio"][checked="true"] {
 	--icon-tentative: var(--gnome-icon-question-symbolic) !important;
 	--icon-photo-ban: var(--gnome-icon-stop-sign-large-symbolic) !important;
 	--icon-column-menu: var(--gnome-icon-columns-symbolic) !important;
+	--icon-redirect: var(--gnome-icon-network-transmit-receive-symbolic) !important;
+	--icon-file: var(--gnome-icon-rich-text-symbolic) !important;
 	
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
