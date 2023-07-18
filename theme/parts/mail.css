@@ -26,6 +26,10 @@
 	margin-inline: 0 !important;
 }
 
+.folder-count-badge {
+	min-width: 18px !important;
+}
+
 /* Filters */
 .list-header-bar:not([hidden]), #quick-filter-bar {
 	background: var(--gnome-toolbar-background) !important;
