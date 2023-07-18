@@ -3,7 +3,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 :root {
-	--selected-item-color: var(--gnome-accent-bg) !important;
+	--selected-item-color: var(--gnome-active-color) !important;
 	--new-folder-color: var(--gnome-accent) !important;
 	--tabs-toolbar-box-shadow: none !important;
 	--button-margin: 0 3px !important;
