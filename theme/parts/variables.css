@@ -4,6 +4,7 @@
 
 :root {
 	--selected-item-color: var(--gnome-active-color) !important;
+	--selected-item-text-color: var(--gnome-window-color) !important;
 	--new-folder-color: var(--gnome-accent) !important;
 	--tabs-toolbar-box-shadow: none !important;
 	--button-margin: 0 3px !important;
