@@ -143,8 +143,7 @@ menuitem[type="radio"][checked="true"] {
 }
 
 @media (prefers-color-scheme: light) {
-	.button.button-primary.icon-button:not(#hack),
-	.spaces-toolbar-button.current img {
+	.button.button-primary.icon-button:not(#hack) {
 		fill: #fff !important;
 	}
 }
