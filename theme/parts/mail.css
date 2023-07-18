@@ -86,6 +86,21 @@
 	color: var(--gnome-view-color) !important;
 }
 
+.thread-card-row > .sender {
+	font-weight: bold !important;
+}
+
+.thread-card-row :is(.sender, .subject) {
+	font-size: 1rem !important;
+}
+
+#threadTree tr[data-properties~="junk"] :is(.sender, .date, .subject) {
+	color: var(--color-red-60) !important;
+}
+#threadTree tr[data-properties~="junk"] :is(.date, .subject) {
+	font-weight: normal !important;
+}
+
 /* Mesagge */
 #messagePane {
 	background: var(--gnome-view-background) !important;
