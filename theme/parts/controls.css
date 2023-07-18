@@ -49,6 +49,7 @@
 .calview-toggle {
 	background: var(--gnome-selected-color) !important;
 	border-radius: 9px !important;
+	box-shadow: none !important;
 	padding: 2px !important;
 }
 

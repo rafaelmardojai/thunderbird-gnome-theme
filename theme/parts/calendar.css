@@ -11,6 +11,10 @@
 	padding: 6px !important;
 }
 
+#bottom-events-box {
+	border: 0 !important;
+}
+
 .navigation-inner-box {
 	padding: 0 !important;
 }
@@ -69,6 +73,9 @@ calendar-minimonth {
 	--mmMainBorderRadius: 12px !important;
 	--mmMainBackground: var(--gnome-card-background) !important;
 	--mmDayTodayBackground: var(--gnome-accent-bg) !important;
+	--mmDayTodayColor: white !important;
+	--mmDaySelectedColor: var(--gnome-view-color) !important;
+	--mmHighlightColor: var(--gnome-view-color) !important;
 	border: 0 !important;
 	box-shadow: var(--gnome-card-shadow);
 	min-width: auto !important;
@@ -103,7 +110,9 @@ calendar-minimonth {
 }
 
 .minimonth-day[today="true"] {
-	--mmDayBusyColor: #fff !important;
+	--mmDayBusyColor: white !important;
+	--mmDaySelectedColor: white !important;
+	--mmHighlightColor: white !important;
 	background-color: var(--gnome-accent-bg) !important;
 }
 .minimonth-day:hover[interactive]:not([selected="true"], [today="true"]) {
