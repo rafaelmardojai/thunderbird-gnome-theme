@@ -197,6 +197,11 @@ calendar-minimonth {
 	filter: brightness(110%);
 }
 
+#miniday-month-panel calendar-minimonth {
+	box-shadow: none !important;
+	border-radius: 12px !important;
+}
+
 /* Tasks */
 #todo-tab-panel, #unifinder-todo-tree {
 	background-color: var(--gnome-window-background) !important;	

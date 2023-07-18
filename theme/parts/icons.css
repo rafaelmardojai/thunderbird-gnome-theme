@@ -273,7 +273,6 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 }
 
 /* Popovers subview menu arrow */
-.subviewbutton-back .toolbarbutton-icon,
 .subviewbutton-nav::after,
 menupopup > menu::after {
 	content: url("../icons/go-next-symbolic.svg") !important;
@@ -281,6 +280,12 @@ menupopup > menu::after {
 	opacity: .3;
 	height: 16px;
 	width: 16px;
+}
+.subviewbutton-back {
+	list-style-image: url("../icons/go-previous-symbolic.svg") !important;
+}
+.subviewbutton-back .toolbarbutton-icon {
+	opacity: .3;
 }
 
 /* Tree views */
