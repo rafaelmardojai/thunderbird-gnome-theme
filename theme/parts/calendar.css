@@ -133,6 +133,11 @@ calendar-minimonth {
 	color: inherit !important;
 }
 
+/* Today */
+#today-pane-header {
+	font-weight: bold !important;
+}
+
 /* Tasks */
 #todo-tab-panel, #unifinder-todo-tree {
 	background-color: var(--gnome-window-background) !important;	

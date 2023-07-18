@@ -9,6 +9,10 @@
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 
+.list-header-title {
+	font-size: inherit !important;
+}
+
 /* Sidebar */
 #folderTree {
 	padding: 6px !important;
@@ -71,11 +75,9 @@
 #threadTree[rows="thread-card"] [is="tree-view-table-body"] > .selected:focus-within {
 	background: none !important;
 }
-
 #threadTree [is="tree-view-table-body"] > :hover .thread-card-container {
 	background: var(--gnome-hover-color) !important;
 }
-
 #threadTree [is="tree-view-table-body"] > .selected .thread-card-container,
 #threadTree [is="tree-view-table-body"]:focus > .selected .thread-card-container,
 #threadTree [is="tree-view-table-body"]:focus-within > .selected .thread-card-container,
