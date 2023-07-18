@@ -49,3 +49,13 @@
 #appMenu-fontSizeReset-button:hover > .toolbarbutton-text {
 	background: none !important;
 }
+
+/* Calendar buttons */
+#imip-view-toolbar > .toolbarbutton-1.message-header-view-button,
+#imip-view-toolbar > .toolbarbutton-1.message-header-view-button > .toolbarbutton-menubutton-button,
+#imip-view-toolbar > .toolbarbutton-1.message-header-view-button > .toolbarbutton-menubutton-dropmarker {
+	background-image: none !important;
+}
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
+	display: none !important;
+}

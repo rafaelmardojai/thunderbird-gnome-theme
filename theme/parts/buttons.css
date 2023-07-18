@@ -5,11 +5,13 @@
 /* Buttons */
 .button,
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
 .close-icon,
 button.calview-toggle-item,
 .nav-button,
+button.button-menu-list,
+.notification-close,
 .today-pane-cycler,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
 #unifiedToolbar .unified-toolbar-button,
@@ -39,10 +41,11 @@ button.calview-toggle-item,
 .button.button-flat,
 .button.icon-button:not(.button-group .button),
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
 .close-icon,
 button.calview-toggle-item,
+.notification-close,
 .today-pane-cycler,
 .nav-button,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
@@ -58,6 +61,7 @@ button.calview-toggle-item,
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
 .close-icon,
 .nav-button,
+.notification-close,
 #quick-filter-bar .button,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
 #unifiedToolbar .unified-toolbar-button,
@@ -83,8 +87,9 @@ button.calview-toggle-item,
 /* Text and icon buttons */
 .button.icon-button,
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
-.icons-beside-text #unifiedToolbar .unified-toolbar-button {
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
+.icons-beside-text #unifiedToolbar .unified-toolbar-button,
+button.button-menu-list {
 	padding: 2px 9px !important;
 	font-weight: bold !important;
 }
@@ -92,8 +97,12 @@ button.calview-toggle-item,
 	padding-inline-start: calc(9px * 1.5 + var(--icon-size)) !important;
 	background-position: 9px center !important;
 }
+button.button-menu-list {
+	padding-inline-end: calc(9px * 1.5 + var(--icon-size)) !important;
+	background-position: right 9px center !important;
+}
 .toolbarbutton-1.message-header-view-button:not([is="toolbarbutton-menu-button"]),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
 	gap: 3px;
 }
 .icons-beside-text #unifiedToolbar .unified-toolbar-button .button-icon {
@@ -116,7 +125,8 @@ button.calview-toggle-item,
 /* Hover buttons */
 .button:not([disabled="true"]):hover,
 #unifiedToolbar .unified-toolbar-button:hover,
-#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):hover {
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):hover,
+button.button-menu-list:not([disabled="true"]):hover {
 	outline: 0 !important;
 	background-color: var(--gnome-button-hover-background) !important;
 }
@@ -125,10 +135,11 @@ button.calview-toggle-item,
 .button.button-flat:not([disabled="true"], [aria-pressed="true"]):hover,
 .button.icon-button:not(.button-group .button):not([disabled="true"], [aria-pressed="true"]):hover,
 .message-header-view-button:not([is="toolbarbutton-menu-button"]):not([disabled="true"], [open]):hover,
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]):hover > .toolbarbutton-menubutton-button:not([disabled="true"]),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]):hover > .toolbarbutton-menubutton-dropmarker:not([disabled="true"], [open]),
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):hover,
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:not([disabled="true"], [open]):hover,
 .close-icon:not([disabled="true"]):hover,
 button.calview-toggle-item:not([disabled="true"]):hover,
+.notification-close:not([disabled="true"]):hover,
 .today-pane-cycler:not([disabled="true"]):hover,
 .nav-button:not([disabled="true"]):hover,
 #unifiedToolbar toolbarbutton:not(.subviewbutton):not([open]):not([disabled="true"]):not([checked]):hover,
@@ -144,6 +155,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 .button:active,
 .button[open],
 .button.check-button[aria-pressed="true"],
+button.button-menu-list:is(:active, [open]),
 #unifiedToolbar .unified-toolbar-button:active,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):is(:active, [checked="true"]) {
 	background-color: var(--gnome-button-active-background) !important;
@@ -155,9 +167,10 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 .button.icon-button:not(.button-group .button):not([disabled="true"]):active,
 .button.icon-button.check-button:not(.button-group .button):not([disabled="true"])[aria-pressed="true"],
 .message-header-view-button:not([is="toolbarbutton-menu-button"]):is(:active, [open]),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
 .close-icon:not([disabled="true"]):active,
+.notification-close:not([disabled="true"]):active,
 .today-pane-cycler:not([disabled="true"]):active,
 .nav-button:not([disabled="true"]):active,
 #unifiedToolbar toolbarbutton:not(.subviewbutton):not([disabled="true"]):not(#hack):active,
@@ -197,8 +210,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 
 /* Combined buttons */
 .button-group .button:not(:last-of-type):not(#hack),
-#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:last-of-type),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:last-of-type) {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;
 	border-right-width: 0 !important;
@@ -206,8 +218,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 }
 
 .button-group .button:not(:first-of-type):not(#hack),
-#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:first-of-type),
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:first-of-type) {
 	border-top-left-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 	margin-left: 0 !important;
@@ -219,14 +230,20 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 }
 
 /* Split buttons (flat) */
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) {
+	border-radius: 6px !important;
+}
+.message-header-view-button:is([is="toolbarbutton-menu-button"]):hover {
+	background-color: var(--gnome-hover-color) !important;
+}
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
 	position: relative !important;
 }
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
 	min-width: 24px !important;
 	width: 24px !important;
 }
-#messageHeader .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
 	border-right: 1px solid var(--gnome-border-color);
 	content: "";
 	height: 22px;

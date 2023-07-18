@@ -83,3 +83,21 @@ tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
 #messagePane {
 	background: var(--gnome-view-background) !important;
 }
+
+/* Message notifications */
+notification-message {
+	margin: 0 !important;
+}
+.calendar-notification-bar,
+.container.infobar {
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+	padding: 6px !important;
+}
+
+.calendar-notification-bar,
+.container.infobar {
+	background-color: color-mix(in srgb, var(--gnome-accent-bg) 30%, var(--gnome-window-background)) !important;
+	color: var(--gnome-window-color) !important;
+}

@@ -11,9 +11,11 @@
 button.email-action-flagged#starMessageButton,
 .calendar-displayed,
 .today-pane-cycler,
+.notification-close,
 .subviewbutton-back .toolbarbutton-icon,
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+button.button-menu-list,
 #offline-status,
 #button-appmenu .toolbarbutton-icon,
 #folderTree > li > .mode-container > .mode-button,
@@ -131,6 +133,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-settings: var(--gnome-icon-settings-symbolic) !important;
 	--icon-unread-dot: var(--gnome-icon-bullet-symbolic) !important;
 	--icon-new-indicator: var(--gnome-icon-bullet-symbolic) !important;
+	--icon-close: var(--gnome-icon-window-close-symbolic) !important;
 	
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
@@ -165,10 +168,6 @@ tr[data-properties~="unread"] .tree-view-row-unread > .tree-button-unread > img:
 tr[data-properties~="junk"] .tree-button-spam > img:not(#hack) {
 	fill: var(--gnome-palette-red-2) !important;
 }
-tr[data-properties~="new"] .thread-card-container::after,
-.new-messages:not([data-server-type]) > .container > .icon::after {
-	fill: var(--gnome-toolbar-star-button)  !important;
-}
 
 /* Dimmed icons */
 .searchbar-search-icon,
@@ -185,6 +184,9 @@ tr[data-properties~="new"] .thread-card-container::after,
 link[href="chrome://global/skin/dropmarker.css"] + image {
 	height: 16px !important;
 	width: 16px !important;
+}
+button.button-menu-list {
+	background-size: 16px !important;
 }
 
 /* Fix hardcoded images */
@@ -338,10 +340,4 @@ tr:not([data-properties~="flagged"]) .tree-view-row-flag > .tree-button-flag > i
 tr:not([data-properties~="flagged"]) .button-star {
 	--icon-star: var(--gnome-icon-non-starred-symbolic) !important;
 	--icon-sta-sm: var(--gnome-icon-non-starred-symbolic) !important;
-}
-
-/* New message indicator (sidebar) */
-.new-messages:not([data-server-type]) > .container > .icon::after {
-	inset-inline-start: -7px !important;
-	inset-block-start: -7px !important;
 }
