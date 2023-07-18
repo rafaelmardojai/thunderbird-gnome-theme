@@ -15,7 +15,7 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input,
 	height: 34px !important;
 	max-height: 34px !important;
 	margin: 0 !important;
-	padding: 6px !important;
+	padding: 6px 9px !important;
 	box-sizing: border-box;
 	transition: outline 0.3s, outline-offset 0.3s;
 }
@@ -37,7 +37,9 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input:-moz-w
 }
 
 /* Entries with margin */
-#quick-filter-bar .themeableSearchBox {
+#quick-filter-bar .themeableSearchBox,
+#view-task-edit-field,
+#task-text-filter-field {
 	margin: 0 3px !important;
 }
 

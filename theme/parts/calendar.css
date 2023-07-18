@@ -8,7 +8,10 @@
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 	height: auto !important;
 	min-height: auto !important;
-	padding: 6px !important;
+	padding: 6px 3px !important;
+}
+#calendarViewHeader {
+	padding-inline-start: 6px !important;
 }
 
 #bottom-events-box {
@@ -162,4 +165,9 @@ calendar-minimonth {
 
 #unifinder-task-edit-field {
 	margin: 3px 6px !important;
+}
+
+/* Hide new task button */
+#calSidebar:not([collapsed="true"]) ~ #calendarDisplayBox #calendar-add-task-button  {
+	visibility: collapse !important;
 }
