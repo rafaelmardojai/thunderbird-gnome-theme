@@ -63,12 +63,12 @@
 	margin-bottom: 2px;
 }
 
-tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
-#threadTree [is="tree-view-table-body"] > :hover,
-#threadTree [is="tree-view-table-body"] > .selected,
-#threadTree [is="tree-view-table-body"]:focus > .selected,
-#threadTree [is="tree-view-table-body"]:focus-within > .selected,
-#threadTree [is="tree-view-table-body"] > .selected:focus-within {
+#threadTree[rows="thread-card"] tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
+#threadTree[rows="thread-card"] [is="tree-view-table-body"] > :hover,
+#threadTree[rows="thread-card"] [is="tree-view-table-body"] > .selected,
+#threadTree[rows="thread-card"] [is="tree-view-table-body"]:focus > .selected,
+#threadTree[rows="thread-card"] [is="tree-view-table-body"]:focus-within > .selected,
+#threadTree[rows="thread-card"] [is="tree-view-table-body"] > .selected:focus-within {
 	background: none !important;
 }
 
@@ -80,7 +80,8 @@ tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
 #threadTree [is="tree-view-table-body"]:focus > .selected .thread-card-container,
 #threadTree [is="tree-view-table-body"]:focus-within > .selected .thread-card-container,
 #threadTree [is="tree-view-table-body"] > .selected:focus-within .thread-card-container {
-	background: var(--gnome-active-color) !important;
+	background: var(--gnome-view-selected-background) !important;
+	color: var(--gnome-view-color) !important;
 }
 
 /* Mesagge */

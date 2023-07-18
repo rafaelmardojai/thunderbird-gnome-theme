@@ -22,10 +22,15 @@
 	--thread-pane-header-padding: 6px !important;
 	--folder-tree-header-padding: 6px !important;
 	--tree-view-bg: var(--gnome-view-background) !important;
+	--tree-view-color: var(--gnome-view-color) !important;
 	--treeitem-border-radius: 6px !important;
 	--treeitem-background-hover: var(--gnome-hover-color)  !important;
 	--treeitem-background-selected: var(--gnome-active-color) !important;
 	--treeitem-background-active: var(--gnome-accent-bg) !important;
+	--listbox-hover: var(--gnome-hover-color) !important;
+	--listbox-selected-bg: var(--gnome-view-selected-background) !important;
+	--listbox-focused-selected-bg: var(--gnome-view-selected-background) !important;
+	--listbox-selected-color: var(--gnome-view-color) !important;
 }
 
 :root .cui-widget-panel {
