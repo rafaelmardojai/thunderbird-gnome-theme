@@ -138,8 +138,16 @@ calendar-minimonth {
 #calendar-list > li.selected,
 #calendar-list:focus-within > li.selected {
 	appearance: none !important;
-	background-color: var(--gnome-active-color) !important;
+	background-color: var(--gnome-selected-color) !important;
 	color: inherit !important;
+}
+
+#calendar-panel {
+	padding: 0 !important;
+}
+
+#sideButtonsBottom {
+	padding: 6px 3px !important;
 }
 
 /* Today */
