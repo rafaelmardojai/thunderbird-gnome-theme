@@ -10,6 +10,7 @@
 .button.icon-button,
 button.email-action-flagged#starMessageButton,
 .calendar-displayed,
+.miniday-nav-buttons,
 .today-pane-cycler,
 .notification-close,
 .subviewbutton-back .toolbarbutton-icon,
@@ -32,6 +33,7 @@ tr[data-properties~="tagged"] .tag-icon,
 .PanelUI-subView .subviewbutton-nav::after,
 #appMenu-fontSize-controls .toolbarbutton-icon,
 #calendar-add-task-button,
+#todaypane-new-event-button,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
@@ -110,6 +112,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-reply-all: var(--gnome-icon-mail-reply-all-symbolic) !important;
 	--icon-calendar: var(--gnome-icon-x-office-calendar-symbolic) !important;
 	--icon-calendar-today: var(--gnome-icon-month-symbolic) !important;
+	--icon-nav-today: var(--gnome-icon-month-symbolic) !important;
 	--icon-new-event: var(--gnome-icon-calendar-new-symbolic) !important;
 	--icon-tasks: var(--gnome-icon-tasks-symbolic) !important;
 	--icon-new-task: var(--gnome-icon-tasks-new-symbolic) !important;
@@ -117,8 +120,10 @@ menuitem[type="radio"][checked="true"] {
 	--icon-sync: var(--gnome-icon-update-symbolic) !important;
 	--icon-nav-back: var(--gnome-icon-go-previous-symbolic) !important;
 	--icon-nav-left: var(--gnome-icon-pan-start-symbolic) !important;
+	--icon-nav-left-sm: var(--gnome-icon-pan-start-symbolic) !important;
 	--icon-nav-forward: var(--gnome-icon-go-next-symbolic) !important;
 	--icon-nav-right: var(--gnome-icon-pan-end-symbolic) !important;
+	--icon-nav-right-sm: var(--gnome-icon-pan-end-symbolic) !important;
 	--icon-nav-up: var(--gnome-icon-go-up-symbolic) !important;
 	--icon-nav-up-sm: var(--gnome-icon-pan-up-symbolic) !important;
 	--icon-nav-down: var(--gnome-icon-go-down-symbolic) !important;

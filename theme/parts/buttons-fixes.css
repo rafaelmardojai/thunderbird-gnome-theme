@@ -59,6 +59,11 @@
 .message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
 	display: none !important;
 }
+.miniday-nav-buttons:active,
+#miniday-dropdown-button:is(:active, [open]),
+#todaypane-new-event-button:active {
+	box-shadow: none !important;
+}
 
 /* Message buttons */
 .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,

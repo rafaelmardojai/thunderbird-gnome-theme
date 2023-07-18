@@ -3,8 +3,13 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Main */
-#primaryButtonSidePanel, #unifinder-searchBox, #calendarViewHeader, #task-addition-box {
-	background: var(--gnome-toolbar-background) !important;
+#primaryButtonSidePanel,
+#unifinder-searchBox,
+#calendarViewHeader,
+#mini-day-box,
+#agenda-toolbar,
+#task-addition-box {
+	background-color: var(--gnome-toolbar-background) !important;
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 	height: auto !important;
 	min-height: auto !important;
@@ -12,6 +17,12 @@
 }
 #calendarViewHeader {
 	padding-inline-start: 6px !important;
+}
+#mini-day-image {
+	background: none !important;
+}
+#mini-day-box {
+	border-bottom: 0 !important;
 }
 
 #bottom-events-box {
@@ -153,9 +164,37 @@ calendar-minimonth {
 	padding: 6px 3px !important;
 }
 
-/* Today */
+/* Agenda */
 #today-pane-header {
 	font-weight: bold !important;
+}
+#buttonspacer {
+	visibility: collapse !important;
+}
+
+#agenda {
+	background-color: var(--gnome-window-background) !important;
+	border: 0 !important;
+	padding: 6px !important;
+}
+#agenda-toolbar {
+	justify-content: center !important;
+}
+#weekdayNameLabel {
+	align-items: end !important;
+}
+
+.agenda-date-header {
+	background: none !important;
+}
+.agenda-listitem-details {
+	border-radius: 6px !important;
+}
+.agenda-listitem-details:not(.agenda-listitem-all-day > .agenda-listitem-details):hover {
+	background-color: var(--gnome-hover-color) !important;
+}
+.agenda-listitem-details:is(.agenda-listitem-all-day > .agenda-listitem-details):hover {
+	filter: brightness(110%);
 }
 
 /* Tasks */
