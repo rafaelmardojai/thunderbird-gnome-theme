@@ -91,7 +91,7 @@
 :root[tabsintitlebar] #unifiedToolbarContainer .titlebar-button {
 	-moz-appearance: none !important;
 	padding: 0 2px !important;
-	background: var(--gnome-button-background);
+	background-color: var(--gnome-button-background);
 	transition: background 0.3s;
 	border-radius: 100% !important;
 	height: 24px !important;
@@ -105,7 +105,7 @@
 	-moz-context-properties: fill, fill-opacity !important;
 }
 
-:root[tabsintitlebar] #unifiedToolbarContainer toolbarbutton > .toolbarbutton-text{
+:root[tabsintitlebar] #unifiedToolbarContainer toolbarbutton > .toolbarbutton-text {
 	display: none !important;
 }
 
@@ -113,11 +113,11 @@
 :root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton .toolbarbutton-icon {
 	width: 16px;
 }
-:root[tabsintitlebar] #titlebar.titlebar-button:not([disabled]):hover {
-	background: var(--gnome-button-hover-background) !important;
+:root[tabsintitlebar] #titlebar .titlebar-button:not([disabled]):hover {
+	background-color: var(--gnome-button-hover-background) !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-button:not([disabled]):active {
-	background: var(--gnome-button-active-background) !important;
+	background-color: var(--gnome-button-active-background) !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-button:-moz-window-inactive {
 	filter: opacity(0.5);
