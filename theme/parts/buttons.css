@@ -36,7 +36,7 @@ button.button-menu-list,
 	outline: 0 !important;
 	font: menu !important;
 	-moz-box-align: center !important;
-	transition: background .3s;
+	transition: background-color .3s;
 }
 .subviewbutton-iconic {
 	-moz-box-pack: center !important;
@@ -270,7 +270,7 @@ button.button-menu-list:is(:active, [open]),
 	min-width: 24px !important;
 	width: 24px !important;
 }
-.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
+.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:before {
 	border-right: 1px solid var(--gnome-border-color);
 	content: "";
 	height: 22px;
