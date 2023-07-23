@@ -29,8 +29,8 @@
 	--treeitem-background-selected: var(--gnome-active-color) !important;
 	--treeitem-background-active: var(--gnome-accent-bg) !important;
 	--listbox-hover: var(--gnome-hover-color) !important;
-	--listbox-selected-bg: var(--gnome-view-selected-background) !important;
-	--listbox-focused-selected-bg: var(--gnome-view-selected-background) !important;
+	--listbox-selected-bg: var(--gnome-selected-color) !important;
+	--listbox-focused-selected-bg: var(--gnome-selected-color) !important;
 	--listbox-selected-color: var(--gnome-view-color) !important;
 }
 

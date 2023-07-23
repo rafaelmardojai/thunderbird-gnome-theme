@@ -2,10 +2,12 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-
 #folderPaneHeaderBar:not([hidden]),
 #messageHeader {
 	background: var(--gnome-toolbar-background) !important;
+}
+
+#folderPaneHeaderBar:not([hidden]) {
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 
@@ -59,12 +61,16 @@
 
 #threadTree tr[is="thread-card"] {
 	margin-bottom: 6px;
+	height: 55px !important;
 }
 
 .thread-card-container {
 	border: 0 !important;
 	border-radius: 6px !important;
 	margin-bottom: 2px;
+}
+tr[is="thread-card"][data-properties~="new"] {
+	box-shadow: none !important;
 }
 
 #threadTree[rows="thread-card"] tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
@@ -82,23 +88,32 @@
 #threadTree [is="tree-view-table-body"]:focus > .selected .thread-card-container,
 #threadTree [is="tree-view-table-body"]:focus-within > .selected .thread-card-container,
 #threadTree [is="tree-view-table-body"] > .selected:focus-within .thread-card-container {
-	background: var(--gnome-view-selected-background) !important;
+	background: var(--gnome-selected-color) !important;
 	color: var(--gnome-view-color) !important;
-}
-
-.thread-card-row > .sender {
-	font-weight: bold !important;
 }
 
 .thread-card-row :is(.sender, .subject) {
 	font-size: 1rem !important;
 }
+.thread-card-row .subject {
+	font-size: 9pt !important;
+}
+.thread-card-row .date {
+	font-size: 9pt !important;
+	opacity: .8 !important;
+}
 
 #threadTree tr[data-properties~="junk"] :is(.sender, .date, .subject) {
 	color: var(--color-red-60) !important;
 }
+#threadTree [data-properties~="new"] .thread-card-container .date,
 #threadTree tr[data-properties~="junk"] :is(.date, .subject) {
+	color: var(--gnome-view-color) !important;
 	font-weight: normal !important;
+}
+#threadTree [data-properties~="new"] .thread-card-container :is(.subject, .sender) {
+	color: var(--gnome-view-color) !important;
+	font-weight: bold !important;
 }
 
 /* Mesagge */
