@@ -25,6 +25,12 @@
 	justify-content: center !important;
 }
 
+/* Menulist */
+link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
+	align-items: center !important;
+	margin-inline-start: 3px;
+}
+
 /* Spaces toolbar */
 .spaces-toolbar-button.current,
 .spaces-toolbar-button.current:hover {

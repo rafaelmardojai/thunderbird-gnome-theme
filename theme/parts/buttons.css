@@ -22,6 +22,7 @@ button.button-menu-list,
 #calendar-add-task-button,
 #miniday-dropdown-button,
 #todaypane-new-event-button,
+menulist,
 .spaces-toolbar-button {
 	-moz-appearance: none !important;
 	background-color: var(--gnome-button-background) !important;
@@ -75,6 +76,7 @@ button.button-menu-list,
 .notification-button:not(.button-menu-list),
 .notification-close,
 #calendar-add-task-button,
+#event-filter-menulist,
 #miniday-dropdown-button,
 #quick-filter-bar .button,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
@@ -106,6 +108,7 @@ button.calview-toggle-item,
 .icons-beside-text #unifiedToolbar .unified-toolbar-button,
 #calendar-add-task-button,
 #todaypane-new-event-button,
+menulist:not(#hack),
 button.button-menu-list {
 	padding: 2px 9px !important;
 	font-weight: bold !important;
@@ -144,6 +147,7 @@ button.button-menu-list {
 .notification-button:not(.button-menu-list):not([disabled="true"]):hover,
 #unifiedToolbar .unified-toolbar-button:hover,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):hover,
+menulist:not([disabled="true"]):hover,
 button.button-menu-list:not([disabled="true"]):hover {
 	outline: 0 !important;
 	background-color: var(--gnome-button-hover-background) !important;
@@ -177,6 +181,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 .button:active,
 .button[open],
 .button.check-button[aria-pressed="true"],
+menulist:not([disabled="true"]):is(:active, [open]),
 button.button-menu-list:is(:active, [open]),
 .notification-button:not(.button-menu-list):not([disabled="true"]):active,
 #unifiedToolbar .unified-toolbar-button:active,

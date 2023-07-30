@@ -27,6 +27,7 @@ button.button-menu-list,
 .attachmentcol-column img, .attachment-icon,
 tr[data-properties~="tagged"] .tag-icon,
 [is="tree-view-table"] img:not(#threadColButton img),
+link[href="chrome://global/skin/dropmarker.css"] + image,
 .search-button-icon,
 .button-star,
 .textbox-search-sign,
@@ -293,6 +294,11 @@ menupopup > menu::after {
 }
 .subviewbutton-back .toolbarbutton-icon {
 	opacity: .3;
+}
+
+/* Dropmarker */
+link[href="chrome://global/skin/dropmarker.css"] + image {
+	 list-style-image: url("../icons/pan-down-symbolic.svg") !important;
 }
 
 /* Tree views */
