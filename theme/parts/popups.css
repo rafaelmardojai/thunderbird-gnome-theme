@@ -84,8 +84,11 @@ panelview .toolbarbutton-1 {
 	margin: 0 !important;
 }
 
-.panel-subview-body > .subviewbutton-iconic > .toolbarbutton-icon {
-	visibility: collapse !important;
+#appMenu-mainView .panel-subview-body > .subviewbutton-iconic:not([type="checkbox"]) > .toolbarbutton-icon {
+	visibility: collapse;
+}
+.panel-subview-body > .subviewbutton-iconic:not([type="checkbox"]) > .toolbarbutton-icon {
+	opacity: 0 !important;
 }
 
 .subviewbutton[shortcut]:after {
