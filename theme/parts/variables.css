@@ -27,7 +27,7 @@
 	--treeitem-border-radius: 6px !important;
 	--treeitem-background-hover: var(--gnome-hover-color)  !important;
 	--treeitem-background-selected: var(--gnome-active-color) !important;
-	--treeitem-background-active: var(--gnome-accent-bg) !important;
+	--treeitem-background-active: var(--gnome-active-color) !important;
 	--listbox-hover: var(--gnome-hover-color) !important;
 	--listbox-selected-bg: var(--gnome-selected-color) !important;
 	--listbox-focused-selected-bg: var(--gnome-selected-color) !important;

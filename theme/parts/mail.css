@@ -19,17 +19,23 @@
 #folderTree {
 	padding: 6px !important;
 }
-
 #folderTree > li:first-child > .mode-container {
 	border: 0 !important;
 }
-
 #folderTree > li:not(:first-child) > .mode-container {
 	padding-top: 3px !important;
 }
-
 #folderTree .container {
 	margin-inline: 0 !important;
+}
+#folderTree:focus-within li.selected > .container, #folderTree li.drop-target > .container {
+	color: var(--gnome-view-color) !important;
+	outline: 2px solid color-mix(in srgb, var(--gnome-accent) 50%, transparent) !important;
+	outline-offset: -2px !important;
+}
+#folderTree:focus-within li.selected > .container > .unread-count {
+	background-color: var(--folderpane-unread-count-background) !important;
+	color: var(--folderpane-unread-count-text) !important;
 }
 
 .folder-count-badge {
