@@ -36,6 +36,8 @@ tr[data-properties~="tagged"] .tag-icon,
 #calendar-add-task-button,
 #todaypane-new-event-button,
 #miniday-dropdown-button > .toolbarbutton-menu-dropmarker,
+#calendarListHeader::after,
+checkbox.treenode-checkbox > .checkbox-check,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
@@ -196,7 +198,9 @@ tr[data-properties~="junk"] .tree-button-spam > img:not(#hack) {
 
 /* Fix icons sizes */
 .menu-iconic-icon,
-link[href="chrome://global/skin/dropmarker.css"] + image {
+link[href="chrome://global/skin/dropmarker.css"] + image,
+#calendarListHeader::after,
+checkbox.treenode-checkbox > .checkbox-check {
 	height: 16px !important;
 	width: 16px !important;
 }
@@ -365,4 +369,23 @@ tr:not([data-properties~="flagged"]) .button-star {
 /* Cancel icon */
 .imipDeclineCounterButton, .imipDeclineRecurrencesButton, .imipDeclineButton {
 	list-style-image: var(--gnome-icon-process-stop-symbolic) !important;
+}
+
+/* Sidebar list headers */
+checkbox.treenode-checkbox > .checkbox-check {
+	background-image:  url("../icons/expander-arrow-symbolic.svg") !important;
+	opacity: .55 !important;
+	transform: rotate(0deg) !important;
+}
+#calendarListHeader > img {
+	visibility: collapse;
+}
+#calendarListHeader::after {
+	content:  url("../icons/expander-arrow-symbolic.svg");
+	opacity: .55 !important;
+	transition: transform 150ms ease;
+}
+#calendarListHeader[checked="true"]::after,
+checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
+	transform: rotate(-180deg) !important;
 }
