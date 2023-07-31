@@ -218,20 +218,11 @@ button.button-menu-list:is(:active, [open]),
 /* Disabled buttons */
 .button[disabled="true"],
 .close-icon[disabled="true"],
-.nav-button:[disabled="true"],
+.nav-button[disabled="true"],
 #unifiedToolbar toolbarbutton:not(.subviewbutton)[disabled="true"],
-#unifiedToolbar .unified-toolbar-button[disabled="true"] {
+#unifiedToolbar .unified-toolbar-button[disabled="true"],
+#todaypane-new-event-button[disabled="true"] {
 	opacity: .5 !important;
-}
-
-/* Inactive window buttons */
-.button:-moz-window-inactive,
-#unifiedToolbar toolbarbutton:not(.subviewbutton):-moz-window-inactive,
-#unifiedToolbar .unified-toolbar-button:-moz-window-inactiven,
-.spaces-toolbar-button:-moz-window-inactiven {
-	background-color: var(--gnome-inactive-button-background) !important;
-	box-shadow: var(--gnome-inactive-button-box-shadow) !important;
-	border-color: var(--gnome-inactive-button-border-color) !important;
 }
 
 /* Circle buttons */
