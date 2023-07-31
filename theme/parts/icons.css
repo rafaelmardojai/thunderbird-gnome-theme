@@ -39,6 +39,8 @@ link[href="chrome://global/skin/dropmarker.css"] + image,
 #todaypane-new-event-button,
 #miniday-dropdown-button > .toolbarbutton-menu-dropmarker,
 #calendarListHeader::after,
+#calendar-list > li[calendar-readonly]::before,
+#calendar-list > li[calendar-readonly]::after,
 checkbox.treenode-checkbox > .checkbox-check,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
@@ -202,6 +204,8 @@ tr[data-properties~="junk"] .tree-button-spam > img:not(#hack) {
 .menu-iconic-icon,
 link[href="chrome://global/skin/dropmarker.css"] + image,
 #calendarListHeader::after,
+#calendar-list > li[calendar-readonly]::after,
+#calendar-list > li[calendar-readonly]::before,
 checkbox.treenode-checkbox > .checkbox-check {
 	height: 16px !important;
 	width: 16px !important;
@@ -395,4 +399,12 @@ checkbox.treenode-checkbox > .checkbox-check {
 #calendarListHeader[checked="true"]::after,
 checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 	transform: rotate(-180deg) !important;
+}
+
+/* Calendars list */
+#calendar-list > li[calendar-readonly]::before {
+	content: url("../icons/padlock-symbolic.svg");
+}
+#calendar-list > li[calendar-muted]::after {
+	content: url("../icons/notifications-disabled-symbolic.svg");
 }

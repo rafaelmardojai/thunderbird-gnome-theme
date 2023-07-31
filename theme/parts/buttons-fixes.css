@@ -71,6 +71,10 @@ link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 	box-shadow: none !important;
 }
 
+#todaypane-new-event-button[disabled="true"] > .toolbarbutton-icon {
+	opacity: 1 !important;
+}
+
 /* Message buttons */
 .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
 .toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),

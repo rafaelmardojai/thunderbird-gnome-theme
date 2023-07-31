@@ -192,6 +192,39 @@ checkbox.treenode-checkbox > .checkbox-check {
 	color: inherit !important;
 }
 
+#calendar-list > :is(li, richlistitem) > .calendar-color {order: 0 !important;}
+#calendar-list > li > .calendar-name {order: 1 !important;}
+#calendar-list > li > button.calendar-enable-button {order: 4 !important;}
+#calendar-list > li > .calendar-displayed {order: 5 !important;}
+#calendar-list > li > .calendar-more-button {order: 6 !important;}
+
+#calendar-list > li > button.calendar-enable-button {
+	background-color: var(--gnome-button-background) !important;
+	border: 0 !important;
+	padding: 6px 9px !important;
+}
+#calendar-list > li > button.calendar-enable-button:hover {
+	background-color: var(--gnome-button-hover-background) !important;
+}
+#calendar-list > li > button.calendar-enable-button:active {
+	background-color: var(--gnome-button-active-background) !important;
+}
+
+#calendar-list > li > .calendar-readstatus,
+#calendar-list > li > .calendar-mute-status {
+	display: none !important;
+}
+#calendar-list > li[calendar-readonly]::after,
+#calendar-list > li[calendar-readonly]::before {
+	opacity: .55;
+}
+#calendar-list > li[calendar-readonly]::before {
+	order: 2;
+}
+#calendar-list > li[calendar-muted]::after {
+	order: 3;
+}
+
 #sideButtonsBottom {
 	padding: 6px 3px !important;
 }
