@@ -17,6 +17,7 @@
 	--viewBorderColor: color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewBackground: var(--gnome-view-background) !important;
 	--viewTodayBackground:  color-mix(in srgb, currentColor 8%, transparent) !important;
+	--viewTodayLabelBackground: var(--gnome-accent-bg) !important;
 	--viewMonthDayOtherBackground: color-mix(in srgb, currentColor 2%, transparent) !important;
 	--viewWeekendBackground: color-mix(in srgb, currentColor 4%, transparent) !important;
 	--viewHighlightBorderColor: var(--gnome-accent-bg) !important;
