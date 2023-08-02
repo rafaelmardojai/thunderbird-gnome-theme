@@ -69,6 +69,11 @@
 	margin-bottom: 6px;
 	height: 55px !important;
 }
+#threadTree tr button.twisty {
+	min-width: 16px !important;
+	min-height: 16px !important;
+	padding: 0 !important;
+}
 
 .thread-card-container {
 	border: 0 !important;

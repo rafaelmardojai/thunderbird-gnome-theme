@@ -3,7 +3,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Buttons */
-.button,
+.button:not(.twisty),
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
 .message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
 .message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
@@ -143,7 +143,7 @@ button.button-menu-list {
 }
 
 /* Hover buttons */
-.button:not([disabled="true"]):hover,
+.button:not(.twisty):not([disabled="true"]):hover,
 .notification-button:not(.button-menu-list):not([disabled="true"]):hover,
 #unifiedToolbar .unified-toolbar-button:hover,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):hover,
@@ -154,7 +154,7 @@ button.button-menu-list:not([disabled="true"]):hover {
 }
 
 /* Hover flat buttons */
-.button.button-flat:not([disabled="true"], [aria-pressed="true"]):hover,
+.button.button-flat:not(.twisty):not([disabled="true"], [aria-pressed="true"]):hover,
 .button.icon-button:not(.button-group .button):not([disabled="true"], [aria-pressed="true"]):hover,
 .message-header-view-button:not([is="toolbarbutton-menu-button"]):not([disabled="true"], [open]):hover,
 .message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):hover,
@@ -178,7 +178,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 }
 
 /* Active buttons */
-.button:active,
+.button:not(.twisty):active,
 .button[open],
 .button.check-button[aria-pressed="true"],
 menulist:not([disabled="true"]):is(:active, [open]),
@@ -190,7 +190,7 @@ button.button-menu-list:is(:active, [open]),
 }
 
 /* Active flat buttons */
-.button.button-flat:not([disabled="true"]):active,
+.button.button-flat:not(.twisty):not([disabled="true"]):active,
 .button.button-flat.check-button[aria-pressed="true"],
 .button.icon-button:not(.button-group .button):not([disabled="true"]):active,
 .button.icon-button.check-button:not(.button-group .button):not([disabled="true"])[aria-pressed="true"],

@@ -9,6 +9,7 @@
 .spaces-toolbar-button img,
 .button.icon-button,
 button.email-action-flagged#starMessageButton,
+.twisty,
 .calendar-displayed,
 .miniday-nav-buttons,
 .today-pane-cycler,
@@ -28,7 +29,8 @@ button.button-menu-list,
 .tree-columnpicker-button,
 .attachmentcol-column img, .attachment-icon,
 tr[data-properties~="tagged"] .tag-icon,
-[is="tree-view-table"] img:not(#threadColButton img),
+[is="tree-view-table"] img:not(#threadColButton img, .tree-button-thread img),
+tr[data-properties~="outgoing"] .correspondentcol-column:not(#hack),
 link[href="chrome://global/skin/dropmarker.css"] + image,
 .search-button-icon,
 .button-star,
@@ -55,7 +57,7 @@ menuitem[type="checkbox"][checked="true"],
 menuitem[type="radio"],
 menuitem[type="radio"][checked="true"] {
 	fill: var(--gnome-toolbar-icon-fill) !important;
-	-moz-context-properties: fill, fill-opacity !important
+	-moz-context-properties: fill, fill-opacity !important;
 }
 
 .spaces-toolbar-button img:-moz-window-inactive,
@@ -174,8 +176,8 @@ menuitem[type="radio"][checked="true"] {
 
 /* Tinted icons */
 #folderTree .icon {
-  -moz-context-properties: fill, fill-opacity !important;
-  fill: var(--icon-color) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: var(--icon-color) !important;
 }
 
 tr[data-properties~="flagged"] .button-star,
@@ -208,7 +210,8 @@ link[href="chrome://global/skin/dropmarker.css"] + image,
 #calendarListHeader::after,
 #calendar-list > li[calendar-readonly]::after,
 #calendar-list > li[calendar-readonly]::before,
-checkbox.treenode-checkbox > .checkbox-check {
+checkbox.treenode-checkbox > .checkbox-check,
+.twisty > .twisty-icon {
 	height: 16px !important;
 	width: 16px !important;
 }
@@ -218,13 +221,13 @@ button.button-menu-list {
 
 /* Fix hardcoded images */
 .tab-close-button,
-.twisty,
+#folderTree li .container > .twisty,
 #starMessageButton {
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 }
 .tab-close-button img,
-.twisty .twisty-icon,
+#folderTree li .container > .twisty > .twisty-icon,
 #starMessageButton img {
 	display: none !important;
 }
@@ -326,15 +329,16 @@ treechildren::-moz-tree-twisty(open) {
 
 treechildren::-moz-tree-image(title, container),
 treechildren::-moz-tree-image(title, open) {
-  list-style-image: url("../icons/folder-symbolic.svg") !important;
+	list-style-image: url("../icons/folder-symbolic.svg") !important;
 }
 treechildren::-moz-tree-image(title, query, dayContainer),
 treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
-  list-style-image: url("../icons/preferences-system-time-symbolic.svg") !important;
+	list-style-image: url("../icons/preferences-system-time-symbolic.svg") !important;
 }
 
 #folderTree li.children > .container > .twisty {
 	background-image: url("../icons/pan-down-symbolic.svg") !important;
+	transition: transform 150ms ease;
 }
 #folderTree li.children.collapsed > .container .twisty {
 	transform: rotate(-90deg);
