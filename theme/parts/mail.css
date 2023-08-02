@@ -3,12 +3,19 @@
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 #folderPaneHeaderBar:not([hidden]),
-#messageHeader {
+#messageHeader,
+#attachmentBar {
 	background: var(--gnome-toolbar-background) !important;
 }
 
 #folderPaneHeaderBar:not([hidden]) {
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+
+#attachmentBar,
+#attachmentView,
+#attachmentList {
+	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 
 .list-header-title {
@@ -129,6 +136,11 @@ tr[is="thread-card"][data-properties~="new"] {
 
 /* Mesagge */
 #messagePane {
+	background: var(--gnome-view-background) !important;
+}
+
+#attachmentView,
+#attachmentList {
 	background: var(--gnome-view-background) !important;
 }
 

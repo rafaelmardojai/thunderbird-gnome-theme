@@ -46,6 +46,7 @@ link[href="chrome://global/skin/dropmarker.css"] + image,
 #calendar-list > li[calendar-readonly]::before,
 #calendar-list > li[calendar-readonly]::after,
 checkbox.treenode-checkbox > .checkbox-check,
+#attachmentToggle,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
@@ -160,6 +161,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-column-menu: var(--gnome-icon-columns-symbolic) !important;
 	--icon-redirect: var(--gnome-icon-network-transmit-receive-symbolic) !important;
 	--icon-file: var(--gnome-icon-rich-text-symbolic) !important;
+	--icon-download: var(--gnome-icon-folder-download-symbolic) !important;
 	
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
