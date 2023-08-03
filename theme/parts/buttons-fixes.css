@@ -29,6 +29,13 @@
 	display: none !important;
 }
 
+.toolbarbutton-1[disabled="true"] .toolbarbutton-icon,
+.toolbarbutton-1[disabled="true"] .toolbarbutton-text,
+.toolbarbutton-1[disabled="true"] .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1[disabled="true"] > .toolbarbutton-menubutton-dropmarker {
+	opacity: 1 !important;
+}
+
 /* Menulist */
 link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 	align-items: center !important;
@@ -79,6 +86,7 @@ link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 /* Message buttons */
 .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
 .toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
-.toolbarbutton-1:not([is="toolbarbutton-menu-button"],[disabled="true"]):is([open="true"],[checked="true"],:hover:active) {
+.toolbarbutton-1:not([is="toolbarbutton-menu-button"],[disabled="true"]):is([open="true"],[checked="true"],:hover:active),
+.address-pill:not([disabled="true"]):hover {
 	box-shadow: none !important;
 }
