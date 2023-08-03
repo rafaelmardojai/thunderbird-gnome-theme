@@ -47,6 +47,13 @@ toolbar:not([type="menubar"]) {
 	padding: 6px 3px !important;
 }
 
+toolbar toolbarseparator:not([orient="vertical"]) {
+	background: none !important;
+	border: 0 !important;
+	margin: 0 3px !important;
+	width: 12px !important;
+}
+
 #navigator-toolbox:-moz-window-inactive label {
 	opacity: 0.7 !important;
 }
