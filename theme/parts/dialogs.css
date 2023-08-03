@@ -80,7 +80,7 @@ dialog#handling {
 	border-bottom: 0 !important;
 }
 
-.dialog-button-box button:not(:last-child) {
+.dialog-button-box button:not(:last-child, :only-child) {
 	border-right: 1px solid var(--gnome-border-color) !important;
 }
 
