@@ -3,7 +3,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Entries */
-input:not([type="checkbox"], [inputmode="search"]),
+input:not([type="checkbox"], [inputmode="search"], .input-pill),
 .themeableSearchBox {
 	-moz-appearance: none !important;
 	background: var(--gnome-entry-background) !important;
@@ -24,8 +24,9 @@ input:not([type="checkbox"], [inputmode="search"]),
 }
 
 /* Entries focused */
-input:not([type="checkbox"], [inputmode="search"], link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input):focus,
-.themeableSearchBox:focus {
+input:not([type="checkbox"], [inputmode="search"], .input-pill, link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input):focus,
+.themeableSearchBox:focus,
+.address-pill.editing:not(#hack) {
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
 }
@@ -97,6 +98,13 @@ toolbar input:not([type="checkbox"], [inputmode="search"]),
 }
 .input-container:focus-within {
 	outline: 0 !important;
+}
+
+.input-pill {
+	font-weight: normal !important;
+}
+.address-pill.editing {
+	box-shadow: none !important;
 }
 
 link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input {

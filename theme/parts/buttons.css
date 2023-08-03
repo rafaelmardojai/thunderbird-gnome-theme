@@ -17,6 +17,7 @@ button.button-menu-list,
 .notification-button:not(.button-menu-list),
 .notification-close,
 .today-pane-cycler,
+.address-pill,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
 #unifiedToolbar .unified-toolbar-button,
 #starMessageButton,
@@ -97,6 +98,7 @@ button.button-menu-list,
 button.calview-toggle-item,
 .notification-button:not(.button-menu-list),
 .text-only #unifiedToolbar .unified-toolbar-button,
+.address-pill,
 #appMenu-fontSizeReset-button:not(#hack) {
 	padding: 2px 15px !important;
 	font-weight: bold !important;
@@ -149,6 +151,7 @@ button.button-menu-list {
 /* Hover buttons */
 .button:not(.twisty):not([disabled="true"]):hover,
 .notification-button:not(.button-menu-list):not([disabled="true"]):hover,
+.address-pill:not([disabled="true"]):hover,
 #unifiedToolbar .unified-toolbar-button:hover,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):hover,
 menulist:not([disabled="true"]):hover,
@@ -189,6 +192,7 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 menulist:not([disabled="true"]):is(:active, [open]),
 button.button-menu-list:is(:active, [open]),
 .notification-button:not(.button-menu-list):not([disabled="true"]):active,
+.address-pill:not([disabled="true"]):active,
 #unifiedToolbar .unified-toolbar-button:active,
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):is(:active, [checked="true"]) {
 	background-color: var(--gnome-button-active-background) !important;
