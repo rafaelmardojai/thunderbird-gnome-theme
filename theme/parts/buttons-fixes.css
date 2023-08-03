@@ -24,6 +24,10 @@
 	align-items: center !important;
 	justify-content: center !important;
 }
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker::before,
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
+	display: none !important;
+}
 
 /* Menulist */
 link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
@@ -61,9 +65,6 @@ link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 #imip-view-toolbar > .toolbarbutton-1.message-header-view-button > .toolbarbutton-menubutton-button,
 #imip-view-toolbar > .toolbarbutton-1.message-header-view-button > .toolbarbutton-menubutton-dropmarker {
 	background-image: none !important;
-}
-.message-header-view-button:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
-	display: none !important;
 }
 .miniday-nav-buttons:active,
 #miniday-dropdown-button:is(:active, [open]),

@@ -3,12 +3,15 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Icons color */
+.button.icon-button,
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
 .preview-icon,
-.toolbarbutton-1.message-header-view-button,
 .unified-toolbar-button,
 .spaces-toolbar-button img,
-.button.icon-button,
 button.email-action-flagged#starMessageButton,
+.cal-event-toolbarbutton .toolbarbutton-icon,
 .twisty,
 .calendar-displayed,
 .miniday-nav-buttons,
@@ -16,8 +19,6 @@ button.email-action-flagged#starMessageButton,
 .notification-close,
 .subviewbutton-back .toolbarbutton-icon,
 .subviewbutton-iconic[type="checkbox"] > .toolbarbutton-icon,
-.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
 button.button-menu-list,
 .checkbox-check[checked],
 .radio-check[selected],
@@ -162,6 +163,10 @@ menuitem[type="radio"][checked="true"] {
 	--icon-redirect: var(--gnome-icon-network-transmit-receive-symbolic) !important;
 	--icon-file: var(--gnome-icon-rich-text-symbolic) !important;
 	--icon-download: var(--gnome-icon-folder-download-symbolic) !important;
+	--icon-lock: var(--gnome-icon-padlock-symbolic) !important;
+	--icon-lock-disabled: var(--gnome-icon-padlock-insecure-symbolic) !important;
+	--icon-spelling: var(--gnome-icon-tools-check-spelling-symbolic) !important;
+	--icon-new-chat:var(--gnome-icon-chat-bubbles-text-symbolic) !important;
 	
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;

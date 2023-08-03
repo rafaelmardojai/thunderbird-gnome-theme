@@ -16,7 +16,9 @@
 #tabs-toolbar,
 #status-bar,
 .inline-toolbar,
-.contentTabToolbar {
+.contentTabToolbar,
+toolbar,
+#event-toolbar {
 	appearance: none !important;
 	background: var(--gnome-toolbar-background) !important;
 	border: 0 !important;
@@ -24,7 +26,9 @@
 #toolbar-menubar:not([inactive=true]),
 #tabs-toolbar,
 .inline-toolbar,
-.contentTabToolbar {
+.contentTabToolbar,
+toolbar,
+#event-toolbar {
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 #status-bar {
@@ -33,8 +37,14 @@
 unified-toolbar:-moz-window-inactive,
 #toolbar-menubar:-moz-window-inactive,
 #tabs-toolbar:-moz-window-inactive,
-#statusbar:-moz-window-inactive {
+#statusbar:-moz-window-inactive,
+toolbar:-moz-window-inactive,
+#event-toolbar:-moz-window-inactive {
 	transition: background .2s ease-out;
+}
+
+toolbar:not([type="menubar"]) {
+	padding: 6px 3px !important;
 }
 
 #navigator-toolbox:-moz-window-inactive label {

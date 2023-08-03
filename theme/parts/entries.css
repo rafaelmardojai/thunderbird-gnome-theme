@@ -3,7 +3,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Entries */
-link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input,
+input:not([type="checkbox"], [inputmode="search"]),
 .themeableSearchBox {
 	-moz-appearance: none !important;
 	background: var(--gnome-entry-background) !important;
@@ -24,19 +24,30 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input,
 }
 
 /* Entries focused */
+input:not([type="checkbox"], [inputmode="search"], link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input):focus,
 .themeableSearchBox:focus {
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
 }
 
 /* Inactive window entries */
-link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input:-moz-window-inactive,
+input:-moz-window-inactive,
 .themeableSearchBox:-moz-window-inactive {
 	color: var(--gnome-inactive-entry-color) !important;
 	outline: 2px solid transparent !important;
 }
 
+/* Entries combined */
+link[href="chrome://global/skin/menulist.css"] ~ input {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+link[href="chrome://global/skin/menulist.css"] ~ input:focus {
+	-moz-outline-radius: 5px 0 0 5px !important;
+}
+
 /* Entries with margin */
+toolbar input:not([type="checkbox"], [inputmode="search"]),
 #quick-filter-bar .themeableSearchBox,
 #view-task-edit-field,
 #task-text-filter-field {
@@ -78,6 +89,16 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input:-moz-w
 }
 
 /* Entries fixes */
+.input-container {
+	background: none !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.input-container:focus-within {
+	outline: 0 !important;
+}
+
 link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input {
 	position: relative !important;
 }
@@ -91,4 +112,11 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form:focus-within {
 	border-radius: 8px !important;
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px !important;
+}
+
+menulist[editable="true"]:not(#hack) {
+	padding: 0 !important;
+}
+link[href="chrome://global/skin/menulist.css"] ~ input {
+	margin: 0 !important;
 }
