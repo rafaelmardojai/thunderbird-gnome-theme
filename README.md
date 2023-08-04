@@ -1,3 +1,4 @@
+do not merge
 <img src="icon.svg" alt="Thunderbird GNOME theme" width="128" align="left"/>
 
 # Thunderbird GNOME theme
