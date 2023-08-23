@@ -96,7 +96,7 @@ You should already have this file installed if you followed one of the installat
 You can follow the installation script steps again to update the theme.
 
 ## Uninstalling
-1. Go to your profile folder. Go to Manu > Help > More Troubleshooting Information >  Application Basics > Profile Directory > Open Directory)
+1. Go to your profile folder. Go to Menu > Help > More Troubleshooting Information >  Application Basics > Profile Directory > Open Directory)
 2. Remove `chrome` folder.
 3. Remove the unwanted preferences from your `user.js` inside your profile folder. The install script append the needed prefs in that file, you can check what preferences does it append by checking `configuration/user.js` in this repo.
 
