@@ -273,6 +273,10 @@ tab:not([pinned]):hover .tab-content::before {
 	background-color: var(--gnome-tabbar-tab-active-background) !important;
 }
 
+.tabmail-tab[selected="true"] {
+	box-shadow: none !important;
+}
+
 /* Tab hover */
 tab:hover > .tab-stack > .tab-background[selected=true]:not(:-moz-window-inactive) {
 	background-color: var(--gnome-tabbar-tab-active-hover-background) !important;
