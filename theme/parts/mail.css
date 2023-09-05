@@ -134,6 +134,13 @@ tr[is="thread-card"][data-properties~="new"] {
 	font-weight: bold !important;
 }
 
+.multi-selected [is="tree-view-table-body"] > .selected.current,
+.multi-selected [is="tree-view-table-body"]:focus > .selected.current {
+	outline: 2px solid color-mix(in srgb, var(--gnome-accent) 50%, transparent) !important;
+	border-radius: 6px !important;
+	outline-offset: -2px !important;
+}
+
 /* Mesagge */
 #messagePane {
 	background: var(--gnome-view-background) !important;
