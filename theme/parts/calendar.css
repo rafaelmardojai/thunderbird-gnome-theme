@@ -8,7 +8,9 @@
 #calendarViewHeader,
 #mini-day-box,
 #agenda-toolbar,
-#task-addition-box {
+#task-addition-box,
+#other-actions-box,
+#calendar-task-details-box {
 	background-color: var(--gnome-toolbar-background) !important;
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 	height: auto !important;
@@ -274,6 +276,20 @@ checkbox.treenode-checkbox > .checkbox-check {
 
 #unifinder-task-edit-field {
 	margin: 3px 6px !important;
+}
+
+#calendar-task-tree,
+#calendar-task-details-description {
+	background: var(--gnome-view-background) !important;
+}
+
+#calendar-task-details-container {
+	padding: 0 !important;
+}
+
+#calendar-task-details-description {
+	border: 0 !important;
+	padding: 0 !important;
 }
 
 /* Hide new task button */
