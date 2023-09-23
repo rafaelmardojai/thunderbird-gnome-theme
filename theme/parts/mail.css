@@ -91,6 +91,10 @@ tr[is="thread-card"][data-properties~="new"] {
 	box-shadow: none !important;
 }
 
+tr[is="thread-card"] + tr[is="thread-card"]:not(.context-menu-target) .thread-card-container::before {
+	content: none !important;
+}
+
 #threadTree[rows="thread-card"] tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
 #threadTree[rows="thread-card"] [is="tree-view-table-body"] > :hover,
 #threadTree[rows="thread-card"] [is="tree-view-table-body"] > .selected,
