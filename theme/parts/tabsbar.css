@@ -319,14 +319,14 @@ tab {
 }
 
 /* OPTIONAL: hide tabsbar */
-@supports -moz-bool-pref("gnomeTheme.hideTabbar") {
+@media (-moz-bool-pref: "gnomeTheme.hideTabbar") {
 	#toolbar-menubar[autohide="true"][inactive="true"] + #tabs-toolbar {
 		visibility: collapse !important;
 	}
 }
 
 /* OPTIONAL: Use normal width tabs */
-@supports -moz-bool-pref("gnomeTheme.normalWidthTabs") {
+@media (-moz-bool-pref: "gnomeTheme.normalWidthTabs") {
 	tab:not([style^="max-width"]):not([pinned]),
 	tab[style^="max-width: 100px !important;"]:not([pinned]) {
 		max-width: 225px !important;
@@ -335,7 +335,7 @@ tab {
 }
 
 /* OPTIONAL: Add more contrast to the active tab */
-@supports -moz-bool-pref("gnomeTheme.activeTabContrast") {
+@media (-moz-bool-pref: "gnomeTheme.activeTabContrast") {
 	.tab-background[selected=true]:not(#hack),
 	:root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background:not(#hack) {
 		background: var(--gnome-tabbar-tab-active-background-contrast) !important;
