@@ -7,6 +7,7 @@ installationPaths=(
     ~/.thunderbird
     ~/.var/app/org.mozilla.Thunderbird/.thunderbird
     ~/snap/thunderbird/common/.thunderbird
+    ~/.var/app/eu.betterbird.Betterbird/.thunderbird
 )
 
 currentTheme=$(gsettings get org.gnome.desktop.interface gtk-theme ) || currentTheme=""
