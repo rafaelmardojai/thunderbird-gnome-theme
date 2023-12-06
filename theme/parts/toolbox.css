@@ -23,7 +23,6 @@ toolbar,
 	background: var(--gnome-toolbar-background) !important;
 	border: 0 !important;
 }
-#toolbar-menubar:not([inactive=true]),
 #tabs-toolbar,
 .inline-toolbar,
 .contentTabToolbar,

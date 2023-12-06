@@ -89,11 +89,11 @@ tab:not(:first-of-type, [selected], :hover) {
 	--gnome-tabbar-tab-separator-hack1: linear-gradient(
 		to bottom,
 		var(--gnome-tabbar-tab-separator-hack0) 0,
-		var(--gnome-tabbar-tab-separator-hack0) 9px,
-		var(--gnome-tabbar-tab-separator-color) 9px,
-		var(--gnome-tabbar-tab-separator-color) 35px,
-		var(--gnome-tabbar-tab-separator-hack0) 35px,
-		var(--gnome-tabbar-tab-separator-hack0) 45px
+		var(--gnome-tabbar-tab-separator-hack0) 3px,
+		var(--gnome-tabbar-tab-separator-color) 3px,
+		var(--gnome-tabbar-tab-separator-color) 31px,
+		var(--gnome-tabbar-tab-separator-hack0) 31px,
+		var(--gnome-tabbar-tab-separator-hack0) 40px
 	) 1;
 	border-image: var(--gnome-tabbar-tab-separator-hack1);
 }
@@ -323,6 +323,11 @@ tab {
 	#toolbar-menubar[autohide="true"][inactive="true"] + #tabs-toolbar {
 		visibility: collapse !important;
 	}
+	
+	unified-toolbar {
+		border-bottom: 1px solid var(--gnome-headerbar-shade-color) !important;
+	}
+
 }
 
 /* OPTIONAL: Use normal width tabs */
