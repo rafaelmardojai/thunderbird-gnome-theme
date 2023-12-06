@@ -63,7 +63,7 @@ spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
 tab {
 	border-width: 0 !important;
 	border-radius: 0 !important;
-	padding: 5px 2px 6px !important;
+	padding: 0px 2px 6px !important;
 	position: relative;
 }
 tab:first-of-type {
