@@ -70,6 +70,7 @@
 	--gnome-view-selected-active-background: color-mix(in srgb, var(--gnome-accent-bg) 39%, transparent);
 	--gnome-sidebar-background: #ebebeb;
 	--gnome-secondary-sidebar-background: #f3f3f3;
+	--gnome-sidebar-shade-color: rgba(0, 0, 0, 0.07);
 	
 	/* Card */
 	--gnome-card-background: #ffffff;
@@ -88,7 +89,7 @@
 	
 	/* Header bar */
 	--gnome-headerbar-background: #ffffff;
-	--gnome-headerbar-shade-color: rgba(0, 0, 0, 0.07);
+	--gnome-headerbar-shade-color: rgba(0, 0, 0, 0.12);
 
 	/* Toolbars */
 	--gnome-toolbar-background: var(--gnome-headerbar-background);

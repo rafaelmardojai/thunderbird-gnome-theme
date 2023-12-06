@@ -2,14 +2,21 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#folderPaneHeaderBar:not([hidden]),
-#messageHeader,
+#headingWrapper,
 #attachmentBar {
 	background: var(--gnome-toolbar-background) !important;
 }
 
 #folderPaneHeaderBar:not([hidden]) {
+	background: var(--gnome-sidebar-background) !important;
+}
+
+#folderPaneHeaderBar:not([hidden]) {
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+
+#messageHeader {
+	background: var(--gnome-window-background) !important;
 }
 
 #attachmentBar,
@@ -51,7 +58,7 @@
 
 /* Filters */
 .list-header-bar:not([hidden]), #quick-filter-bar {
-	background: var(--gnome-toolbar-background) !important;
+	background: var(--gnome-secondary-sidebar-background) !important;
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 #quick-filter-bar-filter-text-bar {
@@ -63,7 +70,7 @@
 
 /* List */
 #threadTree {
-	background: var(--gnome-view-background) !important;
+	background: var(--gnome-secondary-sidebar-background) !important;
 }
 #threadTree .tree-table {
 	background: transparent !important;

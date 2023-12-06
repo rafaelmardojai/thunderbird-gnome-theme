@@ -9,11 +9,11 @@
 	--tabs-toolbar-box-shadow: none !important;
 	--button-margin: 0 3px !important;
 	--spaces-bg-color: var(--gnome-window-background) !important;
-	--spaces-border-color: var(--gnome-border-color) !important;
+	--spaces-border-color: var(--gnome-sidebar-shade-color) !important;
 	--spaces-total-width: calc(2 * var(--spaces-padding) + 34px + var(--messenger-body-border)) !important;
-	--sidebar-background-color: var(--gnome-window-background) !important;
-	--sidebar-border-color: var(--gnome-border-color) !important;
-	--splitter-color: var(--gnome-border-color) !important;
+	--sidebar-background-color: var(--gnome-sidebar-background) !important;
+	--sidebar-border-color: var(--gnome-sidebar-shade-color) !important;
+	--splitter-color: var(--gnome-sidebar-shade-color) !important;
 	--viewBorderColor: color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewBackground: var(--gnome-view-background) !important;
 	--viewTodayBackground:  color-mix(in srgb, currentColor 8%, transparent) !important;

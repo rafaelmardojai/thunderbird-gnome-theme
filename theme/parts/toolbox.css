@@ -61,9 +61,6 @@ toolbar toolbarseparator:not([orient="vertical"]) {
 #calSidebar {
 	background-color: var(--gnome-window-background) !important;
 }
-.spaces-toolbar:not([hidden]) {
-	border-right: 1px solid var(--gnome-border-color) !important;
-}
 
 #quick-filter-bar {
 	padding: 6px 3px !important;

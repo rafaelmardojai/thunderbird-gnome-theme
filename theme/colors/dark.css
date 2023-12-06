@@ -18,6 +18,7 @@
 		--gnome-view-background: #1e1e1e;
 		--gnome-sidebar-background: #303030;
 		--gnome-secondary-sidebar-background: #2a2a2a;
+		--gnome-sidebar-shade-color: color-mix(in srgb, black 36%, transparent);
 
 		/* Card */
 		--gnome-card-background: rgba(255, 255, 255, 0.08);
