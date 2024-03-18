@@ -132,6 +132,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-tasks: var(--gnome-icon-tasks-symbolic) !important;
 	--icon-new-task: var(--gnome-icon-tasks-new-symbolic) !important;
 	--icon-chat: var(--gnome-icon-chat-bubbles-text-symbolic) !important;
+	--icon-rss: var(--gnome-icon-newspaper-symbolic) !important;
 	--icon-sync: var(--gnome-icon-update-symbolic) !important;
 	--icon-nav-back: var(--gnome-icon-go-previous-symbolic) !important;
 	--icon-nav-left: var(--gnome-icon-pan-start-symbolic) !important;
