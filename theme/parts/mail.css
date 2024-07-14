@@ -112,6 +112,7 @@
 
 		/* Labels */
 		:is(.sender, .date, .subject) {
+			color: var(--gnome-view-color) !important;
 			font-weight: normal !important;
 		}
 		:is(.sender, .subject) {
