@@ -201,28 +201,16 @@ notification-message {
 	margin: 0 !important;
 }
 .calendar-notification-bar,
-.container.infobar {
+link[href="chrome://global/content/elements/moz-message-bar.css"] + .container {
+	background-color: color-mix(in srgb, var(--gnome-accent-bg) 30%, var(--gnome-window-background)) !important;
 	border-radius: 0 !important;
 	box-shadow: none !important;
+	color: var(--gnome-window-color) !important;
+	gap: 6px !important;
 	margin: 0 !important;
 	padding: 6px !important;
-}
-.notification-message {
-	font-weight: bold !important;
-	margin-block: 0 !important;
-}
-.infobar > .icon {
-	margin: 0 !important;
-}
-
-.calendar-notification-bar,
-.container.infobar {
-	background-color: color-mix(in srgb, var(--gnome-accent-bg) 30%, var(--gnome-window-background)) !important;
-	color: var(--gnome-window-color) !important;
-}
-
-/* Remove new message indicator dot */
-.new-messages:not([data-server-type]) > .container > .icon::after,
-tr[data-properties~="new"] .thread-card-container::after {
-	display: none !important;
+	
+	.text-content {
+		font-weight: bold !important;
+	}
 }
