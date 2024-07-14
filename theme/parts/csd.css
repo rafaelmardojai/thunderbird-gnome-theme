@@ -61,6 +61,29 @@
 		padding-left: 50px !important;
 		padding-right: 3px !important
 	}
+	
+	/* Adjust to spaces toolbar */
+	:root[tabsintitlebar][spacestoolbar="true"] {
+		#titlebar .titlebar-buttonbox-container {
+			left: 46px;
+		}
+		
+		/* Window control on spaces bar */
+		@media (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-maximize-button)) and (not (-moz-gtk-csd-minimize-button)) {
+			#titlebar .titlebar-buttonbox-container {
+				left: 0;
+			}
+			#spacesToolbar {
+				padding-top: 46px !important;
+			}
+			#unifiedToolbar {
+				--gnome-navbar-csd-offset: 3px !important;
+			}
+			#titlebar .titlebar-buttonbox-container {
+				z-index: 99;
+			}
+		}
+	}
 }
 
 /* Remove close and minimize buttons from fullscreen buttons */

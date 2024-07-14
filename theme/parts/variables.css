@@ -8,6 +8,7 @@
 	--new-folder-color: var(--gnome-accent) !important;
 	--tabs-toolbar-box-shadow: none !important;
 	--button-margin: 0 3px !important;
+	--spaces-padding: 6px !important;
 	--spaces-bg-color: var(--gnome-window-background) !important;
 	--spaces-border-color: var(--gnome-sidebar-shade-color) !important;
 	--spaces-total-width: calc(2 * var(--spaces-padding) + 34px + var(--messenger-body-border)) !important;
