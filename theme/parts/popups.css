@@ -59,7 +59,23 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	background: transparent !important;
 }
 
+/* Adjust popovers position */
+panel[type=arrow] {
+	margin-top: 8px !important;
+}
+
 /* Style popovers */
+panel:not([remote]) {
+	--arrowpanel-background: var(--gnome-menu-background) !important;
+	--panel-item-hover-bgcolor: var(--gnome-selected-background) !important;
+}
+panel  {
+	--arrowpanel-padding: 0 !important;
+	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
+	--arrowpanel-border-radius: 12px !important;
+	--gnome-menu-padding: 6px;
+}
+
 .panel-header,
 .panel-subview-body {
 	padding: 6px !important;
@@ -77,11 +93,10 @@ panelview .subviewbutton,
 panelview .toolbarbutton-1 {
 	-moz-appearance: none !important;
 	border-radius: 6px !important;	
-	color: var(--gnome-toolbar-color) !important;
+	color: var(--gnome-window-color) !important;
 	font: menu !important;
 	padding: 4px 12px !important;
 	min-height: 32px !important;
-	margin: 0 !important;
 }
 
 #appMenu-mainView .panel-subview-body > .subviewbutton-iconic:not([type="checkbox"]) > .toolbarbutton-icon {
@@ -141,4 +156,11 @@ toolbarseparator, menuseparator {
 toolbarseparator:not([orient="vertical"]), menupopup menuseparator {
 	border-top: 1px solid var(--gnome-menu-separator-color) !important;
 	margin: 6px 0 !important;
+}
+
+menuseparator {
+	padding: 0 !important;
+}
+menuseparator::before {
+	display: none !important;
 }
