@@ -33,6 +33,9 @@
 	--listbox-selected-bg: var(--gnome-selected-color) !important;
 	--listbox-focused-selected-bg: var(--gnome-selected-color) !important;
 	--listbox-selected-color: var(--gnome-view-color) !important;
+	--listbox-border-radius: 6px !important;
+	--list-container-background-hover: var(--gnome-hover-color)  !important;
+	--list-container-background-selected-current: var(--gnome-active-color) !important;
 }
 
 :root .cui-widget-panel {

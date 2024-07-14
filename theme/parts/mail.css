@@ -30,7 +30,7 @@
 }
 
 /* Sidebar */
-#folderTree {
+#folderTree, #folderPaneHeaderBar {
 	padding: 6px !important;
 }
 #folderTree > li:first-child > .mode-container {
@@ -40,14 +40,16 @@
 	padding-top: 3px !important;
 }
 #folderTree .container {
+	border: 0 !important;
 	margin-inline: 0 !important;
+	margin: 1px 0 !important;
 }
 #folderTree:focus-within li.selected > .container, #folderTree li.drop-target > .container {
 	color: var(--gnome-view-color) !important;
 	outline: 2px solid color-mix(in srgb, var(--gnome-accent) 50%, transparent) !important;
 	outline-offset: -2px !important;
 }
-#folderTree:focus-within li.selected > .container > .unread-count {
+#folderTree li > .container > .unread-count {
 	background-color: var(--folderpane-unread-count-background) !important;
 	color: var(--folderpane-unread-count-text) !important;
 }
@@ -71,85 +73,117 @@
 /* List */
 #threadTree {
 	background: var(--gnome-secondary-sidebar-background) !important;
+	padding: 0 !important;
 }
 #threadTree .tree-table {
 	background: transparent !important;
 }
-#threadTree[rows="thread-card"] .tree-table {
-	padding: 12px !important;
-}
 
-#threadTree tr[is="thread-card"] {
-	margin-bottom: 6px;
-	height: 55px !important;
-}
-#threadTree tr button.twisty {
-	min-width: 16px !important;
-	min-height: 16px !important;
-	padding: 0 !important;
-}
+#threadTree tr.card-layout {
+	background: transparent !important;
+	height: auto !important;
+	
+	/* Spacing */
+	td {
+		padding: 12px 12px !important;
+	}
+	&:not(:first-child) td {
+		padding-top: 0 !important;
+	}
+	
+	/* Card */
+	.card-container {
+		--thread-card-content-gap: 6px !important;
+		background: none !important;
+		border: 0 !important;
+		border-radius: 6px !important;
+		grid-template-columns: 1fr !important;
+		min-height: 60px !important;
 
-.thread-card-container {
-	border: 0 !important;
-	border-radius: 6px !important;
-	margin-bottom: 2px;
-}
-tr[is="thread-card"][data-properties~="new"] {
-	box-shadow: none !important;
-}
+		.thread-card-column:first-child {
+			display: none !important;
+		}
+		
+		.thread-card-column:last-child {
+			.thread-card-last-row {
+				padding-inline-end: 3px !important;
+			}
+		}
 
-tr[is="thread-card"] + tr[is="thread-card"]:not(.context-menu-target) .thread-card-container::before {
-	content: none !important;
-}
-
-#threadTree[rows="thread-card"] tr[is="thread-card"][data-properties~="unread"]:not(.selected, :hover),
-#threadTree[rows="thread-card"] [is="tree-view-table-body"] > :hover,
-#threadTree[rows="thread-card"] [is="tree-view-table-body"] > .selected,
-#threadTree[rows="thread-card"] [is="tree-view-table-body"]:focus > .selected,
-#threadTree[rows="thread-card"] [is="tree-view-table-body"]:focus-within > .selected,
-#threadTree[rows="thread-card"] [is="tree-view-table-body"] > .selected:focus-within {
-	background: none !important;
-}
-#threadTree [is="tree-view-table-body"] > :hover .thread-card-container {
-	background: var(--gnome-hover-color) !important;
-}
-#threadTree [is="tree-view-table-body"] > .selected .thread-card-container,
-#threadTree [is="tree-view-table-body"]:focus > .selected .thread-card-container,
-#threadTree [is="tree-view-table-body"]:focus-within > .selected .thread-card-container,
-#threadTree [is="tree-view-table-body"] > .selected:focus-within .thread-card-container {
-	background: var(--gnome-selected-color) !important;
-	color: var(--gnome-view-color) !important;
-}
-
-.thread-card-row :is(.sender, .subject) {
-	font-size: 1rem !important;
-}
-.thread-card-row .subject {
-	font-size: 9pt !important;
-}
-.thread-card-row .date {
-	font-size: 9pt !important;
-	opacity: .8 !important;
-}
-
-#threadTree tr[data-properties~="junk"] :is(.sender, .date, .subject) {
-	color: var(--color-red-60) !important;
-}
-#threadTree [data-properties~="new"] .thread-card-container .date,
-#threadTree tr[data-properties~="junk"] :is(.date, .subject) {
-	color: var(--gnome-view-color) !important;
-	font-weight: normal !important;
-}
-#threadTree [data-properties~="new"] .thread-card-container :is(.subject, .sender) {
-	color: var(--gnome-view-color) !important;
-	font-weight: bold !important;
-}
-
-.multi-selected [is="tree-view-table-body"] > .selected.current,
-.multi-selected [is="tree-view-table-body"]:focus > .selected.current {
-	outline: 2px solid color-mix(in srgb, var(--gnome-accent) 50%, transparent) !important;
-	border-radius: 6px !important;
-	outline-offset: -2px !important;
+		/* Labels */
+		:is(.sender, .date, .subject) {
+			font-weight: normal !important;
+		}
+		:is(.sender, .subject) {
+			font-size: 1rem !important;
+		}
+		.subject {
+			font-size: 9pt !important;
+		}
+		.date {
+			font-size: 9pt !important;
+			opacity: .8 !important;
+		}
+		
+		/* Remove selected indicator */
+		&::before {
+			content: none !important;
+		}
+		
+		/* Compact tree-button-more */
+		.tree-button-more {
+			padding: 0 !important;
+			height: 22px !important;
+			max-height: 22px !important;
+			min-height: 22px !important;
+			min-width: 22px !important;
+		}
+	}
+	
+	/* Improve card layout when there are no children */
+	&:not(.children) .card-container {
+		.thread-card-column:last-child {
+			grid-template-areas:
+				"sender sender"
+				"subject details";
+			grid-template-columns: auto content;
+			
+			.thread-card-row:first-child {
+				grid-area: sender;
+			}			
+		}
+	}
+	
+	/* Hover */
+	&:hover .card-container {
+		box-shadow: none !important;
+	}
+	&:not(.selected):hover .card-container {
+		background: var(--gnome-hover-color) !important;
+	}
+	/* Active */
+	&.selected .card-container {
+		background: var(--gnome-selected-color) !important;
+	}
+	/* New */
+	&[data-properties~="unread"] .card-container :is(.subject, .sender) {
+		font-weight: bold !important;
+	}
+	/* Junk */
+	&[data-properties~="junk"] .card-container :is(.sender, .date, .subject) {
+		color: var(--color-red-60) !important;
+	}
+	/* Child */
+	&[data-properties~="thread-children"] td {
+		padding-inline-start: calc(var(--thread-child-start) + 12px) !important;
+		&::before{
+			border-color:  var(--gnome-view-color) !important;
+		}
+		&::after {
+			fill: var(--gnome-view-color) !important;
+			stroke: var(--gnome-view-color) !important;
+		}
+    }
 }
 
 /* Mesagge */
