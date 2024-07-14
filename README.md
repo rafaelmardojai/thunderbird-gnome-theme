@@ -12,9 +12,11 @@
 
 This theme follows latest GNOME Adwaita style.
 
-> ## Warning:
+> [!WARNING]
+> ## BE AWARE:
 > This theme is a work in progress.
 
+> [!WARNING]
 > ### Disclaimer:
 > Be aware that this theme might do things that are not supported by upstream Thunderbird. If you face an issue while using this theme, report it here first or test if it is repoducible in vanilla Thunderbird.
 >
