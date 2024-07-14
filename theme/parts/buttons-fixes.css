@@ -20,9 +20,10 @@
 	justify-content: center !important;
 }
 
-.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
 	align-items: center !important;
 	justify-content: center !important;
+	padding: 9px 4px !important;;
 }
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker::before,
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
