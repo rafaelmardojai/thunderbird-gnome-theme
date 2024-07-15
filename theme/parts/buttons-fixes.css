@@ -91,3 +91,13 @@ link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 .address-pill:not([disabled="true"]):hover {
 	box-shadow: none !important;
 }
+
+/* Icon with empty label */
+#offline-status > .toolbarbutton-text {
+	display: none !important;
+}
+
+/* Today panel button */
+#calendar-status-todaypane-button .toolbarbutton-icon-end {
+	display: none;
+}

@@ -130,15 +130,6 @@
 		&::before {
 			content: none !important;
 		}
-		
-		/* Compact tree-button-more */
-		.tree-button-more {
-			padding: 0 !important;
-			height: 22px !important;
-			max-height: 22px !important;
-			min-height: 22px !important;
-			min-width: 22px !important;
-		}
 	}
 	
 	/* Improve card layout when there are no children */

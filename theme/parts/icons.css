@@ -24,6 +24,8 @@ button.email-action-flagged#starMessageButton,
 button.button-menu-list,
 .checkbox-check[checked],
 .radio-check[selected],
+#spacesPinnedButton .toolbarbutton-icon,
+#spacesToolbarReveal,
 #offline-status,
 #button-appmenu .toolbarbutton-icon,
 #folderTree > li > .mode-container > .mode-button,
@@ -43,7 +45,8 @@ link[href="chrome://global/skin/dropmarker.css"] + image,
 #appMenu-fontSize-controls .toolbarbutton-icon,
 #calendar-add-task-button,
 #todaypane-new-event-button,
-#miniday-dropdown-button > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-menu-dropmarker,
+#miniday-dropdown-button > .toolbarbutton-menu-dropmarker:not(#hack),
 #calendarListHeader::after,
 #calendar-list > li[calendar-readonly]::before,
 #calendar-list > li[calendar-readonly]::after,
@@ -93,7 +96,8 @@ menuitem[type="radio"][checked="true"] {
 	/*--spaces-icon-overflow: var(--gnome-icon-last-symbolic) !important;*/
 	--spaces-icon-settings: var(--gnome-icon-settings-symbolic) !important;
 	--spaces-icon-collapse: var(--gnome-icon-first-symbolic) !important;
-	
+	--icon-collapse: var(--gnome-icon-first-symbolic) !important;
+	--icon-spaces-menu: var(--gnome-icon-toggle-sidebar-symbolic) !important;
 	--icon-app-menu: var(--gnome-icon-open-menu-symbolic) !important;
 	--icon-folder: var(--gnome-icon-folder-symbolic) !important;
 	--icon-inbox: var(--gnome-icon-inbox-symbolic) !important;
@@ -237,13 +241,18 @@ button.button-menu-list {
 /* Fix hardcoded images */
 .tab-close-button,
 #folderTree li .container > .twisty,
-#starMessageButton {
+#starMessageButton,
+#spacesToolbarReveal {
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 }
+#spacesToolbarReveal {
+	width: 16px;
+}
 .tab-close-button img,
 #folderTree li .container > .twisty > .twisty-icon,
-#starMessageButton img {
+#starMessageButton img,
+#spacesToolbarReveal img {
 	display: none !important;
 }
 
@@ -323,6 +332,9 @@ menupopup > menu::after {
 /* Dropmarker */
 link[href="chrome://global/skin/dropmarker.css"] + image {
 	 list-style-image: url("../icons/pan-down-symbolic.svg") !important;
+}
+.toolbarbutton-menu-dropmarker {
+	content: url("../icons/pan-down-symbolic.svg") !important;
 }
 
 /* Tree views */
@@ -428,4 +440,9 @@ checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 }
 #calendar-list > li[calendar-muted]::after {
 	content: url("../icons/notifications-disabled-symbolic.svg");
+}
+
+/* Collapse */
+#spacesToolbarReveal {
+	background-image: url("../icons/last-symbolic.svg") !important;
 }

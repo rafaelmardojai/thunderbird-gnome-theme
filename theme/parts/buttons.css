@@ -26,8 +26,11 @@ button.button-menu-list,
 #calendar-add-task-button,
 #miniday-dropdown-button,
 #todaypane-new-event-button,
-.spaces-toolbar-button {
-	-moz-appearance: none !important;
+.spaces-toolbar-button,
+#offline-status,
+#spacesToolbarReveal,
+#calendar-status-todaypane-button {
+	appearance: none !important;
 	background-color: var(--gnome-button-background) !important;
 	border-radius: 6px !important;
 	border: 0 !important;
@@ -67,7 +70,10 @@ button.calview-toggle-item,
 #miniday-dropdown-button,
 .icons-only #unifiedToolbar .unified-toolbar-button,
 .icons-beside-text #unifiedToolbar .unified-toolbar-button,
-.spaces-toolbar-button {
+.spaces-toolbar-button,
+#offline-status,
+#spacesToolbarReveal,
+#calendar-status-todaypane-button {
 	background-color: transparent !important;
 	transition: background .3s;
 }
@@ -117,7 +123,8 @@ button.calview-toggle-item,
 #calendar-add-task-button,
 #todaypane-new-event-button,
 menulist:not(#hack),
-button.button-menu-list {
+button.button-menu-list,
+#calendar-status-todaypane-button {
 	padding: 2px 9px !important;
 	font-weight: bold !important;
 }
@@ -184,7 +191,10 @@ button.calview-toggle-item:not([disabled="true"]):hover,
 #starMessageButton:not([disabled="true"]):hover,
 .icons-only #unifiedToolbar .unified-toolbar-button:hover,
 .icons-beside-text #unifiedToolbar .unified-toolbar-button:hover,
-.spaces-toolbar-button:hover {
+.spaces-toolbar-button:hover,
+#offline-status:not([disabled="true"]):hover,
+#spacesToolbarReveal:hover,
+#calendar-status-todaypane-button:hover {
 	outline: 0 !important;
 	background-color: var(--gnome-hover-color) !important;
 }
@@ -227,7 +237,10 @@ link[href="chrome://global/content/elements/moz-button.css"] + button[type~="ico
 #starMessageButton:active,
 .icons-only #unifiedToolbar .unified-toolbar-button:active,
 .icons-beside-text #unifiedToolbar .unified-toolbar-button:active,
-.spaces-toolbar-button:active {
+.spaces-toolbar-button:active,
+#offline-status:active,
+#spacesToolbarReveal:active,
+#calendar-status-todaypane-button:is(:active, [checked="true"]) {
 	background-color: var(--gnome-active-color) !important;
 }
 
@@ -324,3 +337,17 @@ link[href="chrome://global/content/elements/moz-button.css"] + button[type~="ico
 .button.button-primary:not(#hack):active {
 	filter: brightness(80%);
 }
+
+/* Compact buttons */
+#threadTree tr.card-layout .tree-button-more,
+#offline-status,
+#spacesToolbarReveal,
+#calendar-status-todaypane-button {
+	padding-top: 0 !important;
+	padding-bottom: : 0 !important;
+	height: 22px !important;
+	max-height: 22px !important;
+	min-height: 22px !important;
+	min-width: 22px !important;
+}
+

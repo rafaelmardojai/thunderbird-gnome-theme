@@ -31,7 +31,11 @@ toolbar,
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 #status-bar {
+	padding: 2px !important;
 	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+#statusText {
+	margin: 0 !important;
 }
 unified-toolbar:-moz-window-inactive,
 #toolbar-menubar:-moz-window-inactive,
