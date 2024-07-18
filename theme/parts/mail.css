@@ -67,6 +67,8 @@
 	padding-top: 12px !important;
 }
 #qfb-qs-textbox {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
 	max-width: 100% !important;
 }
 
