@@ -170,12 +170,15 @@
 	/* Child */
 	&[data-properties~="thread-children"] td {
 		padding-inline-start: calc(var(--thread-child-start) + 12px) !important;
-		&::before{
+		&::before {
 			border-color:  var(--gnome-view-color) !important;
 		}
 		&::after {
 			fill: var(--gnome-view-color) !important;
 			stroke: var(--gnome-view-color) !important;
+		}
+		&::before, &::after {
+			opacity: .6 !important;
 		}
     }
 }
