@@ -13,6 +13,7 @@ link[href="chrome://global/content/elements/moz-message-bar.css"] + .container .
 .unified-toolbar-button,
 .spaces-toolbar-button img,
 button.email-action-flagged#starMessageButton,
+#placeholderNoMessages::before,
 .cal-event-toolbarbutton .toolbarbutton-icon,
 .twisty,
 .calendar-displayed,
@@ -127,6 +128,7 @@ menuitem[type="radio"][checked="true"] {
 	--icon-attachment: var(--gnome-icon-mail-attachment-symbolic) !important;
 	--icon-attachment-sm: var(--gnome-icon-mail-attachment-symbolic) !important;
 	--icon-mail: var(--gnome-icon-mail-symbolic) !important;
+	--icon-mail-lg: var(--gnome-icon-mail-symbolic) !important;
 	--icon-new-mail: var(--gnome-icon-mail-message-new-symbolic) !important;
 	--icon-forward: var(--gnome-icon-mail-forward-symbolic) !important;
 	--icon-forward-col: var(--gnome-icon-mail-forward-symbolic) !important;

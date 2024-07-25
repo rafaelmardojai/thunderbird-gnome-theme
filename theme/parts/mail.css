@@ -183,6 +183,24 @@
     }
 }
 
+/* Placeholder */
+slot[name="placeholders"] {
+	inset: 50% 0 auto !important;
+	opacity: 1 !important;
+	transform: translateY(-50%);
+}
+#placeholderNoMessages {
+	font-size: 20px !important;
+	font-weight: 800 !important;
+	text-shadow: none !important;
+	
+	&::before {
+		fill-opacity: 1 !important;
+		height: 96px !important;
+		opacity: 0.6;
+	}
+}
+
 /* Mesagge */
 #messagePane {
 	background: var(--gnome-view-background) !important;
