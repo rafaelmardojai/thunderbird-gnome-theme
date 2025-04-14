@@ -5,10 +5,10 @@
 
 /* Headerbar top border corners rounded */
 :root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) unified-toolbar {
-	border-radius: env(-moz-gtk-csd-titlebar-radius, 8px) env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
+	border-radius: env(-moz-gtk-csd-titlebar-radius, 15px) env(-moz-gtk-csd-titlebar-radius, 15px) 0 0 !important;
 }
 :root[tabsintitlebar][sizemode="normal"][spacestoolbar="true"]:not([gtktiledwindow="true"]) unified-toolbar {
-	border-radius: 0 env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
+	border-radius: 0 env(-moz-gtk-csd-titlebar-radius, 15px) 0 0 !important;
 }
 
 /* Window buttons: at least 1 button */
