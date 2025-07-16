@@ -54,23 +54,23 @@
 	--gnome-palette-dark-5: #000000;
 	
 	/* Accent */
-	--gnome-accent-bg: var(--gnome-palette-blue-3);
-	--gnome-accent: var(--gnome-palette-blue-4);
+	--gnome-accent-bg: AccentColor;
+	--gnome-accent: oklab(from var(--gnome-accent-bg) var(--gnome-standalone-color-oklab));
 
 	--gnome-selection-bg: color-mix(in srgb, var(--gnome-accent-bg) 30%, transparent);
 	--gnome-toolbar-star-button: var(--gnome-palette-yellow-5);
 	
 	/* Window */
-	--gnome-window-background: #fafafa;
-	--gnome-window-color: rgba(0, 0, 0, 0.8);
+	--gnome-window-background: #fafafb;
+	--gnome-window-color: rgba(0, 0, 6, 0.8);
 	--gnome-view-background: #ffffff;
 	--gnome-view-color: var(--gnome-window-color);
 	--gnome-view-selected-background: color-mix(in srgb, var(--gnome-accent-bg) 25%, transparent);
 	--gnome-view-selected-hover-background: color-mix(in srgb, var(--gnome-accent-bg) 32%, transparent);
 	--gnome-view-selected-active-background: color-mix(in srgb, var(--gnome-accent-bg) 39%, transparent);
-	--gnome-sidebar-background: #ebebeb;
-	--gnome-secondary-sidebar-background: #f3f3f3;
-	--gnome-sidebar-shade-color: rgba(0, 0, 0, 0.07);
+	--gnome-sidebar-background: #ebebed;
+	--gnome-secondary-sidebar-background: #f3f3f5;
+	--gnome-sidebar-shade-color: rgba(0, 0, 6, 0.07);
 	
 	/* Card */
 	--gnome-card-background: #ffffff;
@@ -83,7 +83,7 @@
 	--gnome-menu-background: #ffffff;
 	--gnome-menu-color: var(--gnome-window-color);
 	--gnome-menu-border-color: rgba(0, 0, 0, .04);
-	--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
+	--gnome-menu-shadow: 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
 	--gnome-menu-button-hover-background: var(--gnome-button-background);
 	--gnome-menu-separator-color: var(--gnome-border-color);
 	
@@ -113,7 +113,7 @@
 	--gnome-button-hover-background: color-mix(in srgb, currentColor 15%, transparent);
 	--gnome-button-active-background: color-mix(in srgb, currentColor 30%, transparent);
 	--gnome-button-suggested-action-background: var(--gnome-accent-bg);
-	--gnome-button-destructive-action-background: #e01b24;
+	--gnome-button-destructive-action-background: color-mix(in srgb, currentColor 35%, transparent);
 
 	/* Entries */
 	--gnome-entry-background: var(--gnome-button-background);
