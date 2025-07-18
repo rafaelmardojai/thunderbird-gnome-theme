@@ -15,7 +15,7 @@
 		/* Window */
 		--gnome-window-background: #222226;
 		--gnome-window-color: white;
-		--gnome-view-background: #1e1e1e;
+		--gnome-view-background: #222226;
 		--gnome-sidebar-background: #2e2e32;
 		--gnome-secondary-sidebar-background: #28282c;
 		--gnome-sidebar-shade-color: color-mix(in srgb, black 36%, transparent);
