@@ -100,7 +100,7 @@
 	/* Elements */
 	--gnome-border-color: color-mix(in srgb, currentColor 15%, transparent);
 	--gnome-hover-color: color-mix(in srgb, currentColor 7%, transparent);
-	--gnome-active-color: color-mix(in srgb, currentColor 16%, transparent);
+	--gnome-active-color: color-mix(in srgb, currentColor 7%, transparent);
 	--gnome-selected-color: color-mix(in srgb, currentColor 10%, transparent);
 	--gnome-selected-hover-color: color-mix(in srgb, currentColor 13%, transparent);
 	--gnome-selected-active-color: color-mix(in srgb, currentColor 19%, transparent);
