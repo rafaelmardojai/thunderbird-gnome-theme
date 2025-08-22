@@ -34,7 +34,7 @@ function saveProfile(){
 
 	# Copy theme repo inside
 	echo "Copying repo in $PWD" >&2
-	cp -fR "$THEMEDIRECTORY" "$PWD" || { echo "FAIL, couldn't copy to $PWD/chrome, please check if there's something named 'chrome', that is not a dir."; exit 1; }
+	cp -fR "$THEMEDIRECTORY" "$PWD/thunderbird-gnome-theme" || { echo "FAIL, couldn't copy to $PWD/chrome, please check if there's something named 'chrome', that is not a dir."; exit 1; }
 
 	# Create single-line user CSS files if non-existent or empty.
 	if [ -s userChrome.css ]; then
