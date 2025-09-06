@@ -13,6 +13,5 @@
 
 /* Headerbar CSD colors */
 unified-toolbar {
-	background: var(--gnome-headerbar-background) !important;
 	border: 0 !important;
 }
