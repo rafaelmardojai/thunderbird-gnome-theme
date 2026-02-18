@@ -75,6 +75,11 @@
 	max-width: 100% !important;
 }
 
+/* fix header alignment */
+.list-header-bar-container-start, .list-header-bar-container-end {
+	margin-left: 10px;
+}
+
 /* Pane splitter */
 hr[is="pane-splitter"] {
 	--splitter-occupy-size: 0px !important;
