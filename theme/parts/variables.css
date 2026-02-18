@@ -1,4 +1,4 @@
-/* Tunderbird variables  */
+/* Thunderbird variables  */
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
@@ -13,8 +13,9 @@
 	--spaces-border-color: var(--gnome-sidebar-shade-color) !important;
 	--spaces-total-width: calc(2 * var(--spaces-padding) + 34px + var(--messenger-body-border)) !important;
 	--sidebar-background-color: var(--gnome-sidebar-background) !important;
-	--sidebar-border-color: var(--gnome-sidebar-shade-color) !important;
+	--sidebar-border-color: color-mix(in srgb, var(--gnome-window-color) 15%, transparent) !important;
 	--splitter-color: var(--gnome-sidebar-shade-color) !important;
+	--splitter-occupy-size: 0px !important;
 	--viewBorderColor: color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewBackground: var(--gnome-view-background) !important;
 	--viewTodayBackground:  color-mix(in srgb, currentColor 8%, transparent) !important;

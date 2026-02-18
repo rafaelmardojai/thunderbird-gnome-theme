@@ -64,7 +64,7 @@
 /* Filters */
 .list-header-bar:not([hidden]), #quick-filter-bar {
 	background: var(--gnome-secondary-sidebar-background) !important;
-	border-bottom: 1px solid color-mix(in srgb, var(--gnome-toolbar-border-color) 30%, transparent) !important;
+	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
 #quick-filter-bar-filter-text-bar {
 	padding-top: 12px !important;
@@ -75,7 +75,6 @@
 	max-width: 100% !important;
 }
 
-/* fix header alignment */
 .list-header-bar-container-start, .list-header-bar-container-end {
 	margin-left: 10px;
 }
@@ -86,7 +85,7 @@ hr[is="pane-splitter"] {
 }
 
 #folderPaneHeaderBar:not([hidden]) {
-	border-bottom: 0px !important;
+	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
 
 /* List */
