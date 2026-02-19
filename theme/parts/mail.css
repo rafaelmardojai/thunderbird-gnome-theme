@@ -61,6 +61,11 @@
 	min-width: 18px !important;
 }
 
+/* fix gradient artifact */
+.sidebar-panel-scroll::before {
+  background-image: none !important;
+}
+
 /* Filters */
 .list-header-bar:not([hidden]), #quick-filter-bar {
 	background: var(--gnome-secondary-sidebar-background) !important;
