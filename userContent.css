@@ -19,6 +19,7 @@
 }
 
 span#size {
+  font-size: 12px !important;
   padding-left: 10px !important;
 }
 
