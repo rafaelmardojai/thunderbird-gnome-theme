@@ -43,5 +43,5 @@ span#summarySubtitle {
   left: 10px !important;
   right: 10px !important;
   height: 1px !important;
-  background: var(--gnome-toolbar-border-color) !important;
+  background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
