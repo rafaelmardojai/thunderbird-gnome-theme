@@ -1,3 +1,46 @@
 @import "theme/colors/light.css";
 @import "theme/colors/dark.css";
 
+/* multi-message thread styling */
+#headingWrapper,
+#attachmentBar {
+  background: var(--gnome-window-background) !important;
+  padding: 15px !important;
+  border-bottom: none !important;
+}
+
+#heading {
+  align-items: flex-start !important;
+  display: flex !important;
+  font-weight: 700 !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  padding-left: 14px !important;
+}
+
+span#size {
+  padding-left: 10px !important;
+}
+
+span#summarySubtitle {
+  font-weight: normal !important;
+  margin-inline-start: 0px !important;
+}
+
+#messageList > li {
+  margin-top: 10px !important;
+  padding-bottom: 20px !important;
+  border-bottom: none !important;
+  position: relative !important;
+}
+
+/* for narrowing the multi-message thread borders */
+#messageList > li::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 10px !important;
+  right: 10px !important;
+  height: 1px !important;
+  background: var(--gnome-toolbar-border-color) !important;
+}
