@@ -1,6 +1,12 @@
 <img src="icon.svg" alt="Thunderbird GNOME theme" width="128" align="left"/>
 
-# Thunderbird GNOME theme
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h1> Thunderbird GNOME theme </h1>
+    </summary>
+  </ul>
+</div>
 
 [![GitHub](https://img.shields.io/github/license/rafaelmardojai/thunderbird-gnome-theme.svg)](https://github.com/rafaelmardojai/thunderbird-gnome-theme/blob/master/LICENSE)
 [![Donate](https://img.shields.io/badge/PayPal-Donate-gray.svg?style=flat&logo=paypal&colorA=0071bb&logoColor=fff)](https://paypal.me/RafaelMardojaiCM)
