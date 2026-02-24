@@ -1,0 +1,17 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Variables that start with --gnome- are added by me and are assigned
+ * to elements somewhere in this code. The rest of the variables are
+ * built-in in Firefox, so you need to add an !important if you wanna
+ * override them. */
+
+:root {
+  /* Accent */
+	--gnome-accent-bg: #e95420;
+	--gnome-accent: #e95420;
+}
+
+/* Recolor some elements that are blue by default */
+#tabbrowser-tabs {
+	--tab-loading-fill: #e95420! important;
+}
