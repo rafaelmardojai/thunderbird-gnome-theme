@@ -25,6 +25,7 @@
 #attachmentBar,
 #attachmentView,
 #attachmentList {
+  background: var(--gnome-window-background) !important;
 	border-top: 0px solid var(--gnome-toolbar-border-color) !important;
 }
 
