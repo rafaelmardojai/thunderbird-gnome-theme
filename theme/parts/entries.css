@@ -29,7 +29,6 @@ input:not([type="checkbox"], [inputmode="search"], .input-pill, link[href="chrom
 .address-pill.editing:not(#hack) {
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
-	padding: 5px 30px !important;
 }
 
 /* Inactive window entries */
@@ -37,7 +36,6 @@ input:-moz-window-inactive,
 .themeableSearchBox:-moz-window-inactive {
 	color: var(--gnome-inactive-entry-color) !important;
 	outline: 2px solid transparent !important;
-	padding: 5px 30px !important;
 }
 
 /* Entries combined */
