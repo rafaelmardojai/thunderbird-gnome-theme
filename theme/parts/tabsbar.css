@@ -133,6 +133,16 @@ tab {
 	transition: background 0.2s;
 }
 
+/* Tab background color */
+#tabmail-tabs .tabmail-tab {
+	background-color: var(--gnome-sidebar-background) !important;
+	margin-inline-end: 0px !important;
+}
+:root:-moz-window-inactive #tabmail-tabs .tabmail-tab {
+	background-color: var(--gnome-inactive-sidebar-background, transparent) !important;
+	margin-inline-end: 0px !important;
+}
+
 /* Center all inside tab */
 .tab-content {
 	justify-content: center !important;
