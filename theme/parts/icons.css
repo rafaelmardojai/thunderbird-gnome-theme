@@ -89,7 +89,7 @@ menuitem[type="radio"][checked="true"] {
 }
 
 :root {
-	--spaces-icon-mail: var(--gnome-icon-mail-symbolic) !important;
+	--spaces-icon-mail: var(--gnome-icon-mail-unread-symbolic) !important;
 	--spaces-icon-address-book: var(--gnome-icon-address-book-symbolic) !important;
 	--spaces-icon-calendar: var(--gnome-icon-x-office-calendar-symbolic) !important;
 	--spaces-icon-tasks: var(--gnome-icon-tasks-symbolic) !important;
@@ -98,7 +98,7 @@ menuitem[type="radio"][checked="true"] {
 	--spaces-icon-settings: var(--gnome-icon-settings-symbolic) !important;
 	--spaces-icon-collapse: var(--gnome-icon-first-symbolic) !important;
 	--icon-collapse: var(--gnome-icon-first-symbolic) !important;
-	--icon-spaces-menu: var(--gnome-icon-toggle-sidebar-symbolic) !important;
+	--icon-spaces-menu: var(--gnome-icon-sidebar-show-symbolic) !important;
 	--icon-app-menu: var(--gnome-icon-open-menu-symbolic) !important;
 	--icon-folder: var(--gnome-icon-folder-symbolic) !important;
 	--icon-inbox: var(--gnome-icon-inbox-symbolic) !important;
@@ -127,8 +127,8 @@ menuitem[type="radio"][checked="true"] {
 	--icon-address-book: var(--gnome-icon-address-book-symbolic) !important;
 	--icon-attachment: var(--gnome-icon-mail-attachment-symbolic) !important;
 	--icon-attachment-sm: var(--gnome-icon-mail-attachment-symbolic) !important;
-	--icon-mail: var(--gnome-icon-mail-symbolic) !important;
-	--icon-mail-lg: var(--gnome-icon-mail-symbolic) !important;
+	--icon-mail: var(--gnome-icon-mail-unread-symbolic) !important;
+	--icon-mail-lg: var(--gnome-icon-mail-unread-symbolic) !important;
 	--icon-new-mail: var(--gnome-icon-mail-message-new-symbolic) !important;
 	--icon-forward: var(--gnome-icon-mail-forward-symbolic) !important;
 	--icon-forward-col: var(--gnome-icon-mail-forward-symbolic) !important;
@@ -170,15 +170,15 @@ menuitem[type="radio"][checked="true"] {
 	--icon-new-indicator: var(--gnome-icon-bullet-symbolic) !important;
 	--icon-close: var(--gnome-icon-window-close-symbolic) !important;
 	--icon-check: var(--gnome-icon-select-symbolic) !important;
-	--icon-tentative: var(--gnome-icon-question-symbolic) !important;
+	--icon-tentative: var(--gnome-icon-dialog-question-symbolic) !important;
 	--icon-photo-ban: var(--gnome-icon-stop-sign-large-symbolic) !important;
 	--icon-column-menu: var(--gnome-icon-columns-symbolic) !important;
 	--icon-redirect: var(--gnome-icon-network-transmit-receive-symbolic) !important;
 	--icon-redirect-col: var(--gnome-icon-network-transmit-receive-symbolic) !important;
 	--icon-file: var(--gnome-icon-rich-text-symbolic) !important;
 	--icon-download: var(--gnome-icon-folder-download-symbolic) !important;
-	--icon-lock: var(--gnome-icon-padlock-symbolic) !important;
-	--icon-lock-disabled: var(--gnome-icon-padlock-insecure-symbolic) !important;
+	--icon-lock: var(--gnome-icon-channel-secure-symbolic) !important;
+	--icon-lock-disabled: var(--gnome-icon-channel-insecure-symbolic) !important;
 	--icon-spelling: var(--gnome-icon-tools-check-spelling-symbolic) !important;
 	--icon-new-chat:var(--gnome-icon-chat-bubbles-text-symbolic) !important;
 	
@@ -419,7 +419,7 @@ tr:not([data-properties~="flagged"]) .button-star {
 
 /* Sidebar list headers */
 checkbox.treenode-checkbox > .checkbox-check {
-	background-image:  url("../icons/expander-arrow-symbolic.svg") !important;
+	background-image: var(--gnome-icon-pan-down-symbolic) !important;
 	opacity: .55 !important;
 	transform: rotate(0deg) !important;
 }
@@ -427,7 +427,7 @@ checkbox.treenode-checkbox > .checkbox-check {
 	visibility: collapse;
 }
 #calendarListHeader::after {
-	content:  url("../icons/expander-arrow-symbolic.svg");
+	content: var(--gnome-icon-pan-down-symbolic);
 	opacity: .55 !important;
 	transition: transform 150ms ease;
 }

@@ -310,9 +310,13 @@ tab {
 /* Tab spinner */
 .tab-throbber::before {
 	animation: gnome-spinner 1s linear infinite !important;
-	background-image: url("../icons/process-working-symbolic.svg") !important;
+	background-image: url("../icons/spinner.png") !important;
+	background-size: 16px;
 	width: 16px !important;
 	opacity: 1 !important;
+	@media (prefers-color-scheme: dark) {
+		background-image: url("../icons/spinner-dark.png") !important;
+	}
 }
 @keyframes gnome-spinner {
 	from {
