@@ -271,22 +271,22 @@ treechildren::-moz-tree-image(selected, focus, open),
 
 /* Window buttons */
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon {
-	list-style-image: url("../icons/window-close-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-window-close-symbolic) !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon {
-	list-style-image: url("../icons/window-maximize-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-window-maximize-symbolic) !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
-	list-style-image: url("../icons/window-restore-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-window-restore-symbolic)  !important;
 }
 :root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
-	list-style-image: url("../icons/view-restore-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-view-restore-symbolic) !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
-	list-style-image: url("../icons/window-minimize-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-window-minimize-symbolic) !important;
 }
 :root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
-	list-style-image: url("../icons/view-restore-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-view-restore-symbolic) !important;
 }
 
 /* Menu checkbox */
@@ -294,7 +294,7 @@ menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 menuitem[type="checkbox"][checked="true"] {
-	list-style-image: url("../icons/select-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-select-symbolic) !important;
 }
 menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
 	opacity: 0.5;
@@ -305,7 +305,7 @@ menuitem[type="radio"] {
 	list-style-image: none !important;
 }
 menuitem[type="radio"][checked="true"] {
-	list-style-image: url("../icons/bullet-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-bullet-symbolic) !important;
 }
 menuitem[type="radio"] .menu-iconic-icon {
 	border-radius: 100%;
@@ -318,14 +318,14 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 /* Popovers subview menu arrow */
 .subviewbutton-nav::after,
 menupopup > menu::after {
-	content: url("../icons/go-next-symbolic.svg") !important;
+	content:  var(--gnome-icon-go-next-symbolic) !important;
 	fill-opacity: 1 !important;
 	opacity: .3;
 	height: 16px;
 	width: 16px;
 }
 .subviewbutton-back {
-	list-style-image: url("../icons/go-previous-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-go-previous-symbolic) !important;
 }
 .subviewbutton-back .toolbarbutton-icon {
 	opacity: .3;
@@ -333,27 +333,27 @@ menupopup > menu::after {
 
 /* Dropmarker */
 link[href="chrome://global/skin/dropmarker.css"] + image {
-	 list-style-image: url("../icons/pan-down-symbolic.svg") !important;
+	 list-style-image: var(--gnome-icon-pan-down-symbolic) !important;
 }
 .toolbarbutton-menu-dropmarker {
-	content: url("../icons/pan-down-symbolic.svg") !important;
+	content: var(--gnome-icon-pan-down-symbolic) !important;
 }
 
 /* Tree views */
 treechildren::-moz-tree-twisty,
 .item.client .item-twisty-container {
-	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-pan-end-symbolic) !important;
 	width: 16px !important;
 	height: 16px !important;
 }
 .item.client .item-twisty-container {
-	background-image: url("../icons/pan-end-symbolic.svg") !important;
+	background-image: var(--gnome-icon-pan-end-symbolic) !important;
 }
 treechildren::-moz-tree-twisty(open) {
-	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-pan-down-symbolic) !important;
 }
 .item.client.closed .item-twisty-container {
-	background-image: url("../icons/pan-down-symbolic.svg") !important;
+	background-image: var(--gnome-icon-pan-down-symbolic) !important;
 }
 
 treechildren::-moz-tree-image(title, container),
@@ -366,7 +366,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 }
 
 #folderTree li.children > .container > .twisty {
-	background-image: url("../icons/pan-down-symbolic.svg") !important;
+	background-image: var(--gnome-icon-pan-down-symbolic) !important;
 	transition: transform 150ms ease;
 }
 #folderTree li.children.collapsed > .container .twisty {
@@ -375,12 +375,12 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 
 /* Close button */
 .close-icon {
-	list-style-image: url("../icons/window-close-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-window-close-symbolic) !important;
 }
 
 /* Search entries */
 .textbox-search-sign {
-	list-style-image: url(../icons/edit-find-symbolic.svg) !important;
+	list-style-image: var(--gnome-icon-edit-find-symbolic) !important;
 }
 .textbox-search-sign {
 	margin: 3px 0;
@@ -389,7 +389,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 }
 /* Text clear */
 .textbox-search-clear {
-	list-style-image: url("../icons/edit-clear-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-edit-clear-symbolic) !important;
 }
 
 /* Star message header */
@@ -402,7 +402,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 
 /* Tab icon */
 .tab-close-button {
-	background-image: url("../icons/window-close-symbolic.svg") !important;
+	background-image: var(--gnome-icon-window-close-symbolic) !important;
 }
 
 /* Non starred mail */
@@ -438,13 +438,13 @@ checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 
 /* Calendars list */
 #calendar-list > li[calendar-readonly]::before {
-	content: url("../icons/padlock-symbolic.svg");
+	content: var(--gnome-icon-padlock-symbolic);
 }
 #calendar-list > li[calendar-muted]::after {
-	content: url("../icons/notifications-disabled-symbolic.svg");
+	content: var(--gnome-icon-notifications-disabled-symbolic);
 }
 
 /* Collapse */
 #spacesToolbarReveal {
-	background-image: url("../icons/last-symbolic.svg") !important;
+	background-image: var(--gnome-icon-last-symbolic) !important;
 }
