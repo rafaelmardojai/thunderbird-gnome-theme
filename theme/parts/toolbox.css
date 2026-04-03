@@ -3,9 +3,8 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Toolbox colors */
-#navigator-toolbox {
-	border: 0 !important;
-	background: none !important;
+#titlebar {
+	border-bottom: 1px solid var(--gnome-headerbar-shade-color) !important;
 }
 
 #toolbar-menubar {
@@ -22,13 +21,6 @@ toolbar,
 	appearance: none !important;
 	background: var(--gnome-toolbar-background) !important;
 	border: 0 !important;
-}
-#tabs-toolbar,
-.inline-toolbar,
-.contentTabToolbar,
-toolbar,
-#event-toolbar {
-	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 #status-bar {
 	padding: 2px !important;

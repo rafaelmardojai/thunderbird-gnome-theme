@@ -56,6 +56,7 @@ checkbox.treenode-checkbox > .checkbox-check,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
 .menu-iconic-icon,
+.tab-close-button::before,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
@@ -241,7 +242,6 @@ button.button-menu-list {
 }
 
 /* Fix hardcoded images */
-.tab-close-button,
 #folderTree li .container > .twisty,
 #starMessageButton,
 #spacesToolbarReveal {
@@ -401,8 +401,8 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 }
 
 /* Tab icon */
-.tab-close-button {
-	background-image: var(--gnome-icon-window-close-symbolic) !important;
+.tab-close-button::before {
+	content: var(--gnome-icon-window-close-symbolic) !important;
 }
 
 /* Non starred mail */

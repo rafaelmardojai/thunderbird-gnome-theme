@@ -2,20 +2,14 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#headingWrapper,
-#attachmentBar {
-	background: var(--gnome-toolbar-background) !important;
-	border-bottom: 0px solid var(--gnome-toolbar-border-color) !important;
-	border-top: 0px solid var(--gnome-toolbar-border-color) !important;
-	padding: 7px !important;
+:root {
+	--thread-pane-header-padding: var(--gnome-toolbar-padding) !important;
+	--folder-tree-header-padding: var(--gnome-toolbar-padding) !important;
 }
 
 #folderPaneHeaderBar:not([hidden]) {
 	background: var(--gnome-sidebar-background) !important;
-}
-
-#folderPaneHeaderBar:not([hidden]) {
-	border-bottom: 0px solid var(--gnome-toolbar-border-color) !important;
+	border-bottom: 1px solid var(--gnome-sidebar-shade-color) !important;
 }
 
 #messageHeader {
@@ -26,7 +20,6 @@
 #attachmentView,
 #attachmentList {
 	background: var(--gnome-window-background) !important;
-	border-top: 0px solid var(--gnome-toolbar-border-color) !important;
 }
 
 .list-header-title {
@@ -36,9 +29,6 @@
 /* Sidebar */
 #folderTree > li[data-mode] {
     margin-bottom: 12px !important;
-}
-#folderTree, #folderPaneHeaderBar {
-	padding: 6px !important;
 }
 #folderTree > li:first-child > .mode-container {
 	border: 0 !important;
@@ -73,7 +63,7 @@
 /* Filters */
 .list-header-bar:not([hidden]), #quick-filter-bar {
 	background: var(--gnome-secondary-sidebar-background) !important;
-	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+	border-bottom: 1px solid var(--gnome-sidebar-shade-color) !important;
 }
 #quick-filter-bar-filter-text-bar {
 	padding-top: 12px !important;
@@ -86,19 +76,6 @@
 
 .list-header-bar-container-start, .list-header-bar-container-end {
 	margin-left: 10px;
-}
-
-/* Pane splitter */
-hr[is="pane-splitter"] {
-	--splitter-occupy-size: 0px !important;
-}
-
-#header-splitter {
-  border-top: 0px solid var(--splitter-color) !important;
-}
-
-#folderPaneHeaderBar:not([hidden]) {
-	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
 
 /* List */
@@ -233,6 +210,11 @@ slot[name="placeholders"] {
 /* Mesagge */
 #messagePane {
 	background: var(--gnome-view-background) !important;
+}
+
+#attachmentBar {
+	background: var(--gnome-toolbar-background) !important;
+	padding: var(--gnome-toolbar-padding) !important;
 }
 
 #attachmentView,
