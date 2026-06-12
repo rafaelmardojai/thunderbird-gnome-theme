@@ -215,8 +215,8 @@ tab:not([soundplaying], [muted], [activemedia-blocked], [crashed]) .tab-icon-sta
 
 /* Close tab button */
 .tab-close-button {
-	content: url("../icons/window-close-symbolic.svg") !important;
-	fill: var(--gnome-toolbar-color) !important;
+	content: var(--gnome-icon-window-close-symbolic) !important;
+	fill: var(--gnome-toolbar-icon-fill) !important;
 	fill-opacity: 1 !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	height: 16px !important;
@@ -236,8 +236,9 @@ tab:hover .tab-close-button {
 	opacity: 1 !important;
 }
 
-/* Fix close button position */
-#tabbrowser-tabs[closebuttons="activetab"] .tabmail-tab:not([pinned]) .tab-close-button {
+/* Show close button on inactive tabs too (Thunderbird hides it when
+ * closebuttons="activetab", except the first tab which can't be closed) */
+#tabmail-tabs[closebuttons="activetab"] .tabmail-tab:not([pinned], :first-child) .tab-close-button {
 	display: block !important;
 }
 
