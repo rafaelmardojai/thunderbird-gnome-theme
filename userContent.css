@@ -1,3 +1,8 @@
+@import "theme/metrics.css";
+/* The address book is a content document, so nothing from userChrome.css
+ * reaches it. Only the icon definitions are pulled in here; the rules that
+ * use them stay inside the @-moz-document block, out of reach of web pages. */
+@import "theme/icons/icons.css";
 @import "theme/colors/light.css";
 @import "theme/colors/dark.css";
 
@@ -44,4 +49,57 @@ span#summarySubtitle {
   right: 10px !important;
   height: 1px !important;
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+}
+
+@-moz-document url("about:addressbook") {
+	/* Address book list
+	 *
+	 * The list of address books is its own widget and none of the tree variables
+	 * reach it: 28px rows, inset 3px, rounded at 3px, and a selected row with a
+	 * drawn border. The folder tree next to it is 34px, inset 6px, rounded at 9px
+	 * and marks a selection with a tint alone. */
+	#books > li > .bookRow-container {
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		margin-inline: var(--gnome-toolbar-padding) !important;
+		min-height: var(--gnome-button-size) !important;
+	}
+	#books > li.selected > .bookRow-container {
+		background-color: var(--gnome-active-color) !important;
+	}
+	#books > li:not(.selected):hover > .bookRow-container {
+		background-color: var(--gnome-hover-color) !important;
+	}
+
+	/* Icons
+	 *
+	 * The address book takes every one of its icons from an --icon-* token, and
+	 * none of them are mapped here, so the whole page was drawn from
+	 * Thunderbird's own set. */
+	:root {
+		--icon-address-book: var(--gnome-icon-address-book-symbolic) !important;
+		--icon-new-address-book: var(--gnome-icon-address-book-new-symbolic) !important;
+		--icon-new-contact: var(--gnome-icon-contact-new-symbolic) !important;
+		--icon-user: var(--gnome-icon-avatar-default-symbolic) !important;
+		--icon-user-list: var(--gnome-icon-system-users-symbolic) !important;
+		--icon-new-user-list: var(--gnome-icon-system-users-symbolic) !important;
+		--icon-globe: var(--gnome-icon-web-browser-symbolic) !important;
+		--icon-add: var(--gnome-icon-list-add-symbolic) !important;
+		--icon-add-md: var(--gnome-icon-list-add-symbolic) !important;
+		--icon-import: var(--gnome-icon-folder-download-symbolic) !important;
+		--icon-search: var(--gnome-icon-edit-find-symbolic) !important;
+		--icon-display-options: var(--gnome-icon-list-large-symbolic) !important;
+		--icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
+		--icon-kebab: var(--gnome-icon-view-more-symbolic) !important;
+		--icon-star: var(--gnome-icon-starred-symbolic) !important;
+		--icon-mail: var(--gnome-icon-mail-unread-symbolic) !important;
+		--icon-new-mail: var(--gnome-icon-mail-message-new-symbolic) !important;
+		--icon-print: var(--gnome-icon-printer-symbolic) !important;
+		--icon-trash: var(--gnome-icon-user-trash-symbolic) !important;
+		--icon-pencil: var(--gnome-icon-edit-symbolic) !important;
+		--icon-nav-left: var(--gnome-icon-pan-start-symbolic) !important;
+		--icon-nav-right: var(--gnome-icon-pan-end-symbolic) !important;
+		--icon-nav-down-sm: var(--gnome-icon-pan-down-symbolic) !important;
+		--icon-close: var(--gnome-icon-window-close-symbolic) !important;
+	}
 }

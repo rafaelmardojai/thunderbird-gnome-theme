@@ -1,13 +1,13 @@
-/* GNOME CSD styles for headerbar on Firefox [tabsintitlebar] */
+/* GNOME CSD styles for the headerbar, Thunderbird [customtitlebar] */
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 
 /* Headerbar top border corners rounded */
-:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) unified-toolbar {
+:root[customtitlebar][sizemode="normal"]:not([tiled]) unified-toolbar {
 	border-radius: env(-moz-gtk-csd-titlebar-radius, 8px) env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
 }
-:root[tabsintitlebar][sizemode="normal"][spacestoolbar="true"]:not([gtktiledwindow="true"]) unified-toolbar {
+:root[customtitlebar][sizemode="normal"][spacestoolbar="true"]:not([tiled]) unified-toolbar {
 	border-radius: 0 env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
 }
 
@@ -33,37 +33,37 @@
 }
 
 /* Right window buttons offset by button count */
-:root[tabsintitlebar]:not([inFullscreen]) #unifiedToolbar {
+:root[customtitlebar]:not([sizemode="fullscreen"]) #unifiedToolbar {
 	padding-left: 3px !important;
 	padding-right: var(--gnome-navbar-csd-offset) !important;
 }
 /* Fullscreen headerbar padding for 1 button */
-:root[tabsintitlebar][inFullscreen]:not([inDOMFullscreen]) #unifiedToolbar {
+:root[customtitlebar][sizemode="fullscreen"]:not([inDOMFullscreen]) #unifiedToolbar {
 	padding-right: 43px !important;
 }
 
 /* Left window buttons */
 @media (-moz-gtk-csd-reversed-placement) {
 	/* Window controls offset by button count */
-	:root[tabsintitlebar]:not([inFullscreen]) #unifiedToolbar {
+	:root[customtitlebar]:not([sizemode="fullscreen"]) #unifiedToolbar {
 		padding-left: var(--gnome-navbar-csd-offset) !important;
 		padding-right: 3px !important;
 	}
 	
 	/* Window buttons box */
-	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
+	:root[customtitlebar] #titlebar .titlebar-buttonbox-container {
 		left: 0;
 		right: auto !important;
 	}
 	
 	/* Fullscreen headerbar padding for 1 button */
-	:root[tabsintitlebar][inFullscreen]:not([inDOMFullscreen]) #unifiedToolbar {
+	:root[customtitlebar][sizemode="fullscreen"]:not([inDOMFullscreen]) #unifiedToolbar {
 		padding-left: 50px !important;
 		padding-right: 3px !important
 	}
 	
 	/* Adjust to spaces toolbar */
-	:root[tabsintitlebar][spacestoolbar="true"] {
+	:root[customtitlebar][spacestoolbar="true"] {
 		#titlebar .titlebar-buttonbox-container {
 			left: 46px;
 		}
@@ -87,37 +87,32 @@
 }
 
 /* Remove close and minimize buttons from fullscreen buttons */
-:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container .titlebar-min,
-:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container .titlebar-close {
+:root[customtitlebar][sizemode="fullscreen"] #titlebar .titlebar-buttonbox-container .titlebar-min,
+:root[customtitlebar][sizemode="fullscreen"] #titlebar .titlebar-buttonbox-container .titlebar-close {
 	display: none !important;
 }
 
 /* Force the restore button to appear regardless of maximize button's status */
-:root[tabsintitlebar][inFullscreen]:not([inDOMFullscreen]) #titlebar .titlebar-buttonbox-container {
+:root[customtitlebar][sizemode="fullscreen"]:not([inDOMFullscreen]) #titlebar .titlebar-buttonbox-container {
 	visibility: visible !important;
 }
-:root[tabsintitlebar][inFullscreen]:not([inDOMFullscreen]) #titlebar .titlebar-buttonbox-container .titlebar-restore {
+:root[customtitlebar][sizemode="fullscreen"]:not([inDOMFullscreen]) #titlebar .titlebar-buttonbox-container .titlebar-restore {
 	display: inherit !important;
 }
 
-/* Remove tabsbar titlebar blank spaces */
-:root[tabsintitlebar] #TabsToolbar .titlebar-placeholder {
-	display: none !important;
-}
-
 /* Prevent menubar from breaking */
-:root[tabsintitlebar] #toolbar-menubar:not([inactive=true]) {
+:root[customtitlebar] #toolbar-menubar:not([inactive=true]) {
 	height: 30px !important;
 	margin-bottom: 8px;
 }
 
 /* Remove default style of titlebar */
-:root[tabsintitlebar] #titlebar {
+:root[customtitlebar] #titlebar {
 	appearance: none !important;
 }
 
 /* Window buttons box */
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
+:root[customtitlebar] #titlebar .titlebar-buttonbox-container {
 	appearance: none !important;
 	padding: 5px;
 	position: absolute !important;	
@@ -125,26 +120,29 @@
 	top: 0;
 	display: block !important;
 }
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox {
+:root[customtitlebar] #titlebar .titlebar-buttonbox {
 	appearance: none !important;
 }
 
 /* Window buttons style */
-:root[tabsintitlebar]:not([inFullscreen]) #titlebar .titlebar-button {
+:root[customtitlebar]:not([sizemode="fullscreen"]) #titlebar .titlebar-button {
 	padding: 0 2px !important;
 	background: var(--gnome-button-background) !important;
 	transition: background 0.3s;
 }
 
-:root[tabsintitlebar] #titlebar .titlebar-button {
+:root[customtitlebar] #titlebar .titlebar-button {
 	border-radius: 100% !important;
 	height: 24px !important;
 	width: 24px !important;
 	margin: 6px 6px !important;
 }
 
-:root[tabsintitlebar] #titlebar .titlebar-button > .toolbarbutton-icon {
+:root[customtitlebar] #titlebar .titlebar-button > .toolbarbutton-icon {
 	appearance: none !important;
+	/* The icon carries a tint of its own, which stacked with the one on the
+	 * button and drew a second, darker circle inside the first. */
+	background: none !important;
 	height: 16px !important;
 	padding: 0 !important;
 	stroke: none !important;
@@ -152,24 +150,21 @@
 	-moz-context-properties: fill, fill-opacity !important;
 }
 
-:root[tabsintitlebar] #titlebar .titlebar-button:not([disabled]):hover {
+:root[customtitlebar] #titlebar .titlebar-button:not([disabled]):hover {
 	background: var(--gnome-button-hover-background) !important;
 }
-:root[tabsintitlebar] #titlebar .titlebar-button:hover > .toolbarbutton-icon {
-	background: none !important;
-}
-:root[tabsintitlebar] #titlebar .titlebar-button:not([disabled]):active {
+:root[customtitlebar] #titlebar .titlebar-button:not([disabled]):active {
 	background: var(--gnome-button-active-background) !important;
 }
 
-:root[tabsintitlebar] #titlebar .titlebar-button:-moz-window-inactive {
+:root[customtitlebar] #titlebar .titlebar-button:-moz-window-inactive {
 	filter: opacity(0.5);
 }
 
 /* Fixes */
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
+:root[customtitlebar] #titlebar .titlebar-buttonbox-container {
 	margin: 0 !important;
 }
-:root[tabsintitlebar] #titlebar toolbarbutton > .toolbarbutton-text {
+:root[customtitlebar] #titlebar toolbarbutton > .toolbarbutton-text {
 	display: none !important;
 }

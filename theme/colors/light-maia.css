@@ -11,7 +11,3 @@
 	--gnome-accent: #16A085;
 }
 
-/* Recolor some elements that are blue by default */
-#tabbrowser-tabs {
-	--tab-loading-fill: #16A085! important;
-}

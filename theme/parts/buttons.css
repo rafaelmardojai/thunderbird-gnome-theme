@@ -16,7 +16,6 @@ menulist,
 button.calview-toggle-item,
 button.button-menu-list,
 .notification-button:not(.button-menu-list),
-.notification-close,
 .today-pane-cycler,
 .address-pill,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
@@ -90,11 +89,10 @@ button.button-menu-list,
 .toolbarbutton-1:not([is="toolbarbutton-menu-button"]),
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
-link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"],
+link[href="chrome://global/content/elements/moz-button.css"] + button:has(> [type~="icon"]),
 .dialog-button-box button,
 .close-icon,
 button.calview-toggle-item,
-.notification-close,
 .today-pane-cycler,
 .nav-button,
 .miniday-nav-buttons,
@@ -152,15 +150,6 @@ button.calview-toggle-item,
 	}
 }
 
-/* Buttons with destructive action */
-#editBookmarkPanelRemoveButton,
-#PanelUI-panic-view-button {
-	--gnome-button-background: var(--gnome-button-destructive-background) !important;
-	--gnome-button-hover-background: var(--gnome-button-destructive-hover-background) !important;
-	--gnome-button-active-background: var(--gnome-button-destructive-active-background) !important;
-	color: var(--gnome-destructive) !important;
-}
-
 /* Buttons with margins */
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
 toolbar .toolbarbutton-1,
@@ -169,7 +158,6 @@ toolbar .toolbarbutton-1,
 .miniday-nav-buttons,
 button.button-menu-list,
 .notification-button:not(.button-menu-list),
-.notification-close,
 #calendar-add-task-button,
 #event-filter-menulist,
 #miniday-dropdown-button,
@@ -238,12 +226,6 @@ button.button-menu-list {
 	}
 }
 
-/* Circle buttons */
-#downloadsPanel-mainView .download-state .downloadButton,
-.permission-popup-permission-remove-button:not(#hack) {
-	border-radius: 100% !important;
-}
-
 /* Combined buttons */
 .button-group .button:not(:last-of-type):not(#hack),
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:last-of-type) {
@@ -293,15 +275,36 @@ button.button-menu-list {
 }
 
 /* Compact buttons */
-.thread-card-last-row .button,
+.thread-card-dynamic-row .button,
 #threadTree tr.card-layout .tree-button-more,
 #offline-status,
 #spacesToolbarReveal,
 #calendar-status-todaypane-button {
 	padding-top: 0 !important;
-	padding-bottom: : 0 !important;
+	padding-bottom: 0 !important;
 	height: 22px !important;
 	max-height: 22px !important;
 	min-height: 22px !important;
 	min-width: 22px !important;
+}
+
+/* moz-button inner surface */
+/* Thunderbird 157 moved the look of a moz-button onto an inner
+ * <span class="button-background"> in its shadow tree. That span kept the
+ * platform border and 3px corners and drew them inside the button this theme
+ * already paints, so an icon button showed a grey box within a round one.
+ * The outer button carries the whole appearance; the span only centres.
+ * That span is a block of its own width, so once the button is widened to the
+ * GNOME button size it has to be centred by hand. */
+link[href="chrome://global/content/elements/moz-button.css"] + button > .button-background {
+	background-color: transparent !important;
+	border: 0 !important;
+	border-radius: inherit !important;
+	color: inherit !important;
+	font-weight: inherit !important;
+	margin-inline: auto !important;
+	/* The span carries the icon as a background image and declares its own
+	 * fill, which came out at 16% opacity and left the glyph barely visible.
+	 * Let it follow the fill the button is given. */
+	fill: inherit !important;
 }
