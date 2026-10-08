@@ -1,3 +1,4 @@
+@import "theme/metrics.css";
 @import "theme/colors/light.css";
 @import "theme/colors/dark.css";
 
@@ -44,4 +45,25 @@ span#summarySubtitle {
   right: 10px !important;
   height: 1px !important;
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+}
+
+@-moz-document url("about:addressbook") {
+	/* Address book list
+	 *
+	 * The list of address books is its own widget and none of the tree variables
+	 * reach it: 28px rows, inset 3px, rounded at 3px, and a selected row with a
+	 * drawn border. The folder tree next to it is 34px, inset 6px, rounded at 9px
+	 * and marks a selection with a tint alone. */
+	#books > li > .bookRow-container {
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		margin-inline: var(--gnome-toolbar-padding) !important;
+		min-height: var(--gnome-button-size) !important;
+	}
+	#books > li.selected > .bookRow-container {
+		background-color: var(--gnome-active-color) !important;
+	}
+	#books > li:not(.selected):hover > .bookRow-container {
+		background-color: var(--gnome-hover-color) !important;
+	}
 }
