@@ -1,3 +1,8 @@
+@import "theme/metrics.css";
+/* The address book is a content document, so nothing from userChrome.css
+ * reaches it. Only the icon definitions are pulled in here; the rules that
+ * use them stay inside the @-moz-document block, out of reach of web pages. */
+@import "theme/icons/icons.css";
 @import "theme/colors/light.css";
 @import "theme/colors/dark.css";
 
@@ -44,4 +49,284 @@ span#summarySubtitle {
   right: 10px !important;
   height: 1px !important;
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+}
+
+@-moz-document url("about:addressbook") {
+	/* Address book list
+	 *
+	 * The list of address books is its own widget and none of the tree variables
+	 * reach it: 28px rows, inset 3px, rounded at 3px, and a selected row with a
+	 * drawn border. The folder tree next to it is 34px, inset 6px, rounded at 9px
+	 * and marks a selection with a tint alone. */
+	#books > li > .bookRow-container {
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		margin-inline: var(--gnome-toolbar-padding) !important;
+		min-height: var(--gnome-button-size) !important;
+	}
+	#books > li.selected > .bookRow-container {
+		background-color: var(--gnome-active-color) !important;
+	}
+	#books > li:not(.selected):hover > .bookRow-container {
+		background-color: var(--gnome-hover-color) !important;
+	}
+
+	/* Buttons and cards
+	 *
+	 * theme/parts/buttons.css never reaches this page either, so every button
+	 * kept the platform shape: a 1px border, 3px corners and the system fill.
+	 * The sections of a contact were off-white blocks with 3px corners on a
+	 * white pane, the opposite way round from a GNOME card. */
+	button {
+		background-color: var(--gnome-button-background) !important;
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		box-shadow: none !important;
+		color: var(--gnome-window-color) !important;
+		/* No size is forced here: the books pane header is 240px wide and fits
+		 * its three buttons exactly, so raising them to the theme's 34px cut
+		 * the label of "New Contact" off. The shape is what was wrong. */
+	}
+	button:hover {
+		background-color: var(--gnome-button-hover-background) !important;
+	}
+	button:active {
+		background-color: var(--gnome-button-active-background) !important;
+	}
+	button.button-flat:not(.button-primary) {
+		background-color: transparent !important;
+	}
+	button.button-flat:not(.button-primary):hover {
+		background-color: var(--gnome-hover-color) !important;
+	}
+	button.button-flat:not(.button-primary):active {
+		background-color: var(--gnome-active-color) !important;
+	}
+	button.button-primary,
+	button.button-primary:hover,
+	button.button-primary:active {
+		background-color: var(--gnome-button-suggested-background) !important;
+		color: white !important;
+	}
+	button.button-primary:not([disabled]):hover {
+		filter: brightness(110%);
+	}
+	button.button-primary:not([disabled]):active {
+		filter: brightness(120%);
+	}
+	button[disabled] {
+		opacity: 0.5 !important;
+	}
+
+	/* The search field is a platform entry here: white, a 1px border and 3px
+	 * corners, where the same widget in the chrome is filled and rounded. */
+	input:not([type="checkbox"], [type="radio"]) {
+		/* Without this the native search widget keeps painting its own white
+		 * box and border over everything set below. */
+		appearance: none !important;
+		background: var(--gnome-entry-background) !important;
+		border: 0 !important;
+		border-radius: var(--gnome-entry-radius) !important;
+		box-shadow: none !important;
+		color: var(--gnome-entry-color) !important;
+		outline: 2px solid transparent !important;
+		padding: 6px 9px !important;
+		transition: outline 0.3s, outline-offset 0.3s;
+	}
+	input:not([type="checkbox"], [type="radio"]):focus {
+		outline: 2px solid var(--gnome-entry-focused-border-color) !important;
+		outline-offset: -2px;
+	}
+
+	/* Icon fill
+	 *
+	 * Thunderbird fills these icons at 20% and draws a stroke around them; the
+	 * Adwaita icons have no stroke, so they came out pale. The chrome side
+	 * gives every icon a solid fill, and theme/parts/icons.css does not reach
+	 * this page. */
+	.bookRow-icon,
+	.listRow-icon {
+		fill: currentColor !important;
+		-moz-context-properties: fill, fill-opacity !important;
+	}
+	button {
+		fill: var(--gnome-toolbar-icon-fill) !important;
+		-moz-context-properties: fill, fill-opacity !important;
+	}
+	button.button-primary {
+		fill: white !important;
+	}
+
+	/* Thunderbird sets a field label in uppercase at 600. */
+	.entry-type {
+		font-weight: normal !important;
+		opacity: 0.7 !important;
+		text-transform: none !important;
+	}
+
+	#detailsPane {
+		background-color: var(--gnome-window-background) !important;
+	}
+	#detailsPane section {
+		background-color: var(--gnome-card-background) !important;
+		border-radius: var(--gnome-card-radius) !important;
+		box-shadow: var(--gnome-card-shadow) !important;
+	}
+
+	/* Contact cards
+	 *
+	 * The card list is the same tree-view table as the message list, but this
+	 * is a content document, so none of those rules reach it: the cards kept
+	 * Thunderbird's white fill, a 1px border and 3px corners, packed against
+	 * each other with 2px of air. The declarations mirror the ones the message
+	 * list gets in theme/parts/mail.css. */
+	#cards tr.card-layout {
+		background: transparent !important;
+	}
+	#cards tr.card-layout > td {
+		padding: var(--gnome-toolbar-padding) !important;
+	}
+	#cards tr.card-layout:not(:first-child) > td {
+		padding-top: 0 !important;
+	}
+	#cards tr.card-layout .card-container {
+		background: none !important;
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		box-shadow: none !important;
+		/* Thunderbird only pads the card on the right, so the text sits on the
+		 * edge of the highlight. */
+		padding: var(--gnome-toolbar-padding) calc(var(--gnome-toolbar-padding) * 2) !important;
+	}
+	#cards tr.card-layout:not(.selected):hover .card-container {
+		background: var(--gnome-hover-color) !important;
+	}
+	#cards tr.card-layout.selected .card-container {
+		background: var(--gnome-active-color) !important;
+	}
+
+	/* Icons
+	 *
+	 * The address book takes every one of its icons from an --icon-* token, and
+	 * none of them are mapped here, so the whole page was drawn from
+	 * Thunderbird's own set. */
+	:root {
+		--icon-address-book: var(--gnome-icon-address-book-symbolic) !important;
+		--icon-new-address-book: var(--gnome-icon-address-book-new-symbolic) !important;
+		--icon-new-contact: var(--gnome-icon-contact-new-symbolic) !important;
+		--icon-user: var(--gnome-icon-avatar-default-symbolic) !important;
+		--icon-user-list: var(--gnome-icon-system-users-symbolic) !important;
+		--icon-new-user-list: var(--gnome-icon-system-users-symbolic) !important;
+		--icon-globe: var(--gnome-icon-web-browser-symbolic) !important;
+		--icon-add: var(--gnome-icon-list-add-symbolic) !important;
+		--icon-add-md: var(--gnome-icon-list-add-symbolic) !important;
+		--icon-import: var(--gnome-icon-folder-download-symbolic) !important;
+		--icon-search: var(--gnome-icon-edit-find-symbolic) !important;
+		--icon-display-options: var(--gnome-icon-list-large-symbolic) !important;
+		--icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
+		--icon-kebab: var(--gnome-icon-view-more-symbolic) !important;
+		--icon-star: var(--gnome-icon-starred-symbolic) !important;
+		--icon-mail: var(--gnome-icon-mail-unread-symbolic) !important;
+		--icon-new-mail: var(--gnome-icon-mail-message-new-symbolic) !important;
+		--icon-print: var(--gnome-icon-printer-symbolic) !important;
+		--icon-trash: var(--gnome-icon-user-trash-symbolic) !important;
+		--icon-pencil: var(--gnome-icon-edit-symbolic) !important;
+		--icon-nav-left: var(--gnome-icon-pan-start-symbolic) !important;
+		--icon-nav-right: var(--gnome-icon-pan-end-symbolic) !important;
+		--icon-nav-down-sm: var(--gnome-icon-pan-down-symbolic) !important;
+		--icon-close: var(--gnome-icon-window-close-symbolic) !important;
+	}
+}
+
+@-moz-document url("about:preferences") {
+	/* Another content document, so nothing from theme/parts reaches it:
+	 * buttons, entries and menulists keep the platform shape and the
+	 * checkboxes and radios are drawn as native widgets. */
+	button,
+	menulist {
+		appearance: none !important;
+		background-color: var(--gnome-button-background) !important;
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		box-shadow: none !important;
+		color: var(--gnome-window-color) !important;
+		min-height: var(--gnome-button-size) !important;
+	}
+	button:hover,
+	menulist:hover {
+		background-color: var(--gnome-button-hover-background) !important;
+	}
+	button:active,
+	menulist[open] {
+		background-color: var(--gnome-button-active-background) !important;
+	}
+	button[disabled],
+	menulist[disabled] {
+		opacity: 0.5 !important;
+	}
+
+	input:not([type="checkbox"], [type="radio"]) {
+		appearance: none !important;
+		background: var(--gnome-entry-background) !important;
+		border: 0 !important;
+		border-radius: var(--gnome-entry-radius) !important;
+		box-shadow: none !important;
+		color: var(--gnome-entry-color) !important;
+		min-height: var(--gnome-entry-height) !important;
+		padding: 6px 9px !important;
+	}
+
+	/* The chrome rules reach for ../icons/*.svg; the set is already here. */
+	checkbox > .checkbox-check,
+	radio > .radio-check {
+		appearance: none !important;
+		border: 0 !important;
+		height: 20px !important;
+		width: 20px !important;
+	}
+	checkbox > .checkbox-check {
+		border-radius: 6px !important;
+	}
+	radio > .radio-check {
+		border-radius: 50% !important;
+	}
+	checkbox > .checkbox-check:not([checked]),
+	radio > .radio-check:not([selected]) {
+		background-color: transparent !important;
+		box-shadow: inset 0 0 0 2px var(--gnome-trough-background);
+	}
+	checkbox > .checkbox-check:not([checked]):hover,
+	radio > .radio-check:not([selected]):hover {
+		box-shadow: inset 0 0 0 2px var(--gnome-trough-hover-background);
+	}
+	checkbox > .checkbox-check[checked],
+	radio > .radio-check[selected] {
+		background-color: var(--gnome-accent-bg) !important;
+		background-position: center;
+		background-repeat: no-repeat;
+		fill: white !important;
+		-moz-context-properties: fill;
+	}
+	checkbox > .checkbox-check[checked] {
+		background-image: var(--gnome-icon-select-symbolic) !important;
+		background-size: 14px !important;
+	}
+	radio > .radio-check[selected] {
+		background-image: var(--gnome-icon-bullet-symbolic) !important;
+		background-size: 14px !important;
+	}
+
+	/* Category list: rows like the folder tree */
+	#categories > richlistitem {
+		border: 0 !important;
+		border-radius: var(--gnome-button-radius) !important;
+		margin-inline: var(--gnome-toolbar-padding) !important;
+	}
+	#categories > richlistitem[selected] {
+		background-color: var(--gnome-active-color) !important;
+		color: inherit !important;
+	}
+	#categories > richlistitem:not([selected]):hover {
+		background-color: var(--gnome-hover-color) !important;
+	}
 }

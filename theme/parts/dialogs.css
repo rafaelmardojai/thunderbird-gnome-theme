@@ -6,15 +6,8 @@ window {
 	padding: 0 !important;
 }
 
-#window-modal-dialog {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-
 /* Browser dialog prompts center */
-.dialogOverlay[topmost="true"]:not(.dialogOverlay-window-modal-dialog-subdialog), #window-modal-dialog::backdrop {
+.dialogOverlay[topmost="true"] {
 	background-color: rgba(0, 0, 0, .5) !important;
 }
 
@@ -42,10 +35,6 @@ dialog#handling {
 }
 
 /* Content */
-.dialog-content-box {
-	padding: 24px;
-	padding-bottom: 0;
-}
 #dialogGrid {
 	padding: 24px !important;
 }

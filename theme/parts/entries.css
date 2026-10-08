@@ -9,11 +9,11 @@ input:not([type="checkbox"], [inputmode="search"], .input-pill),
 	background: var(--gnome-entry-background) !important;
 	outline: 2px solid transparent !important;
 	border: 0 !important;
-	border-radius: 8px !important;
+	border-radius: var(--gnome-entry-radius) !important;
 	box-shadow: none !important;
 	color: var(--gnome-entry-color) !important;
-	height: 34px !important;
-	max-height: 34px !important;
+	height: var(--gnome-entry-height) !important;
+	max-height: var(--gnome-entry-height) !important;
 	margin: 0 !important;
 	padding: 6px 9px !important;
 	box-sizing: border-box;
@@ -27,7 +27,7 @@ input:not([type="checkbox"], [inputmode="search"], .input-pill),
 input:not([type="checkbox"], [inputmode="search"], .input-pill, link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input):focus,
 .themeableSearchBox:focus,
 .address-pill.editing:not(#hack) {
-	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+	outline: 2px solid var(--gnome-entry-focused-border-color) !important;
 	outline-offset: -2px;
 }
 
@@ -56,37 +56,16 @@ toolbar input:not([type="checkbox"], [inputmode="search"]),
 }
 
 /* Entry button */
-.identity-box-button,
-#tracking-protection-icon-container,
-#notification-popup-box,
-.urlbar-page-action,
-.urlbar-icon {
+#notification-popup-box {
 	fill-opacity: 0.8 !important;
 	transition: fill 0.3s, fill-opacity 0.3, opacity 0.3;
 }
 
-.identity-box-button:hover:not([open="true"]),
-#tracking-protection-icon-container:hover:not([open="true"]),
 #notification-popup-box:hover:not([open="true"]),
-.urlbar-page-action:hover:not([open="true"]),
-.urlbar-page-action:hover:not([open="true"]) .urlbar-icon,
-.urlbar-icon:not([disabled]):hover {
-    background: none !important;
-	fill-opacity: 1 !important;	
-}
-
-.identity-box-button:hover:active,
-.identity-box-button[open=true],
-#tracking-protection-icon-container:hover:active,
-#tracking-protection-icon-container[open=true],
 #notification-popup-box:hover:active,
-#notification-popup-box[open=true],
-.urlbar-page-action:hover:active,
-.urlbar-page-action[open=true],
-.urlbar-page-action:hover:active .urlbar-icon,
-.urlbar-page-action[open=true] .urlbar-icon {
+#notification-popup-box[open=true] {
 	background: none !important;
-	fill-opacity: 1 !important;	
+	fill-opacity: 1 !important;
 }
 
 /* Entries fixes */
@@ -112,13 +91,13 @@ link[href="chrome://messenger/skin/shared/search-bar.css"] + form > input {
 }
 
 link[href="chrome://messenger/skin/shared/search-bar.css"] + form {
-	height: 34px !important;
-	max-height: 34px !important;
+	height: var(--gnome-entry-height) !important;
+	max-height: var(--gnome-entry-height) !important;
 }
 
 link[href="chrome://messenger/skin/shared/search-bar.css"] + form:focus-within {
-	border-radius: 8px !important;
-	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+	border-radius: var(--gnome-entry-radius) !important;
+	outline: 2px solid var(--gnome-entry-focused-border-color) !important;
 	outline-offset: -2px !important;
 }
 

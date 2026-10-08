@@ -4,7 +4,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Checkbox */
-checkbox:not(.treenode-checkbox) > .checkbox-check {
+checkbox > .checkbox-check {
 	appearance: none !important;
 	border: 0 !important;
 	border-radius: 6px !important;
@@ -12,16 +12,16 @@ checkbox:not(.treenode-checkbox) > .checkbox-check {
 	height: 20px !important;
 	width: 20px !important;
 }
-checkbox:not(.treenode-checkbox) > .checkbox-check:not([checked]) {
+checkbox > .checkbox-check:not([checked]) {
 	background-color: transparent !important;
 	box-shadow: inset 0 0 0 2px var(--gnome-trough-background);
 }
-checkbox:not(.treenode-checkbox) > .checkbox-check:not([checked]):hover {
+checkbox > .checkbox-check:not([checked]):hover {
 	box-shadow: inset 0 0 0 2px var(--gnome-trough-hover-background);
 }
-checkbox:not(.treenode-checkbox) > .checkbox-check[checked] {
+checkbox > .checkbox-check[checked] {
 	background-color: var(--gnome-accent-bg) !important;
-	background-image: url("../icons/select-symbolic.svg") !important;
+	background-image: var(--gnome-icon-select-symbolic) !important;
 	background-size: 14px !important;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -48,7 +48,7 @@ radio > .radio-check:not([selected]):hover {
 }
 radio > .radio-check[selected] {
 	background-color: var(--gnome-accent-bg) !important;
-	list-style-image: url("../icons/bullet-symbolic.svg") !important;
+	list-style-image: var(--gnome-icon-bullet-symbolic) !important;
 	fill: white !important;
 	-moz-context-properties: fill;
 }
@@ -120,4 +120,60 @@ button.calview-toggle-item:not([disabled="true"]):is(:active, [aria-selected="tr
 	button.calview-toggle-item:not([disabled="true"]):is(:active, [aria-selected="true"]):not(#hack) {
 		background: var(--gnome-selected-active-color) !important;
 	}
+}
+/* Trees */
+/* Nothing here was themed, so the calendar's event list and the task list came
+ * straight from the platform. The header was a filled bar with a
+ * ThreeDLightShadow line before every column and another under the row; a
+ * GNOME column header has no line between the columns, only the one that
+ * parts it from the list. */
+treecol,
+treecolpicker,
+.tree-columnpicker-button {
+	background-color: transparent !important;
+	border-inline-start: 0 !important;
+	box-shadow: inset 0 -1px var(--gnome-headerbar-shade-color) !important;
+	color: var(--gnome-window-color) !important;
+
+	&:where(:hover) {
+		background-color: var(--gnome-hover-color) !important;
+		color: var(--gnome-window-color) !important;
+	}
+	&:where(:hover:active) {
+		background-color: var(--gnome-active-color) !important;
+	}
+}
+.treecol-text {
+	opacity: 0.7 !important;
+}
+
+tree {
+	background-color: var(--gnome-view-background) !important;
+	color: var(--gnome-view-color) !important;
+}
+/* No height here: a tree measures its own row and sizes the box from it, so
+ * forcing one makes the pane above the calendar view jump by the difference. */
+treechildren::-moz-tree-row {
+	border-radius: var(--gnome-button-radius) !important;
+}
+treechildren::-moz-tree-row(hover) {
+	background-color: var(--gnome-hover-color) !important;
+}
+treechildren::-moz-tree-row(selected) {
+	background-color: var(--gnome-active-color) !important;
+}
+treechildren::-moz-tree-cell-text(selected) {
+	color: inherit !important;
+}
+
+/* The sort indicator and the column picker are addressed by URL, not through
+ * the icon tokens, so they kept the platform glyphs. */
+.treecol-sortdirection {
+	list-style-image: var(--gnome-icon-view-sort-ascending-symbolic) !important;
+}
+treecol[sortDirection="descending"] > .treecol-sortdirection {
+	list-style-image: var(--gnome-icon-view-sort-descending-symbolic) !important;
+}
+.tree-columnpicker-button {
+	list-style-image: var(--gnome-icon-columns-symbolic) !important;
 }
