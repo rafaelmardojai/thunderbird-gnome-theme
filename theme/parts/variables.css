@@ -2,51 +2,56 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-:root {
-	--gnome-toolbar-padding: 6px;
-	--gnome-toolbar-spacing: 6px;
-	--gnome-button-radius: 9px;
-	--gnome-button-size: 34px;
-	--gnome-entry-radius: var(--gnome-button-radius);
-	--gnome-entry-height: var(--gnome-button-size);
-	--gnome-card-radius: 12px;
-	--gnome-menu-radius: 9px;
-	--gnome-menu-padding: 6px;
-	--gnome-menu-item-padding: 12px;
-	--gnome-popover-radius: calc(var(--gnome-menu-radius) + 6px);
-	--gnome-dialog-radius: 18px; /* Alert dialog */
-	--gnome-dialog-padding: 24px;
-
-	/* Animations */
-	--gnome-animation-time: 300ms;
-	--gnome-tab-animation-time: 200ms;
-
-	@media (prefers-reduced-motion) {
-		--gnome-animation-time: 0ms;
-		--gnome-tab-animation-time: 0ms;
-	}
-}
-
 /* Overwrite Thunderbird's variables */
 :root {
-	--selected-item-color: var(--gnome-active-color) !important;
-	--selected-item-text-color: var(--gnome-window-color) !important;
+	/* Thunderbird treats this as the accent: it feeds
+	 * --button-primary-background-color and from there --color-accent-primary,
+	 * and the calendar reads it in 188 places for events, the today pane and
+	 * accent-color. Pointed at a neutral tint, all of that came out grey.
+	 * Selected rows have their own variables further down. */
+	--selected-item-color: var(--gnome-accent-bg) !important;
+	--selected-item-text-color: #ffffff !important;
 	
 	--new-folder-color: var(--gnome-accent) !important;
+
+	/* The folder icons are GNOME symbols already, but Thunderbird tints them
+	 * per folder type: blue inbox, yellow folder, teal outbox, purple drafts.
+	 * Adwaita draws symbolic icons in the text colour and keeps colour for
+	 * status, so only the two that carry a warning stay coloured. */
+	--folder-color-inbox: currentColor !important;
+	--folder-color-draft: currentColor !important;
+	--folder-color-sent: currentColor !important;
+	--folder-color-archive: currentColor !important;
+	--folder-color-trash: currentColor !important;
+	--folder-color-template: currentColor !important;
+	--folder-color-newsletter: currentColor !important;
+	--folder-color-rss: currentColor !important;
+	--folder-color-outbox: currentColor !important;
+	--folder-color-folder: currentColor !important;
+	--folder-color-folder-filter: currentColor !important;
+	--folder-color-folder-rss: currentColor !important;
+	--folder-color-spam: var(--gnome-error) !important;
+	--folder-color-warning: var(--gnome-error) !important;
 	--button-margin: 0 calc(var(--gnome-toolbar-spacing) / 2) !important;
 
 	--spaces-padding: var(--gnome-toolbar-padding) !important;
 	--spaces-container-gap: var(--gnome-toolbar-spacing) !important;
 	--spaces-bg-color: var(--gnome-window-background) !important;
-	--spaces-border-color: var(--gnome-sidebar-border-color) !important;
+	/* Thunderbird fills the current space with --selected-item-color and puts
+	 * white on it, which this theme points at the accent; the icon stayed
+	 * dark on top of it. A selection is a neutral tint everywhere else. */
+	--spaces-button-active-bg-color: var(--gnome-active-color) !important;
+	--spaces-button-active-text-color: var(--gnome-window-color) !important;
 	--spaces-total-width: calc(2 * var(--spaces-padding) + var(--gnome-button-size) + var(--messenger-body-border)) !important;
 	
 	--sidebar-header-spacing: var(--gnome-toolbar-padding) !important;
 	--sidebar-background-color: var(--gnome-sidebar-background) !important;
-	--sidebar-border-color: color-mix(in srgb, var(--gnome-window-color) 15%, transparent) !important;
-	--splitter-color: var(--gnome-sidebar-border-color) !important;
+	--sidebar-border-color: var(--gnome-headerbar-shade-color) !important;
 
-	--viewBorderColor: color-mix(in srgb, currentColor 8%, transparent) !important;
+	/* currentColor made the grid lines change strength with every element's
+	 * text colour, so the heading row was drawn darker than the grid under
+	 * it. The window has one divider colour. */
+	--viewBorderColor: var(--gnome-headerbar-shade-color) !important;
 	--viewBackground: var(--gnome-view-background) !important;
 	--viewTodayBackground:  color-mix(in srgb, currentColor 8%, transparent) !important;
 	--viewTodayLabelBackground: var(--gnome-accent-bg) !important;
@@ -56,18 +61,54 @@
 
 	--tree-view-bg: var(--gnome-view-background) !important;
 	--tree-view-color: var(--gnome-view-color) !important;
-	--treeitem-border-radius: var(--gnome-button-radius) !important;
 	--treeitem-background-hover: var(--gnome-hover-color)  !important;
 	--treeitem-background-selected: var(--gnome-active-color) !important;
 	--treeitem-background-active: var(--gnome-active-color) !important;
+
+	/* Thunderbird mixes the selection of trees and cards from
+	 * --selected-item-color, which is the accent. The theme marks a selection
+	 * with a neutral tint everywhere else, so these follow suit; the accent
+	 * stays on buttons, the calendar and the focus ring. */
+	--tree-card-background-current: var(--gnome-hover-color) !important;
+	--tree-card-background-selected: var(--gnome-active-color) !important;
+	--tree-card-background-selected-current: var(--gnome-active-color) !important;
+	--tree-card-background-current-unfocused: var(--gnome-hover-color) !important;
+	--tree-card-background-selected-unfocused: var(--gnome-active-color) !important;
+	--tree-card-background-selected-current-unfocused: var(--gnome-active-color) !important;
+	--tree-card-border-hover: transparent !important;
+	--tree-card-border-selected: transparent !important;
+	--tree-card-border-focus: var(--gnome-focus-border-color) !important;
+
+	/* Same for the rows of the folder tree, which Thunderbird mixes from
+	 * --selected-item-color through the --list-container-* family. */
+	--list-container-background-hover: var(--gnome-hover-color) !important;
+	--list-container-background-selected: var(--gnome-selected-color) !important;
+	--list-container-background-selected-current: var(--gnome-active-color) !important;
+	--list-container-background-selected-focused: var(--gnome-selected-color) !important;
+	--list-container-background-selected-current-focused: var(--gnome-active-color) !important;
+	--list-container-border: transparent !important;
+	--list-container-border-hover: transparent !important;
+	--list-container-border-selected: transparent !important;
+	--list-container-border-selected-current: transparent !important;
+	--list-container-border-selected-focused: transparent !important;
+	--list-container-border-selected-current-focused: transparent !important;
 
 	--listbox-hover: var(--gnome-hover-color) !important;
 	--listbox-selected-bg: var(--gnome-selected-color) !important;
 	--listbox-focused-selected-bg: var(--gnome-selected-color) !important;
 	--listbox-selected-color: var(--gnome-view-color) !important;
 	--listbox-border-radius: var(--gnome-button-radius) !important;
-	--list-container-background-hover: var(--gnome-hover-color)  !important;
-	--list-container-background-selected-current: var(--gnome-active-color) !important;
+
+}
+
+/* Thunderbird gives a tree or listbox row 26px. GNOME lists are roomier; a row
+ * there is as tall as a button. The compact and touch densities keep
+ * Thunderbird's own values.
+ *
+ * Only the folder tree: the message list measures its own rows to decide what
+ * to render, and a height it did not calculate leaves the cards empty. */
+:root:not([uidensity="compact"], [uidensity="touch"]) #folderTree {
+	--list-item-min-height: var(--gnome-button-size) !important;
 }
 
 :root .cui-widget-panel {

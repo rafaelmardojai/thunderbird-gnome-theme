@@ -19,7 +19,6 @@ button.email-action-flagged#starMessageButton,
 .calendar-displayed,
 .miniday-nav-buttons,
 .today-pane-cycler,
-.notification-close,
 .subviewbutton-back .toolbarbutton-icon,
 .subviewbutton-iconic[type="checkbox"] > .toolbarbutton-icon,
 button.button-menu-list,
@@ -34,12 +33,11 @@ button.button-menu-list,
 .tree-columnpicker-button,
 .attachmentcol-column img, .attachment-icon,
 tr[data-properties~="tagged"] .tag-icon,
-[is="tree-view-table"] img:not(#threadColButton img, .tree-button-thread img),
+[is="tree-view-table"] img:not(.tree-button-thread img),
 tr[data-properties~="outgoing"] .correspondentcol-column:not(#hack),
 link[href="chrome://global/skin/dropmarker.css"] + image,
 .search-button-icon,
 .button-star,
-.textbox-search-sign,
 .textbox-search-clear,
 .subviewbutton-back,
 .PanelUI-subView .subviewbutton-nav::after,
@@ -51,16 +49,15 @@ link[href="chrome://global/skin/dropmarker.css"] + image,
 #calendarListHeader::after,
 #calendar-list > li[calendar-readonly]::before,
 #calendar-list > li[calendar-readonly]::after,
-checkbox.treenode-checkbox > .checkbox-check,
 #attachmentToggle,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
-.menu-iconic-icon,
+.menu-icon,
 .tab-close-button::before,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon,
 menuitem[type="checkbox"],
 menuitem[type="checkbox"][checked="true"],
 menuitem[type="radio"],
@@ -74,18 +71,16 @@ menuitem[type="radio"][checked="true"] {
 .button:-moz-window-inactive,
 .search-button-icon:-moz-window-inactive,
 .button-star:-moz-window-inactive,
-.textbox-search-sign:-moz-window-inactive,
 .textbox-search-clear:-moz-window-inactive,
 .toolbarbutton-icon:-moz-window-inactive,
 .search-button-icon:-moz-window-inactive,
 .today-pane-cycler:-moz-window-inactive,
 #offline-status:-moz-window-inactive,
 #starMessageButton img,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close:-moz-window-inactive .toolbarbutton-icon,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon:-moz-window-inactive,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon:-moz-window-inactive,
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon:-moz-window-inactive,
-:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-close:-moz-window-inactive .toolbarbutton-icon,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon:-moz-window-inactive,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon:-moz-window-inactive,
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon:-moz-window-inactive {
 	fill-opacity: 0.8 !important;
 }
 
@@ -167,7 +162,6 @@ menuitem[type="radio"][checked="true"] {
 	--icon-online: var(--gnome-icon-network-transmit-receive-symbolic) !important;
 	--icon-offline: var(--gnome-icon-network-offline-symbolic) !important;
 	--icon-settings: var(--gnome-icon-settings-symbolic) !important;
-	--icon-unread-dot: var(--gnome-icon-bullet-symbolic) !important;
 	--icon-new-indicator: var(--gnome-icon-bullet-symbolic) !important;
 	--icon-close: var(--gnome-icon-window-close-symbolic) !important;
 	--icon-check: var(--gnome-icon-select-symbolic) !important;
@@ -217,8 +211,6 @@ tr[data-properties~="junk"] .tree-button-spam > img:not(#hack) {
 }
 
 /* Dimmed icons */
-.searchbar-search-icon,
-.textbox-search-sign,
 .textbox-search-clear {
 	opacity: 0.7 !important;
 }
@@ -227,12 +219,11 @@ tr[data-properties~="junk"] .tree-button-spam > img:not(#hack) {
 }
 
 /* Fix icons sizes */
-.menu-iconic-icon,
+.menu-icon,
 link[href="chrome://global/skin/dropmarker.css"] + image,
 #calendarListHeader::after,
 #calendar-list > li[calendar-readonly]::after,
 #calendar-list > li[calendar-readonly]::before,
-checkbox.treenode-checkbox > .checkbox-check,
 .twisty > .twisty-icon {
 	height: 16px !important;
 	width: 16px !important;
@@ -262,31 +253,25 @@ button.button-menu-list {
 treechildren::-moz-tree-twisty(selected, focus),
 treechildren::-moz-tree-twisty(selected, focus, open),
 treechildren::-moz-tree-image(selected, focus),
-treechildren::-moz-tree-image(selected, focus, open),
-.item.client:focus .item-twisty-container,
-.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty,
-.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
+treechildren::-moz-tree-image(selected, focus, open) {
 	fill: #fff !important;
 }
 
 /* Window buttons */
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon {
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon {
 	list-style-image: var(--gnome-icon-window-close-symbolic) !important;
 }
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon {
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon {
 	list-style-image: var(--gnome-icon-window-maximize-symbolic) !important;
 }
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
 	list-style-image: var(--gnome-icon-window-restore-symbolic)  !important;
 }
-:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
+:root[customtitlebar][sizemode="fullscreen"] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
 	list-style-image: var(--gnome-icon-view-restore-symbolic) !important;
 }
-:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
+:root[customtitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
 	list-style-image: var(--gnome-icon-window-minimize-symbolic) !important;
-}
-:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
-	list-style-image: var(--gnome-icon-view-restore-symbolic) !important;
 }
 
 /* Menu checkbox */
@@ -296,7 +281,7 @@ menuitem[type="checkbox"] {
 menuitem[type="checkbox"][checked="true"] {
 	list-style-image: var(--gnome-icon-select-symbolic) !important;
 }
-menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
+menuitem[type="checkbox"][disabled="true"] .menu-icon {
 	opacity: 0.5;
 }
 
@@ -307,11 +292,11 @@ menuitem[type="radio"] {
 menuitem[type="radio"][checked="true"] {
 	list-style-image: var(--gnome-icon-bullet-symbolic) !important;
 }
-menuitem[type="radio"] .menu-iconic-icon {
+menuitem[type="radio"] .menu-icon {
 	border-radius: 100%;
 	border: 1px solid var(--gnome-toolbar-icon-fill);
 }
-menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
+menuitem[type="radio"][disabled="true"] .menu-icon {
 	opacity: 0.5;
 }
 
@@ -340,20 +325,13 @@ link[href="chrome://global/skin/dropmarker.css"] + image {
 }
 
 /* Tree views */
-treechildren::-moz-tree-twisty,
-.item.client .item-twisty-container {
+treechildren::-moz-tree-twisty {
 	list-style-image: var(--gnome-icon-pan-end-symbolic) !important;
 	width: 16px !important;
 	height: 16px !important;
 }
-.item.client .item-twisty-container {
-	background-image: var(--gnome-icon-pan-end-symbolic) !important;
-}
 treechildren::-moz-tree-twisty(open) {
 	list-style-image: var(--gnome-icon-pan-down-symbolic) !important;
-}
-.item.client.closed .item-twisty-container {
-	background-image: var(--gnome-icon-pan-down-symbolic) !important;
 }
 
 treechildren::-moz-tree-image(title, container),
@@ -379,14 +357,6 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 }
 
 /* Search entries */
-.textbox-search-sign {
-	list-style-image: var(--gnome-icon-edit-find-symbolic) !important;
-}
-.textbox-search-sign {
-	margin: 3px 0;
-	max-height: 16px !important;
-	width: 16px !important;
-}
 /* Text clear */
 .textbox-search-clear {
 	list-style-image: var(--gnome-icon-edit-clear-symbolic) !important;
@@ -409,7 +379,6 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 tr:not([data-properties~="flagged"]) .tree-view-row-flag > .tree-button-flag > img,
 tr:not([data-properties~="flagged"]) .button-star {
 	--icon-star: var(--gnome-icon-non-starred-symbolic) !important;
-	--icon-sta-sm: var(--gnome-icon-non-starred-symbolic) !important;
 }
 
 /* Cancel icon */
@@ -418,11 +387,6 @@ tr:not([data-properties~="flagged"]) .button-star {
 }
 
 /* Sidebar list headers */
-checkbox.treenode-checkbox > .checkbox-check {
-	background-image: var(--gnome-icon-pan-down-symbolic) !important;
-	opacity: .55 !important;
-	transform: rotate(0deg) !important;
-}
 #calendarListHeader > img {
 	visibility: collapse;
 }
@@ -431,8 +395,7 @@ checkbox.treenode-checkbox > .checkbox-check {
 	opacity: .55 !important;
 	transition: transform 150ms ease;
 }
-#calendarListHeader[checked="true"]::after,
-checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
+#calendarListHeader[checked="true"]::after {
 	transform: rotate(-180deg) !important;
 }
 

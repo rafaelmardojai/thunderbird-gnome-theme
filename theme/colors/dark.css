@@ -21,8 +21,8 @@
 		--gnome-view-background: #1e1e1e;
 		--gnome-sidebar-background: #2e2e32;
 		--gnome-secondary-sidebar-background: #28282c;
-		--gnome-sidebar-border-color: rgba(0, 0, 6, 0.36);
-		--gnome-sidebar-shade-color: rgba(0, 0, 6, 0.25);
+		--gnome-sidebar-border-color: color-mix(in srgb, rgb(0, 0, 6) 36%, var(--gnome-headerbar-background));
+		--gnome-sidebar-shade-color: var(--gnome-headerbar-shade-color);
 
 		/* Card */
 		--gnome-card-background: rgba(255, 255, 255, 0.08);
@@ -33,7 +33,7 @@
 
 		/* Header bar */
 		--gnome-headerbar-background: #2e2e32;
-		--gnome-headerbar-shade-color: rgba(0, 0, 0, 0.9);
+		--gnome-headerbar-shade-color: rgba(0, 0, 6, 0.36);
 
 		/* Toolbars */
 		--gnome-toolbar-icon-fill: #ffffff;

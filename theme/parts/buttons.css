@@ -16,7 +16,6 @@ menulist,
 button.calview-toggle-item,
 button.button-menu-list,
 .notification-button:not(.button-menu-list),
-.notification-close,
 .today-pane-cycler,
 .address-pill,
 #unifiedToolbar toolbarbutton:not(.subviewbutton),
@@ -94,7 +93,6 @@ link[href="chrome://global/content/elements/moz-button.css"] + button[type~="ico
 .dialog-button-box button,
 .close-icon,
 button.calview-toggle-item,
-.notification-close,
 .today-pane-cycler,
 .nav-button,
 .miniday-nav-buttons,
@@ -152,15 +150,6 @@ button.calview-toggle-item,
 	}
 }
 
-/* Buttons with destructive action */
-#editBookmarkPanelRemoveButton,
-#PanelUI-panic-view-button {
-	--gnome-button-background: var(--gnome-button-destructive-background) !important;
-	--gnome-button-hover-background: var(--gnome-button-destructive-hover-background) !important;
-	--gnome-button-active-background: var(--gnome-button-destructive-active-background) !important;
-	color: var(--gnome-destructive) !important;
-}
-
 /* Buttons with margins */
 .message-header-view-button:not([is="toolbarbutton-menu-button"]),
 toolbar .toolbarbutton-1,
@@ -169,7 +158,6 @@ toolbar .toolbarbutton-1,
 .miniday-nav-buttons,
 button.button-menu-list,
 .notification-button:not(.button-menu-list),
-.notification-close,
 #calendar-add-task-button,
 #event-filter-menulist,
 #miniday-dropdown-button,
@@ -238,12 +226,6 @@ button.button-menu-list {
 	}
 }
 
-/* Circle buttons */
-#downloadsPanel-mainView .download-state .downloadButton,
-.permission-popup-permission-remove-button:not(#hack) {
-	border-radius: 100% !important;
-}
-
 /* Combined buttons */
 .button-group .button:not(:last-of-type):not(#hack),
 #appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not(:last-of-type) {
@@ -293,7 +275,7 @@ button.button-menu-list {
 }
 
 /* Compact buttons */
-.thread-card-last-row .button,
+.thread-card-dynamic-row .button,
 #threadTree tr.card-layout .tree-button-more,
 #offline-status,
 #spacesToolbarReveal,
