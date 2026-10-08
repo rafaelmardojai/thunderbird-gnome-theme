@@ -2,16 +2,19 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
+/* Thunderbird renamed the panel tokens: --panel-background became
+ * --panel-background-color, --panel-color became --panel-text-color, and the
+ * shadow pair moved to --panel-box-shadow. The old names are no longer read
+ * anywhere, so the surface fell back to Thunderbird's own. */
 menupopup, panel, slot[part="content"] {
 	--panel-padding: 0 !important;
-	--panel-color: var(--gnome-menu-color) !important;
-	--panel-background: var(--gnome-menu-background) !important;
+	--panel-text-color: var(--gnome-menu-color) !important;
+	--panel-background-color: var(--gnome-menu-background) !important;
 	--panel-border-radius: 12px !important;
 	--panel-border-color: var(--gnome-menu-border-color) !important;
-	--panel-shadow: var(--gnome-menu-shadow) !important;
-	--panel-shadow-margin: 6px !important;
-	--arrowpanel-background: var(--gnome-menu-background) !important;
-	--arrowpanel-border-radius: 12px !important;
+	--panel-box-shadow: var(--gnome-menu-shadow) !important;
+	--panel-box-shadow-margin: 6px !important;
+	--panel-separator-color: var(--gnome-menu-separator-color) !important;
 }
 
 /* Style menus */
@@ -39,8 +42,8 @@ menulist {
 	margin: 0 !important;
 }
 
-menuitem:is([type="checkbox"], [checked="true"]) .menu-iconic-icon,
-menuitem[type="radio"] .menu-iconic-icon {
+menuitem:is([type="checkbox"], [checked="true"]) .menu-icon,
+menuitem[type="radio"] .menu-icon {
 	appearance: none !important;
 }
 menuitem:not(.menuitem-iconic) {
@@ -49,7 +52,7 @@ menuitem:not(.menuitem-iconic) {
 menuitem :is(label, description)[value][crop]::before {
 	min-width: min-content !important;
 }
-menuitem:not([acceltext]) .menu-accel-container {
+menuitem:not([acceltext]) .menu-accel {
 	visibility: collapse !important;
 }
 menuitem[type="checkbox"] image, menuitem[type="radio"] image {
@@ -65,14 +68,7 @@ panel[type=arrow] {
 }
 
 /* Style popovers */
-panel:not([remote]) {
-	--arrowpanel-background: var(--gnome-menu-background) !important;
-	--panel-item-hover-bgcolor: var(--gnome-selected-background) !important;
-}
-panel  {
-	--arrowpanel-padding: 0 !important;
-	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
-	--arrowpanel-border-radius: 12px !important;
+panel {
 	--gnome-menu-padding: 6px;
 }
 
@@ -112,9 +108,7 @@ panelview .toolbarbutton-1 {
 
 /* Menu buttons disabled */
 menuitem[disabled="true"], menupopup menu[disabled="true"],
-.subviewbutton[disabled="true"], .toolbarbutton-1[disabled="true"],
-.protections-popup-category[disabled="true"],
-.identity-popup-content-blocking-category[disabled="true"] {
+.subviewbutton[disabled="true"], .toolbarbutton-1[disabled="true"] {
 	opacity: .5 !important;
 }
 menuitem[disabled="true"][_moz-menuactive], menupopup menu[disabled="true"][_moz-menuactive] {

@@ -56,21 +56,21 @@ calendar-month-view, calendar-multiweek-view {
 	border-right: 0 !important;
 }
 
-.calendar-month-day-box-current-month[relation="today"][selected="true"],
-.calendar-month-day-box-day-off[relation="today"][selected="true"],
-.calendar-month-day-box-other-month[relation="today"][selected="true"] {
+.calendar-month-day-box-current-month[relation="today"][selected],
+.calendar-month-day-box-day-off[relation="today"][selected],
+.calendar-month-day-box-other-month[relation="today"][selected] {
 	background-color: var(--viewTodayBackground) !important;
 }
-.calendar-month-day-box-current-month[selected="true"] {
+.calendar-month-day-box-current-month[selected] {
 	background-color: var(--viewBackground) !important;
 }
-.calendar-month-day-box-day-off[selected="true"] {
+.calendar-month-day-box-day-off[selected] {
 	background-color: var(--viewWeekendBackground) !important;;
 }
 
-.calendar-month-day-box-current-month[selected="true"],
-.calendar-month-day-box-day-off[selected="true"],
-.calendar-month-day-box-other-month[selected="true"] {
+.calendar-month-day-box-current-month[selected],
+.calendar-month-day-box-day-off[selected],
+.calendar-month-day-box-other-month[selected] {
 	background-image: linear-gradient(var(--gnome-view-selected-background), var(--gnome-view-selected-background)) !important;
 	border-color: var(--viewBorderColor) !important;
 }
@@ -131,16 +131,16 @@ calendar-minimonth {
 	--mmHighlightColor: white !important;
 	background-color: var(--gnome-accent-bg) !important;
 }
-.minimonth-day:hover[interactive]:not([selected="true"], [today="true"]) {
+.minimonth-day:hover[interactive]:not([selected], [today="true"]) {
 	background-color: var(--gnome-hover-color) !important;
 }
 .minimonth-day:active[interactive]:not([today="true"]) {
 	background-color: var(--gnome-active-color) !important;
 }
-.minimonth-day[selected="true"][interactive]:not([today="true"]) {
+.minimonth-day[selected][interactive]:not([today="true"]) {
 	background-color: var(--gnome-selected-color) !important;
 }
-.minimonth-day[selected="true"] {
+.minimonth-day[selected] {
 	outline: 2px solid var(--gnome-accent-bg) !important;
 	outline-offset: -2px;
 }
@@ -149,28 +149,18 @@ calendar-minimonth {
 	padding: 0 !important;
 }
 
-#calendarListHeader,
-checkbox.treenode-checkbox {
+#calendarListHeader {
 	border-radius: 6px !important;
 	margin: 0 6px !important;
 	padding: 9px !important;
 }
-#calendarListHeader:hover,
-checkbox.treenode-checkbox:hover {
+#calendarListHeader:hover {
 	background-color: var(--gnome-hover-color) !important;
 }
-#calendarListHeader > span,
-checkbox.treenode-checkbox > .checkbox-label-box > label {
+#calendarListHeader > span {
 	font-size: 9pt !important;
 	font-weight: bold !important;
 	opacity: .55 !important;
-}
-checkbox.treenode-checkbox > .checkbox-label-box {
-	margin: 0 !important;
-}
-checkbox.treenode-checkbox > .checkbox-check {
-	margin: 0 !important;
-	order: 2 !important;
 }
 #task-tree-filtergroup {
 	padding: 6px 9px !important;	

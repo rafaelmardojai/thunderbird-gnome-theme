@@ -4,7 +4,6 @@
 
 :root {
 	--thread-pane-header-padding: var(--gnome-toolbar-padding) !important;
-	--folder-tree-header-padding: var(--gnome-toolbar-padding) !important;
 }
 
 #folderPaneHeaderBar:not([hidden]) {
@@ -113,7 +112,7 @@
 		}
 		
 		.thread-card-column:last-child {
-			.thread-card-last-row {
+			.thread-card-dynamic-row {
 				padding-inline-end: 3px !important;
 			}
 		}
@@ -137,20 +136,6 @@
 		/* Remove selected indicator */
 		&::before {
 			content: none !important;
-		}
-	}
-	
-	/* Improve card layout when there are no children */
-	&:not(.children) .card-container {
-		.thread-card-column:last-child {
-			grid-template-areas:
-				"sender sender"
-				"subject details";
-			grid-template-columns: auto content;
-			
-			.thread-card-row:first-child {
-				grid-area: sender;
-			}			
 		}
 	}
 	

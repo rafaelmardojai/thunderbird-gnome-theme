@@ -91,7 +91,10 @@
 	/* Menu */
 	--gnome-menu-background: #ffffff;
 	--gnome-menu-color: var(--gnome-window-color);
-	--gnome-menu-shadow: 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
+	--gnome-menu-border-color: transparent;
+	/* The first ring is the hairline Adwaita draws around a popover; the
+	 * border itself stays transparent, as in the Firefox theme. */
+	--gnome-menu-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
 	--gnome-menu-button-hover-background: var(--gnome-button-background);
 	--gnome-menu-separator-color: var(--gnome-border-color);
 	
