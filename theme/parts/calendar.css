@@ -56,21 +56,21 @@ calendar-month-view, calendar-multiweek-view {
 	border-right: 0 !important;
 }
 
-.calendar-month-day-box-current-month[relation="today"][selected="true"],
-.calendar-month-day-box-day-off[relation="today"][selected="true"],
-.calendar-month-day-box-other-month[relation="today"][selected="true"] {
+.calendar-month-day-box-current-month[relation="today"][selected],
+.calendar-month-day-box-day-off[relation="today"][selected],
+.calendar-month-day-box-other-month[relation="today"][selected] {
 	background-color: var(--viewTodayBackground) !important;
 }
-.calendar-month-day-box-current-month[selected="true"] {
+.calendar-month-day-box-current-month[selected] {
 	background-color: var(--viewBackground) !important;
 }
-.calendar-month-day-box-day-off[selected="true"] {
+.calendar-month-day-box-day-off[selected] {
 	background-color: var(--viewWeekendBackground) !important;;
 }
 
-.calendar-month-day-box-current-month[selected="true"],
-.calendar-month-day-box-day-off[selected="true"],
-.calendar-month-day-box-other-month[selected="true"] {
+.calendar-month-day-box-current-month[selected],
+.calendar-month-day-box-day-off[selected],
+.calendar-month-day-box-other-month[selected] {
 	background-image: linear-gradient(var(--gnome-view-selected-background), var(--gnome-view-selected-background)) !important;
 	border-color: var(--viewBorderColor) !important;
 }
@@ -116,13 +116,21 @@ calendar-minimonth {
 }
 
 .minimonth-day {
+	/* The busy dot is a block below the digit and takes its own size plus a
+	 * 2px gap off the bottom of the cell, which left the digit above the
+	 * middle of its circle. Half of that has to go back on top. */
+	--gnome-minimonth-day-shift: calc((var(--mmDayBusyIndicatorSize) + 2px) / 2);
 	border: 0 !important;
 	border-radius: 100% !important;
-	padding: 9px 0 !important;
+	padding: calc(9px + var(--gnome-minimonth-day-shift)) 0
+		calc(9px - var(--gnome-minimonth-day-shift)) !important;
 }
-.minimonth-week,
-.minimonth-week:not([hidden]) ~ .minimonth-day {
+.minimonth-week {
 	padding: 5.5px 0 !important;
+}
+.minimonth-week:not([hidden]) ~ .minimonth-day {
+	padding: calc(5.5px + var(--gnome-minimonth-day-shift)) 0
+		calc(5.5px - var(--gnome-minimonth-day-shift)) !important;
 }
 
 .minimonth-day[today="true"] {
@@ -131,16 +139,16 @@ calendar-minimonth {
 	--mmHighlightColor: white !important;
 	background-color: var(--gnome-accent-bg) !important;
 }
-.minimonth-day:hover[interactive]:not([selected="true"], [today="true"]) {
+.minimonth-day:hover[interactive]:not([selected], [today="true"]) {
 	background-color: var(--gnome-hover-color) !important;
 }
 .minimonth-day:active[interactive]:not([today="true"]) {
 	background-color: var(--gnome-active-color) !important;
 }
-.minimonth-day[selected="true"][interactive]:not([today="true"]) {
+.minimonth-day[selected][interactive]:not([today="true"]) {
 	background-color: var(--gnome-selected-color) !important;
 }
-.minimonth-day[selected="true"] {
+.minimonth-day[selected] {
 	outline: 2px solid var(--gnome-accent-bg) !important;
 	outline-offset: -2px;
 }
@@ -149,40 +157,35 @@ calendar-minimonth {
 	padding: 0 !important;
 }
 
-#calendarListHeader,
-checkbox.treenode-checkbox {
-	border-radius: 6px !important;
-	margin: 0 6px !important;
-	padding: 9px !important;
+/* The list header and the rows below it follow the folder tree: 34px tall,
+ * inset by the toolbar padding and rounded at the button radius. They were
+ * 36px and 40px, square to the pane edge and rounded at 6px. */
+#calendarListHeader {
+	border-radius: var(--gnome-button-radius) !important;
+	margin: 0 var(--gnome-toolbar-padding) !important;
+	min-height: var(--gnome-button-size) !important;
+	padding: 0 9px !important;
 }
-#calendarListHeader:hover,
-checkbox.treenode-checkbox:hover {
+#calendarListHeader:hover {
 	background-color: var(--gnome-hover-color) !important;
 }
-#calendarListHeader > span,
-checkbox.treenode-checkbox > .checkbox-label-box > label {
+#calendarListHeader > span {
 	font-size: 9pt !important;
 	font-weight: bold !important;
 	opacity: .55 !important;
-}
-checkbox.treenode-checkbox > .checkbox-label-box {
-	margin: 0 !important;
-}
-checkbox.treenode-checkbox > .checkbox-check {
-	margin: 0 !important;
-	order: 2 !important;
 }
 #task-tree-filtergroup {
 	padding: 6px 9px !important;	
 }
 
 #calendar-list {
-	padding: 0 6px !important;
+	padding: 0 !important;
 }
 #calendar-list > li {
-	border-radius: 6px !important;
-	margin: 2px 0 !important;
-	padding: 3px 9px !important;
+	border-radius: var(--gnome-button-radius) !important;
+	margin: 1px var(--gnome-toolbar-padding) !important;
+	min-height: var(--gnome-button-size) !important;
+	padding: 0 9px !important;
 }
 #calendar-list > li:not(.selected):hover {
 	background-color: var(--gnome-hover-color) !important;
@@ -190,7 +193,7 @@ checkbox.treenode-checkbox > .checkbox-check {
 #calendar-list > li.selected,
 #calendar-list:focus-within > li.selected {
 	appearance: none !important;
-	background-color: var(--gnome-selected-color) !important;
+	background-color: var(--gnome-active-color) !important;
 	color: inherit !important;
 }
 
@@ -203,7 +206,17 @@ checkbox.treenode-checkbox > .checkbox-check {
 #calendar-list > li > button.calendar-enable-button {
 	background-color: var(--gnome-button-background) !important;
 	border: 0 !important;
-	padding: 6px 9px !important;
+	border-radius: var(--gnome-button-radius) !important;
+	min-height: 26px !important;
+	padding: 0 9px !important;
+	/* Thunderbird writes this button in --selected-item-text-color, which
+	 * belongs on the accent. The row behind it carries a neutral tint here,
+	 * so the label was white on a light surface. */
+	color: var(--gnome-window-color) !important;
+	/* ... and sets it in 11px uppercase with letter spacing. */
+	font-size: inherit !important;
+	letter-spacing: normal !important;
+	text-transform: none !important;
 }
 #calendar-list > li > button.calendar-enable-button:hover {
 	background-color: var(--gnome-button-hover-background) !important;
@@ -295,4 +308,39 @@ checkbox.treenode-checkbox > .checkbox-check {
 /* Hide new task button */
 #calSidebar:not([collapsed="true"]) ~ #calendarDisplayBox #calendar-add-task-button  {
 	visibility: collapse !important;
+}
+
+/* Grid and splitter lines */
+
+/* Thunderbird draws the lines that frame the time bar and the day headers at
+ * 2px and everything inside the grid at 1px. */
+.multiday-header-corner,
+.multiday-timebar,
+.multiday-grid-rotated .multiday-timebar,
+calendar-header-container,
+.multiday-grid-rotated calendar-header-container {
+	border-width: 1px !important;
+}
+
+/* These two splitters only declare the line on their end edge, so the platform
+ * border on the other edge stayed visible: two lines in two colours, 5px
+ * apart, where one belongs. */
+#calendar-view-splitter,
+#calendar-task-view-splitter {
+	border-block-start: 0 !important;
+}
+
+/* Events */
+
+/* An event is drawn as a block with 2px corners sitting hard against the grid
+ * line. .calendar-color-box is the shared class of the event in the day, week
+ * and month views; give it the radius the rest of the theme uses and move the
+ * label off the rounded corner. */
+.calendar-color-box {
+	border-radius: var(--gnome-button-radius) !important;
+}
+calendar-month-day-box-item.calendar-color-box,
+calendar-editable-item.calendar-color-box,
+calendar-event-box .calendar-item-flex {
+	padding-inline: 9px !important;
 }

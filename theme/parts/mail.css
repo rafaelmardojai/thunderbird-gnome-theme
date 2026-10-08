@@ -4,7 +4,6 @@
 
 :root {
 	--thread-pane-header-padding: var(--gnome-toolbar-padding) !important;
-	--folder-tree-header-padding: var(--gnome-toolbar-padding) !important;
 }
 
 #folderPaneHeaderBar:not([hidden]) {
@@ -36,15 +35,21 @@
 #folderTree > li:not(:first-child) > .mode-container {
 	padding-top: 3px !important;
 }
+/* GNOME insets the rows of a sidebar from both edges, so the highlight sits
+ * in the list rather than running into the window chrome. */
 #folderTree .container {
 	border: 0 !important;
-	margin-inline: 0 !important;
-	margin: 1px 0 !important;
+	margin: 1px var(--gnome-toolbar-padding) !important;
 }
 #folderTree:focus-within li.selected > .container, #folderTree li.drop-target > .container {
 	color: var(--gnome-view-color) !important;
 	outline: 2px solid color-mix(in srgb, var(--gnome-accent) 50%, transparent) !important;
 	outline-offset: -2px !important;
+}
+/* The account rows take their icon colour from --primary, not from the
+ * folder colours, so they stayed blue. */
+#folderTree li[data-server-type] > .container > .icon {
+	--icon-color: currentColor !important;
 }
 #folderTree li > .container > .unread-count {
 	background-color: var(--folderpane-unread-count-background) !important;
@@ -91,9 +96,10 @@
 	background: transparent !important;
 	height: auto !important;
 	
-	/* Spacing */
+	/* Spacing: the same gutter the folder tree uses, so both lists sit in the
+	 * window the same way. */
 	td {
-		padding: 12px 12px !important;
+		padding: var(--gnome-toolbar-padding) !important;
 	}
 	&:not(:first-child) td {
 		padding-top: 0 !important;
@@ -104,7 +110,11 @@
 		--thread-card-content-gap: 6px !important;
 		background: none !important;
 		border: 0 !important;
-		border-radius: 6px !important;
+		border-radius: var(--gnome-button-radius) !important;
+		/* Thunderbird only pads the card on the right, so the text sits on
+		 * the edge of the highlight. A GNOME list row keeps its content
+		 * clear of it on every side. */
+		padding: var(--gnome-toolbar-padding) calc(var(--gnome-toolbar-padding) * 2) !important;
 		grid-template-columns: 1fr !important;
 		min-height: 60px !important;
 
@@ -113,7 +123,7 @@
 		}
 		
 		.thread-card-column:last-child {
-			.thread-card-last-row {
+			.thread-card-dynamic-row {
 				padding-inline-end: 3px !important;
 			}
 		}
@@ -137,20 +147,6 @@
 		/* Remove selected indicator */
 		&::before {
 			content: none !important;
-		}
-	}
-	
-	/* Improve card layout when there are no children */
-	&:not(.children) .card-container {
-		.thread-card-column:last-child {
-			grid-template-areas:
-				"sender sender"
-				"subject details";
-			grid-template-columns: auto content;
-			
-			.thread-card-row:first-child {
-				grid-area: sender;
-			}			
 		}
 	}
 	

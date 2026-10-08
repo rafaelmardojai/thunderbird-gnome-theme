@@ -4,6 +4,7 @@
 @import "colors/dark.css";
 
 /* Thunderbird */
+@import "metrics.css";
 @import "parts/variables.css";
 @import "parts/icons.css";
 @import "parts/toolbox.css";
