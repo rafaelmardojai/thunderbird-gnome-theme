@@ -49,10 +49,6 @@ toolbar toolbarseparator:not([orient="vertical"]) {
 	width: 12px !important;
 }
 
-#navigator-toolbox:-moz-window-inactive label {
-	opacity: 0.7 !important;
-}
-
 /* Sidebars */
 #calSidebar {
 	background-color: var(--gnome-window-background) !important;

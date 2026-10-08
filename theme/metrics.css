@@ -1,0 +1,26 @@
+/* Measures shared by the chrome and the content stylesheets */
+
+:root {
+	--gnome-toolbar-padding: 6px;
+	--gnome-toolbar-spacing: 6px;
+	--gnome-button-radius: 9px;
+	--gnome-button-size: 34px;
+	--gnome-entry-radius: var(--gnome-button-radius);
+	--gnome-entry-height: var(--gnome-button-size);
+	--gnome-card-radius: 12px;
+	--gnome-menu-radius: 9px;
+	--gnome-menu-padding: 6px;
+	--gnome-menu-item-padding: 12px;
+	--gnome-popover-radius: calc(var(--gnome-menu-radius) + 6px);
+	--gnome-dialog-radius: 18px; /* Alert dialog */
+	--gnome-dialog-padding: 24px;
+
+	/* Animations */
+	--gnome-animation-time: 300ms;
+	--gnome-tab-animation-time: 200ms;
+
+	@media (prefers-reduced-motion) {
+		--gnome-animation-time: 0ms;
+		--gnome-tab-animation-time: 0ms;
+	}
+}
