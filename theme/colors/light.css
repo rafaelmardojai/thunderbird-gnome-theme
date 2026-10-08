@@ -80,8 +80,10 @@
 	--gnome-view-selected-active-background: color-mix(in srgb, var(--gnome-accent-bg) 39%, transparent);
 	--gnome-sidebar-background: #ebebed;
 	--gnome-secondary-sidebar-background: #f3f3f5;
-	--gnome-sidebar-border-color: rgba(0, 0, 6, 0.07);
-	--gnome-sidebar-shade-color: rgba(0, 0, 6, 0.07);
+	/* One divider strength for the whole window, as in the Firefox theme:
+	 * the headerbar shade, opaque where it sits on the sidebar. */
+	--gnome-sidebar-border-color: color-mix(in srgb, rgb(0, 0, 0) 12%, var(--gnome-headerbar-background));
+	--gnome-sidebar-shade-color: var(--gnome-headerbar-shade-color);
 	
 	/* Card */
 	--gnome-card-background: #ffffff;
@@ -91,7 +93,10 @@
 	/* Menu */
 	--gnome-menu-background: #ffffff;
 	--gnome-menu-color: var(--gnome-window-color);
-	--gnome-menu-shadow: 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
+	--gnome-menu-border-color: transparent;
+	/* The first ring is the hairline Adwaita draws around a popover; the
+	 * border itself stays transparent, as in the Firefox theme. */
+	--gnome-menu-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 1px 5px 1px rgba(0, 0, 0, .09), 0 2px 14px 3px rgba(0, 0, 0, .05);
 	--gnome-menu-button-hover-background: var(--gnome-button-background);
 	--gnome-menu-separator-color: var(--gnome-border-color);
 	
@@ -137,9 +142,12 @@
 	--gnome-tabbar-background: var(--gnome-headerbar-background);
 	--gnome-tabbar-tab-separator-color: var(--gnome-border-color);
 	--gnome-tabbar-tab-hover-background: color-mix(in srgb, currentColor 7%, var(--gnome-tabbar-background));
-	--gnome-tabbar-tab-active-background: color-mix(in srgb, currentColor 10%, var(--gnome-tabbar-background));
+	/* Thunderbird spreads a handful of tabs over the whole width, where the
+	 * 10% of a browser tab is hard to make out. The selected tab takes the
+	 * strength the theme uses for a selection elsewhere. */
+	--gnome-tabbar-tab-active-background: color-mix(in srgb, currentColor 16%, var(--gnome-tabbar-background));
 	--gnome-tabbar-tab-active-background-contrast: color-mix(in srgb, currentColor 20%, var(--gnome-tabbar-background));
-	--gnome-tabbar-tab-active-hover-background: color-mix(in srgb, currentColor 13%, var(--gnome-tabbar-background));
+	--gnome-tabbar-tab-active-hover-background: color-mix(in srgb, currentColor 19%, var(--gnome-tabbar-background));
 	--gnome-tabbar-tab-needs-attetion: var(--gnome-palette-blue-2);
 	
 	--gnome-tabbar-identity-color-blue: #0461be;

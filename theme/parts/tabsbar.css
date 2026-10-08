@@ -4,11 +4,9 @@
 
 :root {
 	--tabs-toolbar-box-shadow: none !important;
-	--space-above-tabbar: 0 !important;
 }
 
 #tabs-toolbar {
-    --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding) !important;
 	background-color: var(--gnome-tabbar-background) !important;
 	padding: 0 !important;
 	position: relative;
@@ -86,7 +84,10 @@ tab {
 	border-color: transparent !important;
 }
 tab:not(:first-of-type, [selected], :hover) {
-	--gnome-tabbar-tab-separator-hack0: var(--gnome-tabbar-background);
+	/* The ends of the gradient have to let the bar through. Painting them in
+	 * the bar colour leaves two bright stubs as soon as the bar is a
+	 * different shade, for instance while the window is inactive. */
+	--gnome-tabbar-tab-separator-hack0: transparent;
 	--gnome-tabbar-tab-separator-hack1: linear-gradient(
 		to bottom,
 		var(--gnome-tabbar-tab-separator-hack0) 0,
@@ -119,7 +120,6 @@ tab:hover ~ tab[selected] ~ tab:not([hidden="true"]) ~ tab:not([hidden="true"]) 
 
 /* Tab labels */
 tab {
-	color: var(--gnome-toolbar-color) !important;
 	font-family: Cantarell, inherit;
 	font-weight: normal;
 	font-size: 1em;
@@ -155,7 +155,7 @@ tab {
 }
 
 /* Prevent tab icons size breaking */
-.tab-icon-image, .tab-icon-sound, .tab-throbber, .tab-throbber-fallback, .tab-close-button {
+.tab-icon-image, .tab-throbber, .tab-close-button {
 	min-width: 16px;
 }
 
@@ -167,10 +167,9 @@ tab {
 tab:not([pinned]) .tab-label-container {
 	margin-right: -16px !important;
 }
-tab:not([pinned]):is([selected="true"], :hover) .tab-label-container[textoverflow="true"] {
+tab:not([pinned]):is([selected], :hover) .tab-label-container[textoverflow="true"] {
 	margin-right: 0 !important;
 }
-tab:not([pinned]) .tab-icon-stack,
 tab:not(.tabmail-tab:first-child) .tab-icon-image {
 	margin-left: auto !important;
 }
@@ -179,19 +178,14 @@ tab:not(.tabmail-tab:first-child) .tab-icon-image {
 }
 
 /* Tab icon margin */
-tab:not([pinned]) .tab-icon-stack,
 .tabmail-tab .tab-icon-image {
 	margin-right: 6px !important;
 }
-.tab-throbber:not([pinned]), .tab-icon-pending:not([pinned]), .tab-sharing-icon-overlay:not([pinned]), .tab-icon-overlay:not([pinned]) {
+.tab-throbber:not([pinned]) {
 	margin-inline-end: 0 !important;
-}
-tab:not([soundplaying], [muted], [activemedia-blocked], [crashed]) .tab-icon-stack {
-	padding: 4px;
 }
 
 /* Tab buttons */
-.tab-icon-overlay,
 .tab-close-button {
 	border: 0px solid transparent;
 	box-sizing: content-box; /* Avoid deformation on flexbox */
@@ -200,23 +194,20 @@ tab:not([soundplaying], [muted], [activemedia-blocked], [crashed]) .tab-icon-sta
 	background-size: 24px;
 	transition: all 0.2s ease-out !important;
 }
-:root:not(:-moz-window-inactive) .tab-icon-overlay:hover,
 :root:not(:-moz-window-inactive) .tab-close-button:hover {
 	background-color: var(--gnome-hover-color) !important;
 }
-:root:not(:-moz-window-inactive) .tab-icon-overlay:active,
 :root:not(:-moz-window-inactive) .tab-close-button:active {
 	background-color: var(--gnome-active-color) !important;
 }
 
-.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) image {
-	 margin: auto !important;
-}
 
 /* Close tab button */
 .tab-close-button {
-	content: url("../icons/window-close-symbolic.svg") !important;
-	fill: var(--gnome-toolbar-color) !important;
+	/* The file this pointed at is not in the tree, so the button stayed empty
+	 * whenever it was shown. The icon set has the symbol. */
+	content: var(--gnome-icon-window-close-symbolic) !important;
+	fill: var(--gnome-toolbar-icon-fill) !important;
 	fill-opacity: 1 !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	height: 16px !important;
@@ -227,7 +218,7 @@ tab:not([soundplaying], [muted], [activemedia-blocked], [crashed]) .tab-icon-sta
 }
 
 /* Autohide */
-tab:not([selected="true"]) .tab-close-button {
+tab:not([selected]) .tab-close-button {
 	visibility: hidden !important;
 	opacity: 0 !important;
 }
@@ -236,10 +227,6 @@ tab:hover .tab-close-button {
 	opacity: 1 !important;
 }
 
-/* Fix close button position */
-#tabbrowser-tabs[closebuttons="activetab"] .tabmail-tab:not([pinned]) .tab-close-button {
-	display: block !important;
-}
 
 /* Close button overlay */
 tab:not([pinned], .tabmail-tab:first-child) .tab-content::before {
@@ -257,13 +244,13 @@ tab:not([pinned]) .tab-content::before {
 	background: linear-gradient(to left, var(--gnome-tabbar-tab-close-overlay-bg) 50%, transparent);
 	z-index: 99;
 }
-tab:not([pinned]):is([selected="true"], :hover) .tab-content::before {
+tab:not([pinned]):is([selected], :hover) .tab-content::before {
 	opacity: 1;
 }
-tab:not([pinned])[selected="true"] .tab-content::before {
+tab:not([pinned])[selected] .tab-content::before {
 	--gnome-tabbar-tab-close-overlay-bg: var(--gnome-tabbar-tab-active-background);
 }
-tab:not([pinned], :-moz-window-inactive)[selected="true"]:hover .tab-content::before {
+tab:not([pinned], :-moz-window-inactive)[selected]:hover .tab-content::before {
 	--gnome-tabbar-tab-close-overlay-bg: var(--gnome-tabbar-tab-active-hover-background);
 }
 tab:not([pinned]):hover .tab-content::before {
@@ -271,33 +258,31 @@ tab:not([pinned]):hover .tab-content::before {
 }
 
 /* Tab close button etc. positioning */
-.tab-throbber, .tab-icon-image, .tab-sharing-icon-overlay, .tab-icon-sound, .tab-close-button {
+.tab-throbber, .tab-icon-image, .tab-close-button {
 	margin-top: 0 !important;
 }
 
 /* Active tab */
-.tab-background[selected=true] {
+.tab-background[selected] {
 	background: none !important;
 	border-image: none !important;
 }
-.tab-background[selected=true]  {
+.tab-background[selected]  {
 	background-color: var(--gnome-tabbar-tab-active-background) !important;
 }
 
-.tabmail-tab[selected="true"] {
+.tabmail-tab[selected] {
 	box-shadow: none !important;
 }
 
 /* Tab hover */
-tab:hover > .tab-stack > .tab-background[selected=true]:not(:-moz-window-inactive) {
+tab:hover > .tab-stack > .tab-background[selected]:not(:-moz-window-inactive) {
 	background-color: var(--gnome-tabbar-tab-active-hover-background) !important;
 }
-tab:hover > .tab-stack > .tab-background:not([selected=true]),
-#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabmail-tab:hover > .tab-stack > .tab-background:not([selected=true]),
-#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabmail-tab:hover > .tab-stack > .tab-background > .tab-line:not([selected=true]) {
+tab:hover > .tab-stack > .tab-background:not([selected]) {
 	background-color: transparent !important;
 }
-tab:hover > .tab-stack > .tab-background:not([selected=true]) {
+tab:hover > .tab-stack > .tab-background:not([selected]) {
 	background-color: var(--gnome-tabbar-tab-hover-background) !important;
 	border-image: none !important;
 }
@@ -356,11 +341,10 @@ tab {
 
 /* OPTIONAL: Add more contrast to the active tab */
 @media (-moz-bool-pref: "gnomeTheme.activeTabContrast") {
-	.tab-background[selected=true]:not(#hack),
-	:root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background:not(#hack) {
+	.tab-background[selected]:not(#hack) {
 		background: var(--gnome-tabbar-tab-active-background-contrast) !important;
 	}
-	tab:not([pinned])[selected="true"] .tab-content::before,
+	tab:not([pinned])[selected] .tab-content::before,
 	:root:not(:-moz-window-inactive) tab:hover .tab-content::before {
 		--gnome-tabbar-tab-close-overlay-bg: var(--gnome-tabbar-tab-active-background-contrast) !important;
 	}
