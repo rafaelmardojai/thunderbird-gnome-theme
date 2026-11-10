@@ -58,7 +58,7 @@ button.button-menu-list,
 			background-color: var(--gnome-button-active-background) !important;
 		}
 		/* Checked buttons */
-		&[selected], &[checked], &[open] {
+		&[selected], &[checked], &[open], &[aria-pressed="true"] {
 			background-color: var(--gnome-button-checked-background) !important;
 			
 			&:hover {
@@ -122,7 +122,7 @@ button.calview-toggle-item,
 			background-color: var(--gnome-active-color) !important;
 		}
 		/* Checked buttons */
-		&[selected], &[checked], &[open] {
+		&[selected], &[checked], &[open], &[aria-pressed="true"] {
 			background-color: var(--gnome-selected-color) !important;
 			
 			&:hover {
